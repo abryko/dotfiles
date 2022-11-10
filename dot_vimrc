@@ -1,0 +1,37 @@
+set tabstop=4
+set softtabstop=2
+set shiftwidth=4
+set smartindent
+set noexpandtab
+set nowrapscan
+
+map <F7> :tabp <CR>
+map <f8> :tabn <CR>
+command! DiffOrig rightbelow vertical new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
+
+" VIM-PLUG CONFIG
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+Plug 'tpope/vim-sensible'
+Plug 'hashivim/vim-terraform'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
+Plug 'jjo/vim-cue'
+Plug 'LnL7/vim-nix'
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+
+" Initialize plugin system
+call plug#end()
+
+" autocompletion golang
+"au filetype go inoremap <buffer> . .<C-x><C-o>
+
+
+"syntax on
+"set hlsearch
+"filetype plugin indent on

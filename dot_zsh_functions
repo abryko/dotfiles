@@ -1,0 +1,63 @@
+function _fzf_compgen_dir ()
+{
+    fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
+function _fzf_compgen_path ()
+{
+    fd --hidden --follow --exclude ".git" . "$1"
+}
+
+function xcd ()
+{
+    option=;
+    [ "$1" = "-d" ] && option="-d" && shift;
+    args=$(z 2>&1 | awk '{print $2}' | fzf -m);
+    [ ! -z "$args" ] && xpanes ${option} -c 'cd {}' ${args}
+}
+
+function xvim ()
+{
+    option=;
+    [ "$1" = "-d" ] && option="-d" && shift;
+    args=$(fzf -m);
+    [ ! -z "$args" ] && xpanes ${option} -c 'vim {}' ${args}
+}
+
+
+mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; } 
+
+# Alias
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
+alias ......='cd ../../../../../'
+alias .......='cd ../../../../../../'
+alias ........='cd ../../../../../../../'
+alias .........='cd ../../../../../../../../'
+alias ..........='cd ../../../../../../../../../'
+alias ...........='cd ../../../../../../../../../../'
+alias c='cd ..'
+alias cd..='cd ..'
+
+alias k=kubectl
+alias kn=knife
+alias watch='watch --color '
+alias w='watch --color '
+alias clipin='xclip -selection clipboard'
+alias clipout='xclip -o -selection clipboard'
+alias t='todo.sh'
+alias todo='todo.sh'
+alias cm='chezmoi'
+
+export FZF_DEFAULT_OPTS="--bind ctrl-t:select-all,ctrl-d:deselect-all"
+
+# Firefox log SSL KEYS (for Wireshark)
+#export SSLKEYLOGFILE=~/ssl-keys.log

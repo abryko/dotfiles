@@ -1,0 +1,51 @@
+{
+    "code-runner.runInTerminal": true,
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "vs-kubernetes": {
+        "vs-kubernetes.helm-path": "/home/xmaillard/.vs-kubernetes/tools/helm/linux-amd64/helm",
+        "vs-kubernetes.draft-path": "/home/xmaillard/.vs-kubernetes/tools/draft/linux-amd64/draft",
+        "vs-kubernetes.minikube-path": "/home/xmaillard/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.minikube-path.linux": "/home/xmaillard/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vscode-kubernetes.minikube-path.linux": "/home/xmaillard/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+        "vs-kubernetes.crd-code-completion": "enabled"
+    },
+    "go.formatTool": "goimports",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.largeFileOptimizations": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "go.gopath": "/home/xmaillard/go",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.external.linuxExec": "tilix",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "go.toolsManagement.autoUpdate": true,
+    "redhat.telemetry.enabled": false,
+    "go.testTimeout": "5m",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "--fast"
+    ]
+}

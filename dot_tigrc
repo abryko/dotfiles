@@ -1,0 +1,5 @@
+set refresh-mode = auto
+bind status D @?bash -c "rm -rf $(git rev-parse --show-toplevel)/%(file)"
+bind status C !git commit -v
+bind status + !git commit -v --amend
+set ignore-case = smart-case

@@ -1,0 +1,12 @@
+*.swp
+.envrc
+.terraform/
+.tool-versions
+cue.mod/pkg
+kubeconfig.yaml
+kubeconfig.json
+kube_config.*
+result
+.tool-versions
+.vscode/
+

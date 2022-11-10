@@ -1,0 +1,39 @@
+[user]
+	name = Xavier Maillard
+	email = xavier.maillard@orange.com
+	signingkey = 038B5EFF879C673690E809E6B882D4C9DC0A3E0F
+[commit]
+	gpgsign = true
+[push]
+	default = simple
+#	followTags = true
+[http]
+	sslVerify = false
+[alias]
+	git = !exec git
+	co = checkout
+	st = status
+	cm = commit
+	up = pull
+[init]
+	templatedir = ~/.git-templates
+[core]
+    pager = less -FRX
+	longpaths = true
+	excludesfile = /home/xmaillard/.gitignore_global
+[credential]
+	helper = store --file ~/.git-credentials
+[pager]
+    #branch = false
+[pull]
+	ff = only
+[url "git@git.corp.caascad.com:"]
+insteadOf = git@git.corp.cloudwatt.com:
+[url "git@git.corp.caascad.com:"]
+    insteadOf = https://git.corp.cloudwatt.com/
+
+[difftool "jsondiff"]
+	cmd = "/home/xmaillard/git-json-diff $LOCAL $REMOTE"
+
+[alias]
+	jdiff = difftool -t jsondiff -y

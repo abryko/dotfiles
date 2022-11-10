@@ -1,0 +1,56 @@
+# ZSH conf
+# jump word better
+WORDCHARS='*?_-.[]~&!#$%^(){}<>|'
+LESS_WORDCHARS='*?_-.~&!#$%^<>|'
+LESSER_WORDCHARS='*?~&!#$%^|'
+FULL_WORDCHARS='*?_-,[]/~:@&;!#$£§%^(){}<>|.'
+
+#override zle
+function _backward_delete_full_word(){
+  local WORDCHARS=$FULL_WORDCHARS
+  zle backward-kill-word
+} 
+
+function _backward_kill_lesser_word(){
+  local WORDCHARS=$LESSER_WORDCHARS
+  zle backward-kill-word
+} 
+
+function _backward_kill_less_word(){
+  local WORDCHARS=$LESS_WORDCHARS
+  zle backward-kill-word
+} 
+
+function _forward_full_word(){
+  local WORDCHARS=$FULL_WORDCHARS
+  zle forward-word
+} 
+
+#zle declaration
+zle -N _backward_delete_full_word
+zle -N _backward_kill_lesser_word
+zle -N _backward_kill_less_word
+zle -N _forward_full_word
+#bindkey
+bindkey '^w'  _backward_delete_full_word
+bindkey '^ ' _forward_full_word
+bindkey '^u' backward-kill-line
+bindkey '^[^?' _backward_kill_lesser_word
+bindkey '^H' _backward_kill_less_word
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+
+# Autosuggestion slow
+# This speeds up pasting w/ autosuggest
+# https://github.com/zsh-users/zsh-autosuggestions/issues/238
+pasteinit() {
+  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
+  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
+}
+
+pastefinish() {
+  zle -N self-insert $OLD_SELF_INSERT
+}
+zstyle :bracketed-paste-magic paste-init pasteinit
+zstyle :bracketed-paste-magic paste-finish pastefinish
+ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
+

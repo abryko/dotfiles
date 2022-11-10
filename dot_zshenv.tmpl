@@ -1,0 +1,27 @@
+skip_global_compinit=1
+
+addPath() {
+	local p="$*"
+	[ -z "$p" ] && return
+	if [ -d "$p" ]; then
+	   [[ ":$PATH:" == *":$p:"* ]] || export PATH="${p}${PATH+:$PATH}"
+	fi
+}
+
+sourcePath() {
+	local p="$*"
+	[ -z "$p" ] && return
+	if [ -r "$p" ]; then
+		source  "$p"
+	fi
+}
+
+export GOPATH="$HOME/go"
+
+addPath "{{.chezmoi.homeDir }}/.local/bin"
+addPath "{{.chezmoi.homeDir }}/go/bin"
+addPath "{{.chezmoi.homeDir }}/.cargo/bin"
+addPath "${KREW_ROOT:-{{.chezmoi.homeDir }}/.krew}/bin"
+
+sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/nix.sh"
+sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh"

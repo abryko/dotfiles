@@ -1,0 +1,24 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+shift+[BracketRight]",
+        "command": "editor.action.goToTypeDefinition"
+    },
+    {
+        "key": "ctrl+[BracketRight]",
+        "command": "editor.action.peekTypeDefinition"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+[Quote]",
+        "command": "workbench.action.terminal.toggleTerminal"
+    }
+]
