@@ -56,6 +56,7 @@ alias clipout='xclip -o -selection clipboard'
 alias t='todo.sh'
 alias todo='todo.sh'
 alias cm='chezmoi'
+alias e='vim'
 
 export FZF_DEFAULT_OPTS="--bind ctrl-t:select-all,ctrl-d:deselect-all"
 

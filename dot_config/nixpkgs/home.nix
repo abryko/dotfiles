@@ -16,19 +16,24 @@
     chezmoi
     cue
     curl
+    direnv
     fd
     fzf
     gnupg
+    go
     gron
     jc
     jq
     libnotify
     nixfmt
     nmap
+    (nerdfonts.override { fonts = [ "BitstreamVeraSansMono" "Ubuntu" "UbuntuMono" ]; })
     noto-fonts-emoji
     open-policy-agent
     pre-commit
+    ripgrep
     rclone
+    rustup
     shellcheck
     shfmt
     silver-searcher
@@ -39,6 +44,7 @@
     yq
   ];
 
+  fonts.fontconfig.enable = true;
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new Home Manager release introduces backwards
