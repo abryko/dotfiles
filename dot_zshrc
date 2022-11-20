@@ -92,14 +92,13 @@ zinit lucid light-mode for \
     OMZ::plugins/cp/cp.plugin.zsh \
     as'completion' OMZ::plugins/docker/_docker \
     as'completion' OMZ::plugins/docker-compose/_docker-compose \
-    as'completion' OMZ::plugins/terraform/_terraform \
+    OMZ::plugins/terraform/terraform.plugin.zsh \
     as'completion' OMZ::plugins/vault/_vault \
     OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
     OMZ::plugins/systemd/systemd.plugin.zsh \
     as'completion' OMZ::plugins/pip/_pip \
     OMZ::plugins/pip/pip.plugin.zsh \
     OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
-    OMZ::plugins/helm/helm.plugin.zsh \
     depth=1 spwhitt/nix-zsh-completions \
     depth=1 chisui/zsh-nix-shell \
     depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
@@ -114,6 +113,12 @@ zinit lucid light-mode as'completion' id-as'home-manager-completion' \
 # kubectl-completion
 zinit lucid light-mode as'completion' id-as'kubectl-completion' \
     atclone'kubectl completion zsh > _kubectl' \
+    atpull'%atclone' run-atpull nocompile \
+    has'kubectl' for zdharma-continuum/null
+
+# helm-completion
+zinit lucid light-mode as'completion' id-as'helm-completion' \
+    atclone'helm completion zsh > _helm' \
     atpull'%atclone' run-atpull nocompile \
     has'kubectl' for zdharma-continuum/null
 

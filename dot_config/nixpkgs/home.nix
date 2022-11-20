@@ -21,6 +21,7 @@
     fzf
     gnupg
     go
+    golangci-lint
     gron
     jc
     jq
@@ -38,9 +39,8 @@
     shfmt
     silver-searcher
     tealdeer
+    terraform
     todo-txt-cli
-    vim_configurable
-    xclip
     yq
   ];
 
