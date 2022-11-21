@@ -23,6 +23,7 @@
     go
     golangci-lint
     gron
+    inkscape
     jc
     jq
     libnotify

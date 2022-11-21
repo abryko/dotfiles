@@ -69,9 +69,13 @@ zinit lucid light-mode for \
     depth'1' blockf \
         @Aloxaf/fzf-tab
 
+
 # Direnv
-zinit lucid depth='1' light-mode as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' atpull'%atclone' src"zhook.zsh" for \
-    direnv/direnv
+zinit lucid light-mode id-as'direnv' \
+    atclone'direnv hook zsh > zhook.zsh' \
+    atpull'%atclone' run-atpull pick'zhook.zsh' nocompile \
+    has'direnv' for zdharma-continuum/null
+
 
 # Highlights
 zinit lucid light-mode for \
