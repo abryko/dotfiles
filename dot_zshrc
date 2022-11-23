@@ -44,11 +44,12 @@ autoload -Uz _zinit
 
 # Do not load these in turbo
 zinit lucid light-mode for \
-    OMZ::lib/completion.zsh \
-    OMZ::lib/key-bindings.zsh \
-    OMZ::plugins/fzf/fzf.plugin.zsh \
-    OMZ::lib/history.zsh \
-    OMZ::lib/directories.zsh \
+    OMZL::completion.zsh \
+    OMZL::key-bindings.zsh \
+    OMZL::spectrum.zsh \
+    OMZP::fzf \
+    OMZL::history.zsh \
+    OMZL::directories.zsh \
     romkatv/zsh-defer
 
 
@@ -93,20 +94,20 @@ zinit depth'1' lucid light-mode pick'todo_completion' for \
 
 # Completions
 zinit lucid light-mode for \
-    OMZ::plugins/cp/cp.plugin.zsh \
-    as'completion' OMZ::plugins/docker/_docker \
-    as'completion' OMZ::plugins/docker-compose/_docker-compose \
-    OMZ::plugins/terraform/terraform.plugin.zsh \
-    as'completion' OMZ::plugins/vault/_vault \
-    OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
-    OMZ::plugins/systemd/systemd.plugin.zsh \
-    as'completion' OMZ::plugins/pip/_pip \
-    OMZ::plugins/pip/pip.plugin.zsh \
-    OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
+    OMZP::cp \
+    as'completion' OMZP::docker/_docker \
+    as'completion' OMZP::docker-compose/_docker-compose \
+    OMZP::terraform \
+    as'completion' OMZP::vault/_vault \
+    OMZP::docker-compose \
+    OMZP::systemd \
+    as'completion' OMZP::pip/_pip \
+    OMZP::pip \
+    OMZP::colored-man-pages \
     depth=1 spwhitt/nix-zsh-completions \
     depth=1 chisui/zsh-nix-shell \
     depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
-    OMZ::plugins/command-not-found/command-not-found.plugin.zsh
+    OMZP::command-not-found
 
 
 # home-manager-completion
@@ -231,6 +232,17 @@ export EDITOR=vim
 [[ -r ~/.zsh_zle ]] && source ~/.zsh_zle
 [[ -r ~/.zsh_functions ]] && source ~/.zsh_functions
 export GPG_TTY=$(tty)
+
+## Colored man pages (color codes uses OMZL::spectrum)
+# bold text: red
+less_termcap[md]="$(print -P -- ${FX[bold]}${FG[009]})"
+# blink text: yellow
+less_termcap[mb]="$(print -P -- ${FX[blink]}${FG[226]})"
+# underlined text: orange
+less_termcap[us]="$(print -P -- ${FX[underline]}${FG[208]})"
+# reset
+less_termcap[me]="$(print -P -- ${FX[reset]})"
+less_termcap[ue]="$(print -P -- ${FX[reset]})"
 
 # History
 HISTFILE="$HOME/.zhistory"

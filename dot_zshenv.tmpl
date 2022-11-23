@@ -23,5 +23,5 @@ addPath "{{.chezmoi.homeDir }}/go/bin"
 addPath "{{.chezmoi.homeDir }}/.cargo/bin"
 addPath "${KREW_ROOT:-{{.chezmoi.homeDir }}/.krew}/bin"
 
-sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/nix.sh"
+[[ ":$PATH:" == *":{{.chezmoi.homeDir }}/.nix-profile/bin:"* ]] || sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/nix.sh"
 sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh"

@@ -85,6 +85,10 @@
     enable = true;
   };
 
+  programs.kitty = {
+    enable = true;
+  };
+
   programs.gnome-terminal = {
     enable = true;
     themeVariant = "dark";
