@@ -104,11 +104,16 @@ zinit lucid light-mode for \
     as'completion' OMZP::pip/_pip \
     OMZP::pip \
     OMZP::colored-man-pages \
-    depth=1 spwhitt/nix-zsh-completions \
     depth=1 chisui/zsh-nix-shell \
     depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
     OMZP::command-not-found
 
+# nix-completion
+zinit lucid light-mode as'completion' id-as'nix-completion' \
+	atclone'cp $(realpath $(which nix) | sed "s%/bin/nix%/share/zsh/site-functions/_nix%") _nix' \
+	atpulll'%atclone' run-atpull nocompile \
+	has'nix' for zdharma-continuum/null
+zinit lucid light-mode for depth=1 spwhitt/nix-zsh-completions
 
 # home-manager-completion
 zinit lucid light-mode as'completion' id-as'home-manager-completion' \
@@ -179,7 +184,7 @@ zinit lucid light-mode as'completion' id-as'chezmoi-completion' \
 zinit lucid light-mode as'completion' id-as'cue-completion' \
     atclone'cue completion zsh > _cue' \
     atpull'%atclone' run-atpull nocompile \
-    has'kind' for zdharma-continuum/null
+    has'cue' for zdharma-continuum/null
  
 # rustup-completion
 zinit lucid light-mode as'completion' id-as'rustup-completion' \

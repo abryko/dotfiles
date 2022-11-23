@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
-{
+let nixGLIntel = (pkgs.callPackage "${builtins.fetchTarball {
+      url = https://github.com/guibou/nixGL/archive/7165ffbccbd2cf4379b6cd6d2edd1620a427e5ae.tar.gz;
+      sha256 = "1wc85xqnq2wb008y9acb29jbfkc242m9697g2b8j6q3yqmfhrks1";
+    }}/nixGL.nix" {}).nixGLIntel;
+in {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -49,6 +53,26 @@
 
   fonts.fontconfig.enable = true;
 
+  programs.terminator = {
+    enable = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    package = pkgs.writeShellScriptBin "alacritty" ''
+      #!/bin/sh
+      ${nixGLIntel}/bin/nixGLIntel ${pkgs.alacritty}/bin/alacritty "$@"
+      '';
+  };
+
+  programs.kitty = {
+    enable = true;
+    package = pkgs.writeShellScriptBin "kitty" ''
+      #!/bin/sh
+      ${nixGLIntel}/bin/nixGLIntel ${pkgs.kitty}/bin/kitty "$@"
+      '';
+  };
+
   programs.starship = {
     enable = true;
     enableBashIntegration = false;
@@ -80,14 +104,6 @@
   programs.man.enable = true;
   programs.tealdeer.enable = true;
   programs.tmux.enable = true;
-
-  programs.alacritty = {
-    enable = true;
-  };
-
-  programs.kitty = {
-    enable = true;
-  };
 
   programs.gnome-terminal = {
     enable = true;
