@@ -52,6 +52,18 @@ in
 
   fonts.fontconfig.enable = true;
 
+  targets.genericLinux.enable = true;
+
+  xdg = {
+    enable = true;
+    mime.enable = true;
+    systemDirs = {
+      config = [ "/etc/xdg" ];
+      data = [ "/usr/share" "/usr/local/share" ];
+    };
+    userDirs.enable = true;
+  };
+
   gtk = {
     enable = true;
     font = {
@@ -60,7 +72,7 @@ in
       size = 10;
     };
     cursorTheme = {
-      name = "Vanilla-DMZ";
+      name = "Adwaita";
       size = 30;
     };
     iconTheme = {
@@ -75,15 +87,6 @@ in
 
   programs.terminator = {
     enable = true;
-    package = pkgs.terminator.overrideAttrs (self: super: {
-      nativeBuildInputs = (super.nativeBuildInputs or []) ++ [ pkgs.wrapGAppsHook ];
-      dontWrapGApps = true;
-
-      # Arguments to be passed to `makeWrapper`, only used by buildPython*
-      preFixup = ''
-         makeWrapperArgs+=("''${gappsWrapperArgs[@]}")
-      '';
-    });
     config = {
       global_config = {
         scroll_tabbar = true;
