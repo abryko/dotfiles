@@ -120,9 +120,12 @@ in
 
   programs.starship = {
     enable = true;
-    enableBashIntegration = false;
+    enableBashIntegration = true;
     enableZshIntegration = false;
-    settings = {};
+    settings = {
+      add_newline = true;
+      format = "$all";
+    };
   };
 
   programs.fzf = {
@@ -208,6 +211,15 @@ in
     enableVteIntegration = true;
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historySize = 20000;
+    shellAliases = {
+      ls = "ls --color=auto";
+      ll = "ls -alF";
+      la = "ls -A";
+      l = "ls -CF";
+      grep = "grep --color=auto";
+      fgrep = "fgrep --color=auto";
+      egrep = "egrep --color=auto";
+    };
   };
 
   # This value determines the Home Manager release that your
