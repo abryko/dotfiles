@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 
-let nixGLIntel = (pkgs.callPackage "${builtins.fetchTarball {
-      url = https://github.com/guibou/nixGL/archive/7165ffbccbd2cf4379b6cd6d2edd1620a427e5ae.tar.gz;
-      sha256 = "1wc85xqnq2wb008y9acb29jbfkc242m9697g2b8j6q3yqmfhrks1";
-    }}/nixGL.nix" {}).nixGLIntel;
-in {
+let 
+  myFontPkg = pkgs.nerdfonts.override { fonts = [ "BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono" ]; };
+in
+{
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -35,7 +34,7 @@ in {
     niv
     nixfmt
     nmap
-    (nerdfonts.override { fonts = [ "BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono" ]; })
+    myFontPkg
     noto-fonts-emoji
     open-policy-agent
     pre-commit
@@ -53,24 +52,67 @@ in {
 
   fonts.fontconfig.enable = true;
 
+  gtk = {
+    enable = true;
+    font = {
+      package = myFontPkg;
+      name = "BitstreamVeraSansMono Nerd Font Mono";
+      size = 10;
+    };
+    cursorTheme = {
+      name = "Vanilla-DMZ";
+      size = 30;
+    };
+    iconTheme = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+    };
+    theme = {
+      package = pkgs.gnome.gnome-themes-extra;
+      name = "Adwaita";
+    };
+  };
+
   programs.terminator = {
     enable = true;
-  };
+    package = pkgs.terminator.overrideAttrs (self: super: {
+      nativeBuildInputs = (super.nativeBuildInputs or []) ++ [ pkgs.wrapGAppsHook ];
+      dontWrapGApps = true;
 
-  programs.alacritty = {
-    enable = true;
-    package = pkgs.writeShellScriptBin "alacritty" ''
-      #!/bin/sh
-      ${nixGLIntel}/bin/nixGLIntel ${pkgs.alacritty}/bin/alacritty "$@"
+      # Arguments to be passed to `makeWrapper`, only used by buildPython*
+      preFixup = ''
+         makeWrapperArgs+=("''${gappsWrapperArgs[@]}")
       '';
-  };
-
-  programs.kitty = {
-    enable = true;
-    package = pkgs.writeShellScriptBin "kitty" ''
-      #!/bin/sh
-      ${nixGLIntel}/bin/nixGLIntel ${pkgs.kitty}/bin/kitty "$@"
-      '';
+    });
+    config = {
+      global_config = {
+        scroll_tabbar = true;
+        title_transmit_bg_color = "#61996b";
+        inactive_color_offset = 0.80;
+        title_use_system_font = false;
+        title_font = "BitstreamVeraSansMono Nerd Font Mono 9";
+      };
+      keybindings = {
+        split_vert = "<Primary><Shift>i";
+        split_horiz = "<Primary><Shift>o";
+        toggle_zoom = "<Primary><Shift>x";
+        group_all = null;
+        group_all_toggle = "<Primary><Shift>h";
+        group_tab = null;
+        group_tab_toggle = "<Primary><Shift>g";
+        new_window = null;
+        reset_clear = null;
+      };
+      profiles.default = {
+        use_system_font = false;
+        font = "BitstreamVeraSansMono Nerd Font Mono Roman 10";
+        scroll_on_output = true;
+        scrollback_infinite = true;
+        background_color = "#000000";
+        foreground_color = "#ffffff";
+        palette = "#2e3436:#cc0000:#499105:#c4a000:#3968a3:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec";
+      };
+    };
   };
 
   programs.starship = {

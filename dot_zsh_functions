@@ -24,6 +24,13 @@ function xvim ()
     [ ! -z "$args" ] && xpanes ${option} -c 'vim {}' ${args}
 }
 
+function lookup ()
+{
+    local cmd="$*"
+	[ "$(whence -p "${cmd}")" ] || return;
+	realpath "$(whence -p "${cmd}")"
+}
+
 
 mkcd() { [ -n "$1" ] && mkdir -p "$1" && cd "$1"; } 
 
