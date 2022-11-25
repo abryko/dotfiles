@@ -15,11 +15,14 @@ in
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     age
+    authy
+    bitwarden
     bitwarden-cli
     chezmoi
     cue
     curl
     direnv
+    discord
     fd
     fzf
     gnupg
@@ -40,10 +43,12 @@ in
     pre-commit
     ripgrep
     rclone
+    rocketchat-desktop
     rustup
     shellcheck
     shfmt
     silver-searcher
+    spotify
     tealdeer
     terraform
     todo-txt-cli
@@ -61,7 +66,18 @@ in
       config = [ "/etc/xdg" ];
       data = [ "/usr/share" "/usr/local/share" ];
     };
-    userDirs.enable = true;
+    # Fix symlink rights for snapd
+    userDirs = {
+      enable = true;
+      desktop = "$HOME/Desktop";
+      documents = "$HOME/Documents";
+      download = "$HOME/Downloads";
+      music = "$HOME/Music";
+      pictures = "$HOME/Pictures";
+      publicShare = "$HOME/Public";
+      templates = "$HOME/Templates";
+      videos = "$HOME/Videos";
+    };
   };
 
   gtk = {
@@ -212,6 +228,7 @@ in
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historySize = 20000;
     shellAliases = {
+      c = "cd ..";
       ls = "ls --color=auto";
       ll = "ls -alF";
       la = "ls -A";
