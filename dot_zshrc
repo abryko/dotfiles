@@ -90,30 +90,23 @@ zinit lucid light-mode for \
 
 # todo.txt
 zinit depth'1' lucid light-mode pick'todo_completion' for \
-    todotxt/todo.txt-cli
+    has'todo.sh' todotxt/todo.txt-cli
 
 # Completions
 zinit lucid light-mode for \
     OMZP::cp \
-    as'completion' OMZP::docker/_docker \
-    as'completion' OMZP::docker-compose/_docker-compose \
-    OMZP::terraform \
-    as'completion' OMZP::vault/_vault \
-    OMZP::docker-compose \
     OMZP::systemd \
-    as'completion' OMZP::pip/_pip \
-    OMZP::pip \
+    has'docker' as'completion' OMZP::docker/_docker \
+    has'docker-compose' as'completion' OMZP::docker-compose/_docker-compose \
+    has'terraform' OMZP::terraform \
+    has'vault' as'completion' OMZP::vault/_vault \
+    has'docker-compose' OMZP::docker-compose \
+    has'pip' as'completion' OMZP::pip/_pip \
+    has'pip' OMZP::pip \
     OMZP::colored-man-pages \
-    depth=1 chisui/zsh-nix-shell \
-    depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
+    has'nix' depth=1 chisui/zsh-nix-shell \
+    has'curl' depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
     OMZP::command-not-found
-
-# nix-completion
-zinit lucid light-mode as'completion' id-as'nix-completion' \
-	atclone'cp $(realpath $(which nix) | sed "s%/bin/nix%/share/zsh/site-functions/_nix%") _nix' \
-	atpulll'%atclone' run-atpull nocompile \
-	has'nix' for zdharma-continuum/null
-zinit lucid light-mode for depth=1 spwhitt/nix-zsh-completions
 
 # home-manager-completion
 zinit lucid light-mode as'completion' id-as'home-manager-completion' \
@@ -220,6 +213,16 @@ zinit lucid light-mode as'completion' id-as'minikube-completion' \
 zinit lucid light-mode as'completion' id-as'aws-completion' \
     atload'complete -C "aws_completer" aws' nocompile \
     has'aws' for zdharma-continuum/null
+
+# Bunch of completions from nix installed packages in case they are missing
+zinit lucid light-mode id-as'completions' \
+    atclone'find ~/.nix-profile/share -name "_*" -exec install -m 0644 -t . {} \+' \
+    atpull'%atclone' run-atpull nocompile \
+    has'nix' for zdharma-continuum/null
+
+# nix additional completions
+zinit lucid light-mode for depth=1 has'nix' spwhitt/nix-zsh-completions
+
 
 # Replay all compdef
 # Fix insecure directories when sudo https://github.com/zdharma-continuum/zinit/issues/357
