@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 (
 if ! [ "$(command -v nix)" ]; then
