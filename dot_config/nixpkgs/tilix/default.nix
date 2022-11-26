@@ -1,0 +1,51 @@
+# Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
+{ lib, ... }:
+
+with lib.hm.gvariant;
+
+{
+  dconf.settings = {
+    "com/gexperts/Tilix" = {
+      enable-wide-handle = false;
+      paste-strip-trailing-whitespace = true;
+      prompt-on-close = true;
+      prompt-on-delete-profile = true;
+      quake-specific-monitor = 0;
+      terminal-title-show-when-single = true;
+      terminal-title-style = "small";
+      theme-variant = "dark";
+      use-tabs = true;
+    };
+
+    "com/gexperts/Tilix/keybindings" = {
+      session-add-down = "<Primary><Shift>o";
+      session-add-right = "<Primary><Shift>i";
+      session-open = "disabled";
+      session-synchronize-input = "<Primary><Shift>g";
+      terminal-find-next = "disabled";
+    };
+
+    "com/gexperts/Tilix/profiles" = {
+      list = [ "2b7c4080-0ddd-46c5-8f23-563fd3ba789d" ];
+    };
+
+    "com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d" = {
+      background-color = "#000000000000";
+      background-transparency-percent = 0;
+      badge-color = "#AC7EA8";
+      badge-color-set = true;
+      bold-color-set = false;
+      bold-is-bright = true;
+      cursor-colors-set = false;
+      dim-transparency-percent = 28;
+      font = "BitstreamVeraSansMono Nerd Font Mono 10";
+      foreground-color = "#EFEFEF";
+      highlight-colors-set = false;
+      palette = [ "#000000" "#CC0000" "#4D9A05" "#C3A000" "#3464A3" "#754F7B" "#05979A" "#D3D6CF" "#545652" "#EF2828" "#89E234" "#FBE84F" "#729ECF" "#AC7EA8" "#34E2E2" "#EDEDEB" ];
+      scroll-on-output = false;
+      scrollback-unlimited = true;
+      use-theme-colors = false;
+      visible-name = "Default";
+    };
+  };
+}
