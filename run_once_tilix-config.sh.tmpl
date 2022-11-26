@@ -1,5 +1,0 @@
-#!/bin/sh
-
-# tilix conf can be updated and modified with 
-# `dconf dump /com/gexperts/Tilix/ > "$(cm source-path)/ignored/tilix.conf"`
-dconf load /com/gexperts/Tilix/ < "{{ .chezmoi.sourceDir }}/ignored/tilix.conf"

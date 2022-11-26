@@ -51,6 +51,7 @@ in
     spotify
     tealdeer
     terraform
+    tilix
     todo-txt-cli
     yq
   ];
@@ -58,6 +59,76 @@ in
   fonts.fontconfig.enable = true;
 
   targets.genericLinux.enable = true;
+
+  dconf.settings = {
+    "com/gexperts/Tilix" = {
+      enable-wide-handle = false;
+      paste-strip-trailing-whitespace = true; 
+      prompt-on-close = true;
+      prompt-on-delete-profile = true;
+      quake-specific-monitor = 0;
+      terminal-title-show-when-single = true;
+      terminal-title-style = "small";
+      theme-variant = "dark";
+      use-tabs = true;
+    };
+    "com/gexperts/Tilix/keybindings" = {
+      session-add-down = "<Primary><Shift>o";
+      session-add-right = "<Primary><Shift>i";
+      session-open = "disabled";
+      session-synchronize-input = "<Primary><Shift>g";
+      terminal-find-next = "disabled";
+    };
+    "com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d" = {
+      background-color = "#000000000000";
+      background-transparency-percent = 0;
+      badge-color = "#AC7EA8";
+      badge-color-set = true;
+      bold-color-set = false;
+      bold-is-bright = true;
+      cursor-colors-set = false;
+      dim-transparency-percent = 28;
+      foreground-color = "#EFEFEF";
+      highlight-colors-set = false;
+      palette = [
+        "#000000"
+        "#CC0000"
+        "#4D9A05"
+        "#C3A000"
+        "#3464A3"
+        "#754F7B"
+        "#05979A"
+        "#D3D6CF"
+        "#545652"
+        "#EF2828"
+        "#89E234"
+        "#FBE84F"
+        "#729ECF"
+        "#AC7EA8"
+        "#34E2E2"
+        "#EDEDEB"
+      ];
+      scroll-on-output = false;
+      scrollback-unlimited = true;
+      use-theme-colors = false;
+      visible-name = "Default";
+    };
+  };
+
+  editorconfig = {
+    enable = true;
+    settings = {
+      "*" = {
+        charset = "utf-8";
+        end_of_line = "lf";
+        trim_trailing_whitespace = true;
+        insert_final_newline = true;
+        max_line_width = 82;
+        indent_style = "tab";
+        indent_size = 4;
+      };
+    };
+  };
 
   xdg = {
     enable = true;
@@ -89,7 +160,7 @@ in
     };
     cursorTheme = {
       name = "Adwaita";
-      size = 30;
+      size = 16;
     };
     iconTheme = {
       package = pkgs.gnome.adwaita-icon-theme;
@@ -168,51 +239,6 @@ in
   programs.man.enable = true;
   programs.tealdeer.enable = true;
   programs.tmux.enable = true;
-
-  programs.gnome-terminal = {
-    enable = true;
-    themeVariant = "dark";
-    profile = {
-      "4dff060d-cd00-450a-888f-309315596f9b" = {
-        allowBold = true;
-        audibleBell = true;
-        backspaceBinding = "ascii-delete";
-        boldIsBright = true;
-        colors = {
-          backgroundColor = "#000000";
-          foregroundColor = "#ffffff";
-          palette = [
-            "#2e3436"
-            "#cc0000"
-            "#4e9a06"
-            "#c4a000"
-            "#3465a4"
-            "#75507b"
-            "#06989a"
-            "#d3d7cf"
-            "#555753"
-            "#ef2929"
-            "#8ae234"
-            "#fce94f"
-            "#729fcf"
-            "#ad7fa8"
-            "#34e2e2"
-            "#eeeeec"
-          ];
-        };
-        cursorBlinkMode = "on";
-        cursorShape = "block";
-        default = true;
-        deleteBinding = "delete-sequence";
-        scrollbackLines = 1000000;
-        scrollOnOutput = false;
-        showScrollbar = true;
-        transparencyPercent = null;
-        visibleName = "default";
-      };
-    };
-    showMenubar = false;
-  };
 
   programs.direnv = {
     enable = true;
