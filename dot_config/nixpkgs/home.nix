@@ -90,6 +90,7 @@ in
       bold-is-bright = true;
       cursor-colors-set = false;
       dim-transparency-percent = 28;
+      font = "BitstreamVeraSansMono Nerd Font Mono 10";
       foreground-color = "#EFEFEF";
       highlight-colors-set = false;
       palette = [
