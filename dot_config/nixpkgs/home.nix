@@ -21,6 +21,7 @@ in
     chezmoi
     cue
     curl
+    dconf
     direnv
     discord
     fd
@@ -52,6 +53,7 @@ in
     tealdeer
     terraform
     tilix
+    tig
     todo-txt-cli
     yq
   ];
