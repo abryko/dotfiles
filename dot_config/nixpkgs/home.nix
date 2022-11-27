@@ -31,6 +31,8 @@ in
     discord
     fd
     fzf
+    git
+    git-filter-repo
     gnupg
     go
     golangci-lint
