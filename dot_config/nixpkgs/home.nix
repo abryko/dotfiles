@@ -125,6 +125,10 @@
         indent_style = "tab";
         indent_size = 4;
       };
+	  "*.nix" = {
+        indent_style = "space";
+        indent_size = 2;
+	  };
     };
   };
 
@@ -192,6 +196,19 @@
     mutableTrust = true;
   };
 
+  programs.vscode = {
+    enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      asciidoctor.asciidoctor-vscode
+      bbenoist.nix
+      hashicorp.terraform
+      ms-python.python
+      ms-vscode.go
+      ms-vsliveshare.vsliveshare
+      vscodevim.vim
+    ];
+  };
+
   programs.neovim = {
     enable = true;
     coc = {
@@ -206,6 +223,9 @@
       vim-terraform-completion
       vim-surround
     ];
+    extraConfig = ''
+      set mouse=r
+      '';
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;

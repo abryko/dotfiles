@@ -34,5 +34,13 @@
         "key": "ctrl+shift+space",
         "command": "-editor.action.smartSelect.grow",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "workbench.action.closeActiveEditor"
     }
 ]
