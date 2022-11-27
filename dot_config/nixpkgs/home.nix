@@ -121,7 +121,7 @@
         end_of_line = "lf";
         trim_trailing_whitespace = true;
         insert_final_newline = true;
-        max_line_width = 82;
+        max_line_width = 85;
         indent_style = "tab";
         indent_size = 4;
       };
@@ -194,7 +194,21 @@
 
   programs.neovim = {
     enable = true;
-    coc.enable = true;
+    coc = {
+      enable = true;
+    };
+    plugins = with pkgs.vimPlugins; [
+      completion-treesitter
+      editorconfig-nvim
+      nvim-treesitter
+      vim-cue
+      vim-nix
+      vim-terraform-completion
+      vim-surround
+    ];
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
 
   programs.htop.enable = true;
