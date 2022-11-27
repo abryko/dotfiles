@@ -1,0 +1,27 @@
+skip_global_compinit=1
+
+addPath() {
+	local p="$*"
+	[ -z "$p" ] && return
+	if [ -d "$p" ]; then
+	   [[ ":$PATH:" == *":$p:"* ]] || export PATH="${p}${PATH+:$PATH}"
+	fi
+}
+
+sourcePath() {
+	local p="$*"
+	[ -z "$p" ] && return
+	if [ -r "$p" ]; then
+		source  "$p"
+	fi
+}
+
+export GOPATH="$HOME/go"
+
+addPath "/home/xmaillard/.local/bin"
+addPath "/home/xmaillard/go/bin"
+addPath "/home/xmaillard/.cargo/bin"
+addPath "${KREW_ROOT:-/home/xmaillard/.krew}/bin"
+
+[[ ":$PATH:" == *":/home/xmaillard/.nix-profile/bin:"* ]] || sourcePath "/home/xmaillard/.nix-profile/etc/profile.d/nix.sh"
+sourcePath "/home/xmaillard/.nix-profile/etc/profile.d/hm-session-vars.sh"

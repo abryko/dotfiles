@@ -259,6 +259,27 @@
 
   programs.zellij.enable = true;
 
+  #programs.zsh = {
+  #  enable = true;
+  #  enableAutosuggestions = true;
+  #  enableCompletion = true;
+  #  enableSyntaxHighlighting = true;
+  #  enableVteIntegration = true;
+  #  autocd = true;
+  #  defaultKeymap = "vicmd";
+  #  envExtra = builtins.readFile ./zsh/zshenv;
+  #  history = {
+  #    expireDuplicatesFirst = true;
+  #    extended = true;
+  #    ignoreDups = true;
+  #    ignoreSpace = true;
+  #    save = 60000;
+  #    share = true;
+  #    size = 60000;
+  #  };
+  #  initExtra = builtins.readFile ./zsh/zshrc;
+  #};
+
   programs.bash = {
     enable = true;
     enableCompletion = true;
