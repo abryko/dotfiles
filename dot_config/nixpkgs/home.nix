@@ -124,11 +124,17 @@
         max_line_width = 85;
         indent_style = "tab";
         indent_size = 4;
+        tab_width = 4;
       };
-	  "*.nix" = {
+      "*.nix" = {
         indent_style = "space";
         indent_size = 2;
-	  };
+      };
+      "*.cue" = {
+        indent_style = "tab";
+        indent_size = 4;
+        tab_width = 4;
+      };
     };
   };
 
@@ -213,8 +219,23 @@
     enable = true;
     coc = {
       enable = true;
+      settings = {
+        "suggest.noselect" = true;
+        "suggest.enablePreview" = true;
+        "suggest.enablePreselect" = false;
+        "suggest.disableKind" = true;
+       languageserver = {
+          go = {
+            command =  "gopls";
+            rootPattern= [ "go.mod" ];
+            "trace.server" = "verbose";
+            filetypes =  [ "go" ];
+          };
+        };
+      };
     };
     plugins = with pkgs.vimPlugins; [
+      coc-fzf
       completion-treesitter
       editorconfig-nvim
       nvim-treesitter
@@ -223,9 +244,7 @@
       vim-terraform-completion
       vim-surround
     ];
-    extraConfig = ''
-      set mouse=r
-      '';
+    extraConfig = builtins.readFile ./nvim/vimrc;
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
