@@ -4,6 +4,7 @@
 
   imports = [
     ./tilix/default.nix
+    ./nvim/default.nix
   ];
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -215,41 +216,6 @@
     ];
   };
 
-  programs.neovim = {
-    enable = true;
-    coc = {
-      enable = true;
-      settings = {
-        "suggest.noselect" = true;
-        "suggest.enablePreview" = true;
-        "suggest.enablePreselect" = false;
-        "suggest.disableKind" = true;
-       languageserver = {
-          go = {
-            command =  "gopls";
-            rootPattern= [ "go.mod" ];
-            "trace.server" = "verbose";
-            filetypes =  [ "go" ];
-          };
-        };
-      };
-    };
-    plugins = with pkgs.vimPlugins; [
-      coc-fzf
-      completion-treesitter
-      editorconfig-nvim
-      nvim-treesitter
-      vim-cue
-      vim-nix
-      vim-terraform-completion
-      vim-surround
-    ];
-    extraConfig = builtins.readFile ./nvim/vimrc;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-  };
-
   programs.htop.enable = true;
   programs.jq.enable = true;
   programs.less.enable = true;
@@ -284,7 +250,6 @@
   #  enableCompletion = true;
   #  enableSyntaxHighlighting = true;
   #  enableVteIntegration = true;
-  #  autocd = true;
   #  defaultKeymap = "vicmd";
   #  envExtra = builtins.readFile ./zsh/zshenv;
   #  history = {
