@@ -47,5 +47,8 @@
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
         "--fast"
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["U"], "after": ["<C-r>"] }, 
     ]
 }

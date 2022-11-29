@@ -123,7 +123,7 @@
         trim_trailing_whitespace = true;
         insert_final_newline = true;
         max_line_width = 85;
-        indent_style = "tab";
+        indent_style = "space";
         indent_size = 4;
         tab_width = 4;
       };
@@ -136,7 +136,12 @@
         indent_size = 4;
         tab_width = 4;
       };
-    };
+      "*.go" = {
+        indent_style = "tab";
+        indent_size = 4;
+        tab_width = 4;
+      };
+   };
   };
 
   xdg = {
