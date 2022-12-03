@@ -6,6 +6,7 @@
     ./tilix/default.nix
     ./nvim/default.nix
   ];
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -64,6 +65,27 @@
     todo-txt-cli
     yq
   ];
+
+  home.language = {
+    address = "fr_FR.UTF-8";
+    base = "en_US.UTF-8";
+    collate = "fr_FR.UTF-8";
+    ctype = "fr_FR.UTF-8";
+    measurement ="fr_FR.UTF-8";
+    messages ="en_US.UTF-8";
+    monetary ="fr_FR.UTF-8";
+    name ="fr_FR.UTF-8";
+    numeric ="fr_FR.UTF-8";
+    paper = "fr_FR.UTF-8";
+    telephone = "fr_FR.UTF-8";
+    time = "fr_FR.UTF-8";
+  };
+
+  home.sessionVariables = {
+    LANGUAGE = "en_US.UTF-8";
+    LANG = "en_US.UTF-8";
+    LC_ALL = "en_US.UTF-8";
+  };
 
   fonts.fontconfig.enable = true;
 
@@ -296,4 +318,7 @@
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.11";
+
+
+  services.systembus-notify.enable = true;
 }

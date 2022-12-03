@@ -22,8 +22,11 @@
     };
     plugins = with pkgs.vimPlugins; [
       coc-fzf
+      comment-nvim
       completion-treesitter
       editorconfig-nvim
+      fzf-lua
+      lualine-nvim
       nvim-treesitter
       vim-cue
       vim-nix
