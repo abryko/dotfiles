@@ -49,6 +49,7 @@
         "--fast"
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
-        { "before": ["U"], "after": ["<C-r>"] }
+        { "before": ["U"], "after": ["<C-r>"] },
+        { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] }
     ]
 }
