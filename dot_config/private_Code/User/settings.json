@@ -50,6 +50,7 @@
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         { "before": ["U"], "after": ["<C-r>"] },
-        { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] }
+        { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] },
+        { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] }
     ]
 }

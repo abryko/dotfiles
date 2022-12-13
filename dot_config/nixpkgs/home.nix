@@ -18,6 +18,7 @@
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     age
+    asciinema
     authy
     bitwarden
     bitwarden-cli
