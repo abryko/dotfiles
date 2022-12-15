@@ -38,6 +38,7 @@
     golangci-lint
     graphviz
     gron
+    hugo
     inkscape
     jc
     jq
@@ -53,6 +54,7 @@
     pre-commit
     ripgrep
     rclone
+    rnix-lsp
     rocketchat-desktop
     rustup
     shellcheck

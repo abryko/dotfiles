@@ -130,7 +130,7 @@ zinit lucid light-mode id-as'gopass-completion' \
     atclone'gopass completion bash > script.zsh' \
     atpull'%atclone' run-atpull nocompile \
     has'gopass' for zdharma-continuum/null
- 
+
 # toolbox-completion
 zinit lucid light-mode id-as'toolbox-completion' \
     atclone'toolbox completions > script.zsh' \
@@ -154,7 +154,7 @@ zinit lucid light-mode as'completion' id-as'stern-completion' \
     atclone'stern --completion zsh > _stern' \
     atpull'%atclone' run-atpull nocompile \
     has'stern' for zdharma-continuum/null
- 
+
 # opa-completion
 zinit lucid light-mode as'completion' id-as'opa-completion' \
     atclone'opa completion zsh > _opa' \
@@ -172,19 +172,19 @@ zinit lucid light-mode as'completion' id-as'chezmoi-completion' \
     atclone'chezmoi completion zsh > _chezmoi' \
     atpull'%atclone' run-atpull nocompile \
     has'chezmoi' for zdharma-continuum/null
- 
+
 # cue-completion
 zinit lucid light-mode as'completion' id-as'cue-completion' \
     atclone'cue completion zsh > _cue' \
     atpull'%atclone' run-atpull nocompile \
     has'cue' for zdharma-continuum/null
- 
+
 # rustup-completion
 zinit lucid light-mode as'completion' id-as'rustup-completion' \
     atclone'rustup completions zsh > _rustup' \
     atpull'%atclone' run-atpull nocompile \
     has'rustup' for zdharma-continuum/null
- 
+
 # cargo-completion
 zinit lucid light-mode as'completion' id-as'cargo-completion' \
     atclone'rustup completions zsh cargo > _cargo' \
@@ -208,6 +208,12 @@ zinit lucid light-mode as'completion' id-as'minikube-completion' \
     atclone'minikube completion zsh > _minikube' \
     atpull'%atclone' run-atpull nocompile \
     has'minikube' for zdharma-continuum/null
+
+# hugo-completion
+zinit lucid light-mode as'completion' id-as'hugo-completion' \
+    atclone'hugo completion zsh > _hugo' \
+    atpull'%atclone' run-atpull nocompile \
+    has'hugo' for zdharma-continuum/null
 
 # aws-completion
 zinit lucid light-mode as'completion' id-as'aws-completion' \
