@@ -6,7 +6,7 @@
     coc = {
       enable = true;
       settings = {
-        "suggest.noselect" = true;
+        "suggest.noselect" = false;
         "suggest.enablePreview" = true;
         "suggest.enablePreselect" = false;
         "suggest.disableKind" = true;

@@ -239,6 +239,7 @@
       asciidoctor.asciidoctor-vscode
       bbenoist.nix
       hashicorp.terraform
+      mads-hartmann.bash-ide-vscode
       ms-python.python
       ms-vscode.go
       ms-vsliveshare.vsliveshare
