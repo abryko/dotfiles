@@ -13,9 +13,20 @@
        languageserver = {
           go = {
             command =  "gopls";
-            rootPattern= [ "go.mod" ];
+            rootPatterns = [ "go.mod" ];
             "trace.server" = "verbose";
             filetypes =  [ "go" ];
+          };
+          cue = {
+            command =  "dagger";
+            args = [ "cuelsp" ];
+            rootPatterns = [ "cue.mod/" ".git/" ];
+            filetypes =  [ "cue" ];
+          };
+          nix = {
+            command =  "rnix-lsp";
+            rootPatterns = [ ".git/" ];
+            filetypes =  [ "nix" ];
           };
         };
       };

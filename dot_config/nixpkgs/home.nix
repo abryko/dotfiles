@@ -1,6 +1,26 @@
 { config, pkgs, ... }:
 
-{
+let
+  defaultShellAliases = {
+    ".." = "cd ..";
+    "..." = "cd ../..";
+    e = "vim";
+    c = "cd ..";
+    clipin = "xclip -selection clipboard";
+    clipout = "xclip -o -selection clipboard";
+    cm = "chezmoi";
+    egrep = "egrep --color=auto";
+    fgrep = "fgrep --color=auto";
+    grep = "grep --color=auto";
+    k = "kubectl";
+    l = "ls -CF";
+    la = "ls -A";
+    ll = "ls -alF";
+    ls = "ls --color=auto";
+    t = "toto.sh";
+    todo = "toto.sh";
+  };
+in {
 
   imports = [
     ./tilix/default.nix
@@ -25,6 +45,7 @@
     chezmoi
     cue
     curl
+    dagger
     dconf
     dconf2nix
     direnv
@@ -152,6 +173,10 @@
         indent_size = 4;
         tab_width = 4;
       };
+      "*.{yaml,yml}" = {
+        indent_style = "space";
+        indent_size = 2;
+      };
       "*.nix" = {
         indent_style = "space";
         indent_size = 2;
@@ -223,6 +248,7 @@
   programs.fzf = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = false;
     enableZshIntegration = false;
     tmux.enableShellIntegration = true;
   };
@@ -295,22 +321,56 @@
   #  initExtra = builtins.readFile ./zsh/zshrc;
   #};
 
-  programs.bash = {
+  programs.fish = {
+    enable = true;
+    shellAliases = defaultShellAliases;
+    plugins = [
+      {
+        name = "z";
+        src = pkgs.fetchFromGitHub {
+          owner = "jethrokuan";
+          repo = "z";
+          rev = "ddeb28a7b6a1f0ec6dae40c636e5ca4908ad160a";
+          sha256 = "0c5i7sdrsp0q3vbziqzdyqn4fmp235ax4mn4zslrswvn8g3fvdyh";
+        };
+      }
+      #{
+      #  name = "fzf-fish";
+      #  src = pkgs.fetchFromGitHub {
+      #    owner = "PatrickF1";
+      #    repo = "fzf.fish";
+      #    rev = "175222b9bd79e589da55972b2cd6686b94c6325b";
+      #    sha256 = "sha256-aou6UYE6gjLK8J0yXNTFA9yc9Lv8F7ytzBDSmP2K6Sg";
+      #  };
+      #}
+      {
+        name = "fasd";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-fasd";
+          rev = "38a5b6b6011106092009549e52249c6d6f501fba";
+          sha256 = "06v37hqy5yrv5a6ssd1p3cjd9y3hnp19d3ab7dag56fs1qmgyhbs";
+        };
+      }
+      {
+        name = "nix-env";
+        src = pkgs.fetchFromGitHub {
+          owner = "lilyball";
+          repo = "nix-env.fish";
+          rev = "7b65bd228429e852c8fdfa07601159130a818cfa";
+          sha256 = "sha256-RG/0rfhgq6aEKNZ0XwIqOaZ6K5S4+/Y5EEMnIdtfPhk=";
+        };
+      }
+    ];
+  };
+
+programs.bash = {
     enable = true;
     enableCompletion = true;
     enableVteIntegration = true;
     historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
     historySize = 20000;
-    shellAliases = {
-      c = "cd ..";
-      ls = "ls --color=auto";
-      ll = "ls -alF";
-      la = "ls -A";
-      l = "ls -CF";
-      grep = "grep --color=auto";
-      fgrep = "fgrep --color=auto";
-      egrep = "egrep --color=auto";
-    };
+    shellAliases = defaultShellAliases;
   };
 
   # This value determines the Home Manager release that your
