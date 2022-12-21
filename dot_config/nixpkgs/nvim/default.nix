@@ -7,9 +7,7 @@
       enable = true;
       settings = {
         "suggest.noselect" = false;
-        "suggest.enablePreview" = true;
         "suggest.enablePreselect" = false;
-        "suggest.disableKind" = true;
        languageserver = {
           go = {
             command =  "gopls";
@@ -36,7 +34,7 @@
       comment-nvim
       completion-treesitter
       editorconfig-nvim
-      fzf-lua
+      fzf-vim
       lualine-nvim
       nvim-treesitter
       vim-cue

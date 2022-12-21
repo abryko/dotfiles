@@ -67,6 +67,7 @@ in {
     (nerdfonts.override {
       fonts = [ "BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono" ];
     })
+    mdsh
     niv
     nixfmt
     nmap
