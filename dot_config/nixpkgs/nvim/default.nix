@@ -39,7 +39,7 @@
       nvim-treesitter
       vim-cue
       vim-nix
-      vim-terraform-completion
+      vim-terraform
       vim-surround
     ];
     extraConfig = builtins.readFile ./vimrc;

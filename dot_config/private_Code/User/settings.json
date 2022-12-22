@@ -42,7 +42,8 @@
     "redhat.telemetry.enabled": false,
     "go.testTimeout": "5m",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python"
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnType": true
     },
     "go.lintTool": "golangci-lint",
     "go.lintFlags": [
@@ -51,7 +52,9 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         { "before": ["U"], "after": ["<C-r>"] },
         { "before": ["g", "y"], "commands": ["editor.action.goToTypeDefinition"] },
-        { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] }
+        { "before": ["g", "i"], "commands": ["editor.action.goToImplementation"] },
+        { "before": ["space", "o"], "commands": ["workbench.action.gotoSymbol"] },
+        { "before": ["space", "s"], "commands": ["workbench.action.showAllSymbols"] }
     ],
     "nix.enableLanguageServer": true
 }

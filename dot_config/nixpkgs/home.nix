@@ -175,11 +175,9 @@ in {
         tab_width = 4;
       };
       "*.{yaml,yml}" = {
-        indent_style = "space";
         indent_size = 2;
       };
       "*.nix" = {
-        indent_style = "space";
         indent_size = 2;
       };
       "*.cue" = {
@@ -191,6 +189,9 @@ in {
         indent_style = "tab";
         indent_size = 4;
         tab_width = 4;
+      };
+      "*.tf" = {
+        indent_size = 2;
       };
    };
   };
