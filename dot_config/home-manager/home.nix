@@ -88,6 +88,7 @@ in {
     tilix
     tig
     todo-txt-cli
+    xclip
     yq
   ];
 
