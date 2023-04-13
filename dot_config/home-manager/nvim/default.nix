@@ -37,6 +37,8 @@
       fzf-vim
       lualine-nvim
       nvim-treesitter
+      telescope-coc-nvim
+      telescope-nvim
       vim-cue
       vim-nix
       vim-terraform
