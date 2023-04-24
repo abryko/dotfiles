@@ -237,6 +237,11 @@ require('lualine').setup {
 }
 END
 
+lua << EOF
+require('Comment').setup()
+EOF
+
+
 lua << END
 require("telescope").setup({
   extensions = {

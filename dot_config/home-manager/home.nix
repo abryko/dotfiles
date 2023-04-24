@@ -57,12 +57,14 @@ in {
     gnupg
     go
     golangci-lint
+    google-cloud-sdk
     graphviz
     gron
     hugo
     inkscape
     jc
     jq
+    kubectl
     libnotify
     (nerdfonts.override {
       fonts = [ "BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono" ];
@@ -266,6 +268,7 @@ in {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
       asciidoctor.asciidoctor-vscode
+      asvetliakov.vscode-neovim
       bbenoist.nix
       hashicorp.terraform
       mads-hartmann.bash-ide-vscode
