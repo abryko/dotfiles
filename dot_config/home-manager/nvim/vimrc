@@ -1,5 +1,15 @@
+if exists('g:vscode')
+    " VSCode extension
+    nnoremap <silent> gh :<C-u>call VSCodeNotify('editor.action.showHover')<CR>
+    nnoremap <silent> gy :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+    nnoremap <silent> gd :<C-u>call VSCodeNotify('editor.action.revealDefinition')<CR>
+    nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
+    nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
+
+
+else
 " colorscheme
-colorscheme lunaperche
+colorscheme torte
 
 " Map leader to spacebar
 let mapleader = "\<Space>"
@@ -253,3 +263,5 @@ require("telescope").setup({
 })
 require('telescope').load_extension('coc')
 END
+
+endif

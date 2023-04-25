@@ -108,10 +108,10 @@ zinit lucid light-mode for \
     has'curl' depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
     OMZP::command-not-found
 
-# home-manager-completion
-zinit lucid light-mode as'completion' id-as'home-manager-completion' \
-	has'home-manager' mv'home-manager-completion -> _home_manager' nocompile \
-	for https://raw.githubusercontent.com/nix-community/home-manager/master/home-manager/completion.zsh
+# # home-manager-completion
+# zinit lucid light-mode as'completion' id-as'home-manager-completion' \
+# 	has'home-manager' mv'home-manager-completion -> _home_manager' nocompile \
+# 	for https://raw.githubusercontent.com/nix-community/home-manager/master/home-manager/completion.zsh
 
 # kubectl-completion
 zinit lucid light-mode as'completion' id-as'kubectl-completion' \

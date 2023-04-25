@@ -58,6 +58,7 @@ in {
     go
     golangci-lint
     google-cloud-sdk
+    gopls
     graphviz
     gron
     hugo
@@ -112,7 +113,7 @@ in {
   home.sessionVariables = {
     LANGUAGE = "en_US.UTF-8";
     LANG = "en_US.UTF-8";
-    LC_ALL = "en_US.UTF-8";
+    LC_ALL = "C";
   };
 
   fonts.fontconfig.enable = true;
@@ -275,7 +276,6 @@ in {
       ms-python.python
       ms-vscode.go
       ms-vsliveshare.vsliveshare
-      vscodevim.vim
     ];
   };
 
@@ -389,6 +389,10 @@ programs.bash = {
   # changes in each release.
   home.stateVersion = "21.11";
 
-
+  services.redshift = {
+    enable = true;
+    latitude = 48.863049;
+    longitude = 2.348856;
+  };
   services.systembus-notify.enable = true;
 }

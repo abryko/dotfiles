@@ -56,5 +56,9 @@
         { "before": ["space", "o"], "commands": ["workbench.action.gotoSymbol"] },
         { "before": ["space", "s"], "commands": ["workbench.action.showAllSymbols"] }
     ],
-    "nix.enableLanguageServer": true
+    "nix.enableLanguageServer": true,
+    "extensions.experimental.affinity": {
+            "asvetliakov.vscode-neovim": 1
+    },
+    "editor.lineNumbers": "relative"
 }
