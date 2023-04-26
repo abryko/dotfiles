@@ -1,7 +1,7 @@
 [user]
 	name = Xavier Maillard
 	email = xavier.maillard@orange.com
-	signingkey = 038B5EFF879C673690E809E6B882D4C9DC0A3E0F
+	signingkey = xavier.maillard@s3ns.io
 [commit]
 	gpgsign = true
 [push]
