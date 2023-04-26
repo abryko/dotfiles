@@ -34,7 +34,6 @@
       comment-nvim
       completion-treesitter
       editorconfig-nvim
-      fzf-vim
       lualine-nvim
       nvim-treesitter
       telescope-coc-nvim

@@ -48,6 +48,7 @@ in {
     dagger
     dconf
     dconf2nix
+    delve
     direnv
     discord
     fd
@@ -394,5 +395,6 @@ programs.bash = {
     latitude = 48.863049;
     longitude = 2.348856;
   };
+
   services.systembus-notify.enable = true;
 }

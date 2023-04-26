@@ -1,16 +1,4 @@
-if exists('g:vscode')
-    " VSCode extension
-    nnoremap <silent> gh :<C-u>call VSCodeNotify('editor.action.showHover')<CR>
-    nnoremap <silent> gy :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
-    nnoremap <silent> gd :<C-u>call VSCodeNotify('editor.action.revealDefinition')<CR>
-    nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
-    nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
-
-
-else
-" colorscheme
-colorscheme torte
-
+" GENERAL SETTINGS
 " Map leader to spacebar
 let mapleader = "\<Space>"
 
@@ -37,6 +25,20 @@ set encoding=utf-8
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
+
+" ONLY When running vscode
+if exists('g:vscode')
+    " VSCode extension
+    nnoremap <silent> gh :<C-u>call VSCodeNotify('editor.action.showHover')<CR>
+    nnoremap <silent> gy :<C-u>call VSCodeNotify('editor.action.goToTypeDefinition')<CR>
+    nnoremap <silent> gd :<C-u>call VSCodeNotify('editor.action.revealDefinition')<CR>
+    nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
+    nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
+
+
+else
+" colorscheme
+colorscheme torte
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -193,10 +195,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
-" fzf.vim mappings
-nnoremap <silent><c-p> :Files<CR>
-nnoremap <silent><c-b> :Buffers<CR>
 
 " Telescope mappings
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
