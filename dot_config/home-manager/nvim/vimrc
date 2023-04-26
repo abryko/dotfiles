@@ -35,6 +35,11 @@ if exists('g:vscode')
     nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
     nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
 
+    nnoremap <silent> ff :<C-u>call VSCodeNotify('workbench.action.quickOpen')<CR>
+
+    nnoremap <silent> <leader>o :<C-u>call VSCodeNotify('workbench.action.gotoSymbol')<CR>
+    nnoremap <silent> <leader>s :<C-u>call VSCodeNotify('workbench.action.showAllSymbols')<CR>
+
 
 else
 " colorscheme
@@ -195,6 +200,11 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" CoC menubar color
+hi CocMenuSel ctermbg=darkgrey ctermfg=yellow
+hi CocSearch ctermfg=blue
+
 
 " Telescope mappings
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>

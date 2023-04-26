@@ -6,7 +6,7 @@
     coc = {
       enable = true;
       settings = {
-        "suggest.noselect" = false;
+        "suggest.noselect" = true;
         "suggest.enablePreselect" = false;
        languageserver = {
           go = {
