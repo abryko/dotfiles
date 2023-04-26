@@ -16,8 +16,8 @@
             filetypes =  [ "go" ];
           };
           cue = {
-            command =  "dagger";
-            args = [ "cuelsp" ];
+            command =  "cuelsp";
+            args = [ ];
             rootPatterns = [ "cue.mod/" ".git/" ];
             filetypes =  [ "cue" ];
           };

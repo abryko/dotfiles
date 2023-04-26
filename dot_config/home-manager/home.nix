@@ -44,6 +44,7 @@ in {
     bitwarden-cli
     chezmoi
     cue
+    cuelsp
     curl
     dagger
     dconf
@@ -58,6 +59,7 @@ in {
     gnupg
     go
     golangci-lint
+    google-chrome
     google-cloud-sdk
     gopls
     graphviz
