@@ -50,9 +50,11 @@ in {
     dconf
     dconf2nix
     delve
+    deno
     direnv
     discord
     fd
+    firefox
     fzf
     git
     git-filter-repo
@@ -69,16 +71,19 @@ in {
     jc
     jq
     kubectl
+    krew
     libnotify
     (nerdfonts.override {
       fonts = [ "BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono" ];
     })
     mdsh
+    nickel
     niv
     nixfmt
     nmap
     noto-fonts-emoji
     open-policy-agent
+    powertop
     pre-commit
     ripgrep
     rclone
@@ -88,12 +93,16 @@ in {
     shellcheck
     shfmt
     silver-searcher
+    socat
     spotify
+    stern
     tealdeer
     terraform
     tilix
     tig
     todo-txt-cli
+    tree
+    woodpecker-cli
     xclip
     yq
   ];
@@ -274,8 +283,11 @@ in {
       asciidoctor.asciidoctor-vscode
       asvetliakov.vscode-neovim
       bbenoist.nix
+      denoland.vscode-deno
       hashicorp.terraform
       mads-hartmann.bash-ide-vscode
+      ms-azuretools.vscode-docker
+      ms-kubernetes-tools.vscode-kubernetes-tools
       ms-python.python
       ms-vscode.go
       ms-vsliveshare.vsliveshare
@@ -396,6 +408,8 @@ programs.bash = {
     enable = true;
     latitude = 48.863049;
     longitude = 2.348856;
+    temperature.day = 5500;
+    temperature.night = 3000;
   };
 
   services.systembus-notify.enable = true;

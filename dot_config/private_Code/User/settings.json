@@ -1,4 +1,6 @@
 {
+    "extensions.autoCheckUpdates": false,
+    "update.mode": "none",
     "code-runner.runInTerminal": true,
     "sublimeTextKeymap.promptV3Features": true,
     "editor.snippetSuggestions": "top",
@@ -60,5 +62,6 @@
     "extensions.experimental.affinity": {
             "asvetliakov.vscode-neovim": 1
     },
-    "editor.lineNumbers": "relative"
+    "editor.lineNumbers": "relative",
+    "deno.enable": true
 }

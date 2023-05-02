@@ -2,6 +2,9 @@
 " Map leader to spacebar
 let mapleader = "\<Space>"
 
+" configure listchars
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+
 " Line number
 set number
 set relativenumber
@@ -35,10 +38,13 @@ if exists('g:vscode')
     nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
     nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
 
-    nnoremap <silent> ff :<C-u>call VSCodeNotify('workbench.action.quickOpen')<CR>
+    nnoremap <silent> <leader>ff :<C-u>call VSCodeNotify('workbench.action.quickOpen')<CR>
+    nnoremap <silent> <leader>fg :<C-u>call VSCodeNotify('workbench.action.findInFiles')<CR>
 
     nnoremap <silent> <leader>o :<C-u>call VSCodeNotify('workbench.action.gotoSymbol')<CR>
     nnoremap <silent> <leader>s :<C-u>call VSCodeNotify('workbench.action.showAllSymbols')<CR>
+
+    nnoremap <silent> <leader>qf :<C-u>call VSCodeNotify('editor.action.quickFix')<CR>
 
 
 else
@@ -208,6 +214,7 @@ hi CocSearch ctermfg=blue
 
 " Telescope mappings
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
