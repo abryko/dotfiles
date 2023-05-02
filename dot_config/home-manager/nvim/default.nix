@@ -22,8 +22,8 @@
             filetypes =  [ "cue" ];
           };
           nix = {
-            command =  "rnix-lsp";
-            rootPatterns = [ ".git/" ];
+            command =  "nil";
+            rootPatterns = [ "flake.nix" "shell.nix" ".git" ];
             filetypes =  [ "nix" ];
           };
         };

@@ -59,9 +59,17 @@
         { "before": ["space", "s"], "commands": ["workbench.action.showAllSymbols"] }
     ],
     "nix.enableLanguageServer": true,
+    "nix.serverPath": "nil",
     "extensions.experimental.affinity": {
             "asvetliakov.vscode-neovim": 1
     },
     "editor.lineNumbers": "relative",
-    "deno.enable": true
+    "deno.enable": true,
+  "[nix]": {
+    "editor.defaultFormatter": "kamadorueda.alejandra",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false
+  },
+  "alejandra.program": "alejandra"
 }

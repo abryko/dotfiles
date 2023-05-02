@@ -38,6 +38,7 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     age
+    alejandra
     asciinema
     authy
     bitwarden
@@ -78,6 +79,7 @@ in {
     })
     mdsh
     nickel
+    nil
     niv
     nixfmt
     nmap
@@ -279,12 +281,14 @@ in {
 
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
       asciidoctor.asciidoctor-vscode
       asvetliakov.vscode-neovim
-      bbenoist.nix
       denoland.vscode-deno
       hashicorp.terraform
+      jnoortheen.nix-ide
+      kamadorueda.alejandra
       mads-hartmann.bash-ide-vscode
       ms-azuretools.vscode-docker
       ms-kubernetes-tools.vscode-kubernetes-tools
