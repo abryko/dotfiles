@@ -24,6 +24,7 @@ in {
 
   imports = [
     ./tilix/default.nix
+    ./gnome-terminal/default.nix
     ./nvim/default.nix
   ];
 
@@ -137,51 +138,6 @@ in {
   fonts.fontconfig.enable = true;
 
   targets.genericLinux.enable = true;
-
-  programs.gnome-terminal = {
-    enable = true;
-    themeVariant = "dark";
-    profile = {
-      "4dff060d-cd00-450a-888f-309315596f9b" = {
-        allowBold = true;
-        audibleBell = true;
-        backspaceBinding = "ascii-delete";
-        boldIsBright = true;
-        colors = {
-          backgroundColor = "#000000";
-          foregroundColor = "#ffffff";
-          palette = [
-            "#2e3436"
-            "#cc0000"
-            "#4e9a06"
-            "#c4a000"
-            "#3465a4"
-            "#75507b"
-            "#06989a"
-            "#d3d7cf"
-            "#555753"
-            "#ef2929"
-            "#8ae234"
-            "#fce94f"
-            "#729fcf"
-            "#ad7fa8"
-            "#34e2e2"
-            "#eeeeec"
-          ];
-        };
-        cursorBlinkMode = "on";
-        cursorShape = "block";
-        default = true;
-        deleteBinding = "delete-sequence";
-        scrollbackLines = 1000000;
-        scrollOnOutput = false;
-        showScrollbar = true;
-        transparencyPercent = null;
-        visibleName = "default";
-      };
-    };
-    showMenubar = false;
-  };
 
   editorconfig = {
     enable = true;
