@@ -42,6 +42,7 @@ in {
     alejandra
     asciinema
     authy
+    bazel
     bitwarden
     bitwarden-cli
     chezmoi

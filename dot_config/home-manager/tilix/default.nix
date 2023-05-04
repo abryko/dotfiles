@@ -20,9 +20,16 @@ with lib.hm.gvariant;
     "com/gexperts/Tilix/keybindings" = {
       session-add-down = "<Primary><Shift>o";
       session-add-right = "<Primary><Shift>i";
+      session-name = "<Primary><Shift>m";
       session-open = "disabled";
+      session-switch-to-next-terminal = "disabled";
+      session-switch-to-previous-terminal = "disabled";
       session-synchronize-input = "<Primary><Shift>g";
       terminal-find-next = "disabled";
+      win-reorder-next-session = "<Primary><Shift>Right";
+      win-reorder-previous-session = "<Primary><Shift>Left";
+      win-switch-to-next-session = "<Primary><Shift>Tab";
+      win-switch-to-previous-session = "<Primary>Tab";
     };
 
     "com/gexperts/Tilix/profiles" = {
