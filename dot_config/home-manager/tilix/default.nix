@@ -28,8 +28,8 @@ with lib.hm.gvariant;
       terminal-find-next = "disabled";
       win-reorder-next-session = "<Primary><Shift>Right";
       win-reorder-previous-session = "<Primary><Shift>Left";
-      win-switch-to-next-session = "<Primary><Shift>Tab";
-      win-switch-to-previous-session = "<Primary>Tab";
+      win-switch-to-next-session = "<Primary>Tab";
+      win-switch-to-previous-session = "<Primary><Shift>Tab";
     };
 
     "com/gexperts/Tilix/profiles" = {
