@@ -31,7 +31,7 @@
     "editor.multiCursorModifier": "ctrlCmd",
     "go.gopath": "/home/xmaillard/go",
     "terminal.integrated.defaultProfile.linux": "zsh",
-    "terminal.external.linuxExec": "tilix",
+    "terminal.external.linuxExec": "/usr/bin/tilix",
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
@@ -71,5 +71,6 @@
     "editor.formatOnSave": true,
     "editor.formatOnType": false
   },
-  "alejandra.program": "alejandra"
+"alejandra.program": "alejandra",
+"editor.fontFamily": "'BitstreamVeraSansMono Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace"
 }
