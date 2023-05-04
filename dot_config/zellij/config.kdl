@@ -1,0 +1,17 @@
+copy_command "xclip -selection clipboard"
+default_shell "zsh"
+pane_frames true
+ui {
+	pane_frames {
+		rounded_corners true
+	}
+}
+keybinds {
+    shared {
+        unbind "Ctrl q"
+    }
+    normal {
+        bind "Alt v" { NewPane "Right"; }
+        bind "Alt s" { NewPane "Down"; }
+    }
+}
