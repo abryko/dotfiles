@@ -37,6 +37,7 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    vte
     age
     alejandra
     asciinema
@@ -72,6 +73,7 @@ in {
     jc
     jq
     kubectl
+    kubernetes-helm
     krew
     libnotify
     (nerdfonts.override {
@@ -127,7 +129,8 @@ in {
   home.sessionVariables = {
     LANGUAGE = "en_US.UTF-8";
     LANG = "en_US.UTF-8";
-    LC_ALL = "C";
+    LC_ALL = "C.UTF-8";
+    GTK_THEME = "Mint-Y-Dark-Aqua";
   };
 
   fonts.fontconfig.enable = true;
@@ -211,7 +214,7 @@ in {
       "*.tf" = {
         indent_size = 2;
       };
-   };
+    };
   };
 
   xdg = {
@@ -242,17 +245,20 @@ in {
       size = 10;
     };
     cursorTheme = {
-      name = "Adwaita";
+      name = "Bibata-Modern-Classic";
+      package = pkgs.cinnamon.mint-cursor-themes;
       size = 16;
     };
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.cinnamon.mint-y-icons;
+      name = "Mint-Y-Dark-Aqua";
     };
     theme = {
-      package = pkgs.gnome.gnome-themes-extra;
-      name = "Adwaita";
+      package = pkgs.cinnamon.mint-themes;
+      name = "Mint-Y-Dark-Aqua";
     };
+    gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
+    gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
   programs.starship = {
@@ -389,7 +395,7 @@ in {
     ];
   };
 
-programs.bash = {
+  programs.bash = {
     enable = true;
     enableCompletion = true;
     enableVteIntegration = true;
