@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
-let
+{
+  config,
+  pkgs,
+  ...
+}: let
   defaultShellAliases = {
     ".." = "cd ..";
     "..." = "cd ../..";
@@ -21,7 +23,6 @@ let
     todo = "toto.sh";
   };
 in {
-
   imports = [
     ./tilix/default.nix
     ./gnome-terminal/default.nix
@@ -38,7 +39,7 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    vte
+    (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     age
     alejandra
     asciinema
@@ -74,25 +75,23 @@ in {
     inkscape
     jc
     jq
+    krew
     kubectl
     kubernetes-helm
-    krew
     libnotify
-    (nerdfonts.override {
-      fonts = [ "BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono" ];
-    })
     mdsh
     nickel
     nil
     niv
     nixfmt
     nmap
+    nodePackages.eslint
     noto-fonts-emoji
     open-policy-agent
     powertop
     pre-commit
-    ripgrep
     rclone
+    ripgrep
     rnix-lsp
     rocketchat-desktop
     rustup
@@ -104,10 +103,11 @@ in {
     stern
     tealdeer
     terraform
-    tilix
     tig
+    tilix
     todo-txt-cli
     tree
+    vte
     woodpecker-cli
     xclip
     yq
@@ -118,11 +118,11 @@ in {
     base = "en_US.UTF-8";
     collate = "fr_FR.UTF-8";
     ctype = "fr_FR.UTF-8";
-    measurement ="fr_FR.UTF-8";
-    messages ="en_US.UTF-8";
-    monetary ="fr_FR.UTF-8";
-    name ="fr_FR.UTF-8";
-    numeric ="fr_FR.UTF-8";
+    measurement = "fr_FR.UTF-8";
+    messages = "en_US.UTF-8";
+    monetary = "fr_FR.UTF-8";
+    name = "fr_FR.UTF-8";
+    numeric = "fr_FR.UTF-8";
     paper = "fr_FR.UTF-8";
     telephone = "fr_FR.UTF-8";
     time = "fr_FR.UTF-8";
@@ -178,8 +178,8 @@ in {
     enable = true;
     mime.enable = true;
     systemDirs = {
-      config = [ "/etc/xdg" ];
-      data = [ "/usr/share" "/usr/local/share" ];
+      config = ["/etc/xdg"];
+      data = ["/usr/share" "/usr/local/share"];
     };
     # Fix symlink rights for snapd
     userDirs = {
@@ -356,7 +356,7 @@ in {
     enable = true;
     enableCompletion = true;
     enableVteIntegration = true;
-    historyControl = [ "erasedups" "ignoredups" "ignorespace" ];
+    historyControl = ["erasedups" "ignoredups" "ignorespace"];
     historySize = 20000;
     shellAliases = defaultShellAliases;
   };

@@ -43,7 +43,7 @@ with lib.hm.gvariant;
       scroll-on-output = false;
       scrollback-lines = 1000000;
       scrollbar-policy = "always";
-      use-custom-command = true;
+      use-custom-command = false;
       use-system-font = false;
       use-theme-colors = false;
       visible-name = "default";

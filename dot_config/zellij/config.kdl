@@ -9,6 +9,19 @@ ui {
 keybinds {
     shared {
         unbind "Ctrl q"
+        unbind "Ctrl b"
+    }
+    session {
+        bind "q" { Quit; }
+    }
+    pane {
+        unbind "c"
+        unbind "d"
+        unbind "p"
+        unbind "z"
+        bind "v" { NewPane "Right"; SwitchToMode "normal"; }
+        bind "s" { NewPane "Down"; SwitchToMode "normal"; }
+        bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0; }
     }
     normal {
         bind "Alt v" { NewPane "Right"; }

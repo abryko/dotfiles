@@ -6,6 +6,8 @@
     coc = {
       enable = true;
       settings = {
+        "coc.preferences.formatOnType" = true;
+        "coc.preferences.formatOnSaveFiletypes" = [ "go" "nix" ];
         "suggest.noselect" = true;
         "suggest.enablePreselect" = false;
        languageserver = {
@@ -25,6 +27,9 @@
             command =  "nil";
             rootPatterns = [ "flake.nix" "shell.nix" ".git" ];
             filetypes =  [ "nix" ];
+            settings = {
+              nil.formatting.command = [ "alejandra" ];
+            };
           };
         };
       };
