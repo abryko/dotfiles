@@ -38,6 +38,9 @@ if exists('g:vscode')
     nnoremap <silent> gi :<C-u>call VSCodeNotify('editor.action.goToImplementation')<CR>
     nnoremap <silent> gr :<C-u>call VSCodeNotify('editor.action.goToReferences')<CR>
 
+    nnoremap <silent> [g :<C-u>call VSCodeNotify('editor.action.marker.prevInFiles')<CR>
+    nnoremap <silent> ]g :<C-u>call VSCodeNotify('editor.action.marker.nextInFiles')<CR>
+
     nnoremap <silent> <leader>ff :<C-u>call VSCodeNotify('workbench.action.quickOpen')<CR>
     nnoremap <silent> <leader>fg :<C-u>call VSCodeNotify('workbench.action.findInFiles')<CR>
 

@@ -75,17 +75,20 @@ in {
     inkscape
     jc
     jq
+    kapp
     krew
     kubectl
     kubernetes-helm
     libnotify
     mdsh
+    meld
     nickel
     nil
     niv
     nixfmt
     nmap
     nodePackages.eslint
+    nodePackages_latest.bash-language-server
     noto-fonts-emoji
     open-policy-agent
     powertop

@@ -1,20 +1,24 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{ lib, ... }:
-
-with lib.hm.gvariant;
-
-{
+{lib, ...}:
+with lib.hm.gvariant; {
   dconf.settings = {
     "com/gexperts/Tilix" = {
+      auto-hide-mouse = true;
       enable-wide-handle = false;
       paste-strip-trailing-whitespace = true;
       prompt-on-close = true;
       prompt-on-delete-profile = true;
+      quake-height-percent = 33;
+      quake-hide-headerbar = false;
+      quake-hide-lose-focus = false;
+      quake-keep-on-top = true;
       quake-specific-monitor = 0;
+      quake-width-percent = 100;
       terminal-title-show-when-single = true;
       terminal-title-style = "small";
       theme-variant = "dark";
       use-tabs = true;
+      window-style = "normal";
     };
 
     "com/gexperts/Tilix/keybindings" = {
@@ -33,7 +37,7 @@ with lib.hm.gvariant;
     };
 
     "com/gexperts/Tilix/profiles" = {
-      list = [ "2b7c4080-0ddd-46c5-8f23-563fd3ba789d" ];
+      list = ["2b7c4080-0ddd-46c5-8f23-563fd3ba789d"];
     };
 
     "com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d" = {
@@ -49,7 +53,7 @@ with lib.hm.gvariant;
       font = "BitstreamVeraSansMono Nerd Font Mono 11";
       foreground-color = "#EFEFEF";
       highlight-colors-set = false;
-      palette = [ "#000000" "#CC0000" "#4D9A05" "#C3A000" "#3464A3" "#754F7B" "#05979A" "#D3D6CF" "#545652" "#EF2828" "#89E234" "#FBE84F" "#729ECF" "#AC7EA8" "#34E2E2" "#EDEDEB" ];
+      palette = ["#000000" "#CC0000" "#4D9A05" "#C3A000" "#3464A3" "#754F7B" "#05979A" "#D3D6CF" "#545652" "#EF2828" "#89E234" "#FBE84F" "#729ECF" "#AC7EA8" "#34E2E2" "#EDEDEB"];
       scroll-on-output = false;
       scrollback-unlimited = true;
       terminal-bell = "none";
@@ -57,6 +61,5 @@ with lib.hm.gvariant;
       use-theme-colors = false;
       visible-name = "Default";
     };
-
   };
 }

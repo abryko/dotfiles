@@ -1,34 +1,48 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     coc = {
       enable = true;
       settings = {
         "coc.preferences.formatOnType" = true;
-        "coc.preferences.formatOnSaveFiletypes" = [ "go" "nix" ];
+        "coc.preferences.formatOnSaveFiletypes" = ["cue" "go" "nix" "sh"];
         "suggest.noselect" = true;
         "suggest.enablePreselect" = false;
-       languageserver = {
+        languageserver = {
           go = {
-            command =  "gopls";
-            rootPatterns = [ "go.mod" ];
+            command = "gopls";
+            rootPatterns = ["go.mod"];
             "trace.server" = "verbose";
-            filetypes =  [ "go" ];
+            filetypes = ["go"];
           };
           cue = {
-            command =  "cuelsp";
-            args = [ ];
-            rootPatterns = [ "cue.mod/" ".git/" ];
-            filetypes =  [ "cue" ];
+            command = "cuelsp";
+            args = [];
+            rootPatterns = ["cue.mod/" ".git/"];
+            filetypes = ["cue"];
           };
           nix = {
-            command =  "nil";
-            rootPatterns = [ "flake.nix" "shell.nix" ".git" ];
-            filetypes =  [ "nix" ];
+            command = "nil";
+            rootPatterns = ["flake.nix" "shell.nix" ".git/"];
+            filetypes = ["nix"];
             settings = {
-              nil.formatting.command = [ "alejandra" ];
+              nil.formatting.command = ["alejandra"];
+            };
+          };
+          sh = {
+            command = "bash-language-server";
+            args = ["start"];
+            filetypes = ["sh"];
+          };
+          deno = {
+            command = "deno";
+            args = ["lsp"];
+            filetypes = ["typescript" "javascript"];
+            rootPatterns = ["deno.json" "deno.jsonc" ".git/"];
+            initializationOptions = {
+              enable = true;
+              lint = true;
+              unstable = true;
             };
           };
         };
@@ -45,8 +59,8 @@
       telescope-nvim
       vim-cue
       vim-nix
-      vim-terraform
       vim-surround
+      vim-terraform
     ];
     extraConfig = builtins.readFile ./vimrc;
     viAlias = true;
