@@ -5,7 +5,14 @@
       enable = true;
       settings = {
         "coc.preferences.formatOnType" = true;
-        "coc.preferences.formatOnSaveFiletypes" = ["cue" "go" "nix" "sh"];
+        "coc.preferences.formatOnSaveFiletypes" = [
+          "cue"
+          "go"
+          "javascript"
+          "nix"
+          "sh"
+          "typescript"
+        ];
         "suggest.noselect" = true;
         "suggest.enablePreselect" = false;
         languageserver = {
@@ -43,6 +50,22 @@
               enable = true;
               lint = true;
               unstable = true;
+            };
+          };
+          diagnostic-ls = {
+            command = "diagnostic-languageserver";
+            args = ["--stdio"];
+            filetypes = ["sh"];
+            initializationOptions = {
+              formatFiletypes = {
+                sh = "shfmt";
+              };
+              formatters = {
+                shfmt = {
+                  command = "shfmt";
+                  args = ["-i" "2" "-bn" "-ci" "-sr"];
+                };
+              };
             };
           };
         };

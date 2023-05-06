@@ -50,7 +50,7 @@ with lib.hm.gvariant; {
       cursor-colors-set = false;
       dim-transparency-percent = 28;
       draw-margin = 84;
-      font = "BitstreamVeraSansMono Nerd Font Mono 11";
+      font = "BitstromWera Nerd Font Mono 11";
       foreground-color = "#EFEFEF";
       highlight-colors-set = false;
       palette = ["#000000" "#CC0000" "#4D9A05" "#C3A000" "#3464A3" "#754F7B" "#05979A" "#D3D6CF" "#545652" "#EF2828" "#89E234" "#FBE84F" "#729ECF" "#AC7EA8" "#34E2E2" "#EDEDEB"];

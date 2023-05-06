@@ -1,9 +1,6 @@
 # Generated via dconf2nix: https://github.com/gvolpe/dconf2nix
-{ lib, ... }:
-
-with lib.hm.gvariant;
-
-{
+{lib, ...}:
+with lib.hm.gvariant; {
   dconf.settings = {
     "org/gnome/terminal/legacy" = {
       default-show-menubar = false;
@@ -20,7 +17,7 @@ with lib.hm.gvariant;
 
     "org/gnome/terminal/legacy/profiles:" = {
       default = "4dff060d-cd00-450a-888f-309315596f9b";
-      list = [ "4dff060d-cd00-450a-888f-309315596f9b" ];
+      list = ["4dff060d-cd00-450a-888f-309315596f9b"];
     };
 
     "org/gnome/terminal/legacy/profiles:/:4dff060d-cd00-450a-888f-309315596f9b" = {
@@ -35,11 +32,11 @@ with lib.hm.gvariant;
       cursor-shape = "block";
       custom-command = "zellij";
       delete-binding = "delete-sequence";
-      font = "BitstreamVeraSansMono Nerd Font Mono 11";
+      font = "BitstromWera Nerd Font Mono 11";
       foreground-color = "#ffffff";
       highlight-colors-set = false;
       login-shell = false;
-      palette = [ "#2e3436" "#cc0000" "#4e9a06" "#c4a000" "#3465a4" "#75507b" "#06989a" "#d3d7cf" "#555753" "#ef2929" "#8ae234" "#fce94f" "#729fcf" "#ad7fa8" "#34e2e2" "#eeeeec" ];
+      palette = ["#2e3436" "#cc0000" "#4e9a06" "#c4a000" "#3465a4" "#75507b" "#06989a" "#d3d7cf" "#555753" "#ef2929" "#8ae234" "#fce94f" "#729fcf" "#ad7fa8" "#34e2e2" "#eeeeec"];
       scroll-on-output = false;
       scrollback-lines = 1000000;
       scrollbar-policy = "always";
@@ -48,6 +45,5 @@ with lib.hm.gvariant;
       use-theme-colors = false;
       visible-name = "default";
     };
-
   };
 }

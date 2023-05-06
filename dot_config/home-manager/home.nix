@@ -87,6 +87,7 @@ in {
     niv
     nixfmt
     nmap
+    nodePackages.diagnostic-languageserver
     nodePackages.eslint
     nodePackages_latest.bash-language-server
     noto-fonts-emoji
@@ -201,7 +202,7 @@ in {
   gtk = {
     enable = true;
     font = {
-      name = "BitstreamVeraSansMono Nerd Font Mono";
+      name = "BitstromWera Nerd Font Mono";
       size = 10;
     };
     cursorTheme = {
