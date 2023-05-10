@@ -48,6 +48,7 @@ if exists('g:vscode')
     nnoremap <silent> <leader>s :<C-u>call VSCodeNotify('workbench.action.showAllSymbols')<CR>
 
     nnoremap <silent> <leader>qf :<C-u>call VSCodeNotify('editor.action.quickFix')<CR>
+    nnoremap <silent> <leader>ac :<C-u>call VSCodeNotify('editor.action.quickFix')<CR>
 
 
 else

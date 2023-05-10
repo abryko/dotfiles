@@ -48,6 +48,7 @@ in {
     bitwarden
     bitwarden-cli
     chezmoi
+    colordiff
     cue
     cuelsp
     curl
@@ -71,7 +72,9 @@ in {
     gopls
     graphviz
     gron
+    helmfile
     hugo
+    imagemagick
     inkscape
     jc
     jq
@@ -111,6 +114,7 @@ in {
     tilix
     todo-txt-cli
     tree
+    vault
     vte
     woodpecker-cli
     xclip
@@ -157,6 +161,9 @@ in {
         tab_width = 4;
       };
       "*.{yaml,yml}" = {
+        indent_size = 2;
+      };
+      "*.sh" = {
         indent_size = 2;
       };
       "*.nix" = {
