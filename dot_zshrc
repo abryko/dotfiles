@@ -66,9 +66,7 @@ zinit lucid light-mode for \
     depth'1' \
         @changyuheng/fz \
     depth'1' if'[[ $PATH != *asdf/bin* ]]' \
-        @asdf-vm/asdf \
-    depth'1' blockf \
-        @Aloxaf/fzf-tab
+        @asdf-vm/asdf
 
 
 # Direnv
@@ -87,6 +85,11 @@ zinit lucid light-mode for \
         @zsh-users/zsh-autosuggestions \
     blockf atclone'zinit creinstall -q zsh-users/zsh-completions' atpull'%atclone' \
         @zsh-users/zsh-completions
+
+
+# fzf-tab
+zinit lucid light-mode for depth'1' blockf @Aloxaf/fzf-tab
+
 
 # todo.txt
 zinit depth'1' lucid light-mode pick'todo_completion' for \
@@ -108,35 +111,24 @@ zinit lucid light-mode for \
     has'curl' depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
     OMZP::command-not-found
 
-# kubectl-completion
-zinit lucid light-mode as'completion' id-as'kubectl-completion' \
-    atclone'kubectl completion zsh > _kubectl' \
-    atpull'%atclone' run-atpull nocompile \
-    has'kubectl' for zdharma-continuum/null
 
-# helm-completion
-zinit lucid light-mode as'completion' id-as'helm-completion' \
-    atclone'helm completion zsh > _helm' \
-    atpull'%atclone' run-atpull nocompile \
-    has'kubectl' for zdharma-continuum/null
+# # kubectl-completion
+# zinit lucid light-mode as'completion' id-as'kubectl-completion' \
+#     atclone'kubectl completion zsh > _kubectl' \
+#     atpull'%atclone' run-atpull nocompile \
+#     has'kubectl' for zdharma-continuum/null
+
+# # helm-completion
+# zinit lucid light-mode as'completion' id-as'helm-completion' \
+#     atclone'helm completion zsh > _helm' \
+#     atpull'%atclone' run-atpull nocompile \
+#     has'kubectl' for zdharma-continuum/null
 
 # gopass-completion
 zinit lucid light-mode id-as'gopass-completion' \
     atclone'gopass completion bash > script.zsh' \
     atpull'%atclone' run-atpull nocompile \
     has'gopass' for zdharma-continuum/null
-
-# toolbox-completion
-zinit lucid light-mode id-as'toolbox-completion' \
-    atclone'toolbox completions > script.zsh' \
-    atpull'%atclone' run-atpull pick'script.zsh' \
-    if'[[ -z "$IN_NIX_SHELL" ]]' has'toolbox' for zdharma-continuum/null
-
-# kswitch-completion
-zinit lucid light-mode id-as'kswitch-completion' \
-    atclone'kswitch bash-completions > script.zsh' \
-    atpull'%atclone' run-atpull pick'script.zsh' \
-    has'kswitch' for zdharma-continuum/null
 
 # fly-completion
 zinit lucid light-mode id-as'fly-completion' \
@@ -156,17 +148,17 @@ zinit lucid light-mode as'completion' id-as'bitwarden-completion' \
 #     atpull'%atclone' run-atpull nocompile \
 #     has'cue' for zdharma-continuum/null
 
-# rustup-completion
-zinit lucid light-mode as'completion' id-as'rustup-completion' \
-    atclone'rustup completions zsh > _rustup' \
-    atpull'%atclone' run-atpull nocompile \
-    has'rustup' for zdharma-continuum/null
+# # rustup-completion
+# zinit lucid light-mode as'completion' id-as'rustup-completion' \
+#     atclone'rustup completions zsh > _rustup' \
+#     atpull'%atclone' run-atpull nocompile \
+#     has'rustup' for zdharma-continuum/null
 
-# cargo-completion
-zinit lucid light-mode as'completion' id-as'cargo-completion' \
-    atclone'rustup completions zsh cargo > _cargo' \
-    atpull'%atclone' run-atpull nocompile \
-    has'rustup' has'cargo' for zdharma-continuum/null
+# # cargo-completion
+#  zinit lucid light-mode as'completion' id-as'cargo-completion' \
+#      atclone'rustup completions zsh cargo > _cargo' \
+#      atpull'%atclone' run-atpull nocompile \
+#      has'rustup' has'cargo' for zdharma-continuum/null
 
 # kind-completion
 zinit lucid light-mode as'completion' id-as'kind-completion' \
@@ -186,11 +178,11 @@ zinit lucid light-mode as'completion' id-as'minikube-completion' \
     atpull'%atclone' run-atpull nocompile \
     has'minikube' for zdharma-continuum/null
 
-# hugo-completion
-zinit lucid light-mode as'completion' id-as'hugo-completion' \
-    atclone'hugo completion zsh > _hugo' \
-    atpull'%atclone' run-atpull nocompile \
-    has'hugo' for zdharma-continuum/null
+# # hugo-completion
+# zinit lucid light-mode as'completion' id-as'hugo-completion' \
+#     atclone'hugo completion zsh > _hugo' \
+#     atpull'%atclone' run-atpull nocompile \
+#     has'hugo' for zdharma-continuum/null
 
 # aws-completion
 zinit lucid light-mode as'completion' id-as'aws-completion' \

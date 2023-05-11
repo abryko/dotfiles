@@ -39,12 +39,14 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     age
     alejandra
     asciinema
     authy
     bazel
+    bazelisk
     bitwarden
     bitwarden-cli
     chezmoi
@@ -68,7 +70,6 @@ in {
     go
     golangci-lint
     google-chrome
-    google-cloud-sdk
     gopls
     graphviz
     gron
@@ -93,6 +94,7 @@ in {
     nodePackages.diagnostic-languageserver
     nodePackages.eslint
     nodePackages_latest.bash-language-server
+    nodejs
     noto-fonts-emoji
     open-policy-agent
     powertop
@@ -118,6 +120,7 @@ in {
     vte
     woodpecker-cli
     xclip
+    yarn
     yq
   ];
 
