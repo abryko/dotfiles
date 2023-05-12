@@ -8,7 +8,7 @@
 	default = simple
 #	followTags = true
 [http]
-	sslVerify = false
+	sslVerify = true
 [alias]
 	git = !exec git
 	co = checkout
@@ -17,18 +17,27 @@
 	up = pull
 [init]
 	templatedir = ~/.git-templates
-[core]
-    pager = less -FRX
-	longpaths = true
-	excludesfile = /home/xmaillard/.gitignore_global
-[credential]
-	helper = store --file ~/.git-credentials
 [pager]
     #branch = false
+[core]
+    pager = delta
+	longpaths = true
+	excludesfile = /home/xmaillard/.gitignore_global
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    light = false
+[merge]
+    conflictstyle = diff3
+[credential]
+	helper = store --file ~/.git-credentials
 [pull]
 	ff = only
+[diff]
+    colorMoved = default
 [url "git@git.corp.caascad.com:"]
-insteadOf = git@git.corp.cloudwatt.com:
+    insteadOf = git@git.corp.cloudwatt.com:
 [url "git@git.corp.caascad.com:"]
     insteadOf = https://git.corp.cloudwatt.com/
 

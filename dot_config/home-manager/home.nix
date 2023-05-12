@@ -39,12 +39,14 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     age
     alejandra
     asciinema
     authy
+    bat
     bazel
     bazelisk
     bitwarden
@@ -57,6 +59,7 @@ in {
     dagger
     dconf
     dconf2nix
+    delta
     delve
     deno
     direnv
@@ -66,6 +69,7 @@ in {
     fzf
     git
     git-filter-repo
+    glow
     gnupg
     go
     golangci-lint
@@ -73,6 +77,7 @@ in {
     gopls
     graphviz
     gron
+    gum
     helmfile
     hugo
     imagemagick
@@ -113,7 +118,6 @@ in {
     tealdeer
     terraform
     tig
-    tilix
     todo-txt-cli
     tree
     vault
