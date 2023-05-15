@@ -267,6 +267,7 @@ in {
       asciidoctor.asciidoctor-vscode
       asvetliakov.vscode-neovim
       denoland.vscode-deno
+      eamodio.gitlens
       hashicorp.terraform
       jnoortheen.nix-ide
       kamadorueda.alejandra

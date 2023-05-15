@@ -4,6 +4,7 @@ with lib.hm.gvariant; {
   dconf.settings = {
     "com/gexperts/Tilix" = {
       auto-hide-mouse = true;
+      copy-on-select = true;
       enable-wide-handle = false;
       paste-strip-trailing-whitespace = true;
       prompt-on-close = true;
