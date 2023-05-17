@@ -81,6 +81,7 @@
       telescope-coc-nvim
       telescope-nvim
       vim-cue
+      vim-fugitive
       vim-nix
       vim-surround
       vim-terraform
