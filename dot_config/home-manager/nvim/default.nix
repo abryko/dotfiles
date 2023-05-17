@@ -85,6 +85,7 @@
       vim-nix
       vim-surround
       vim-terraform
+      wilder-nvim
     ];
     extraConfig = builtins.readFile ./vimrc;
     viAlias = true;
