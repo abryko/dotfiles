@@ -16,6 +16,14 @@
         "suggest.noselect" = true;
         "suggest.enablePreselect" = false;
         languageserver = {
+          ccls = {
+            command = "ccls";
+            rootPatterns = [".ccls" "compile_commands.json" ".git/" ".hg/"];
+            filetypes = ["c" "cc" "cpp" "c++" "objc" "objcpp"];
+            initializationOptions = {
+              cache.directory = "/tmp/ccls";
+            };
+          };
           go = {
             command = "gopls";
             rootPatterns = ["go.mod"];
@@ -82,6 +90,7 @@
       telescope-nvim
       vim-cue
       vim-fugitive
+      vim-indentwise
       vim-nix
       vim-surround
       vim-terraform

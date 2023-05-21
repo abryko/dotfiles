@@ -51,8 +51,10 @@ in {
     bazelisk
     bitwarden
     bitwarden-cli
+    ccls
     chezmoi
     colordiff
+    cosign
     cue
     cuelsp
     curl

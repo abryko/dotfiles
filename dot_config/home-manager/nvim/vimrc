@@ -54,7 +54,7 @@ if exists('g:vscode')
 else
 " Key bindings can be changed, see below
 call wilder#setup({
-      \ 'modes': [':', '/', '?'],
+      \ 'modes': [':'],
       \ 'next_key': '<Tab>',
       \ 'previous_key': '<S-Tab>',
       \ 'accept_key': '<Down>',
@@ -68,6 +68,14 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
       \ },
       \ 'border': 'rounded',
       \ })))
+call wilder#set_option('pipeline', [
+      \   wilder#branch(
+      \     wilder#cmdline_pipeline({
+      \       'fuzzy': 1,
+      \     }),
+      \     wilder#python_search_pipeline(),
+      \   ),
+      \ ])
 
 " colorscheme
 colorscheme torte

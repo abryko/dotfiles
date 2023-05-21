@@ -9,4 +9,4 @@ kube_config.*
 result
 .tool-versions
 .vscode/
-
+.direnv/
