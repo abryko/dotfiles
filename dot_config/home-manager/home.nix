@@ -51,10 +51,13 @@ in {
     bazelisk
     bitwarden
     bitwarden-cli
+    buildah
+    caddy
     ccls
     chezmoi
     colordiff
     cosign
+    crane
     cue
     cuelsp
     curl
@@ -87,12 +90,14 @@ in {
     jc
     jq
     kapp
+    ko
     krew
     kubectl
     kubernetes-helm
     libnotify
     mdsh
     meld
+    nginx
     nickel
     nil
     niv
@@ -104,6 +109,7 @@ in {
     nodejs
     noto-fonts-emoji
     open-policy-agent
+    podman
     powertop
     pre-commit
     rclone
@@ -113,7 +119,9 @@ in {
     rustup
     shellcheck
     shfmt
+    shutter
     silver-searcher
+    skopeo
     socat
     spotify
     stern
