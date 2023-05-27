@@ -302,13 +302,18 @@ in {
 
   programs.vscode = {
     enable = true;
-    package = nixGLWrap pkgs.vscode;
+    package = (nixGLWrap pkgs.vscode).overrideAttrs (
+      old: {
+        inherit (pkgs.vscode) pname version;
+      }
+    );
     mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
       asciidoctor.asciidoctor-vscode
       asvetliakov.vscode-neovim
       denoland.vscode-deno
       eamodio.gitlens
+      editorconfig.editorconfig
       hashicorp.terraform
       jnoortheen.nix-ide
       kamadorueda.alejandra

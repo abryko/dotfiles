@@ -30,7 +30,7 @@ keybinds {
         bind "r" { SwitchToMode "RenamePane"; PaneNameInput 0; }
     }
     normal {
-        bind "Alt v" { NewPane "Right"; }
-        bind "Alt s" { NewPane "Down"; }
+        bind "Alt i" "Alt v" { NewPane "Right"; }
+        bind "Alt o" "Alt s" { NewPane "Down"; }
     }
 }
