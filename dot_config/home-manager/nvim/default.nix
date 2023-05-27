@@ -80,12 +80,15 @@
       };
     };
     plugins = with pkgs.vimPlugins; [
+      (nvim-treesitter.withPlugins (p: [p.go p.nix]))
       coc-fzf
       comment-nvim
       completion-treesitter
       editorconfig-nvim
       lualine-nvim
       nvim-treesitter
+      nvim-treesitter-context
+      nvim-treesitter-textobjects
       telescope-coc-nvim
       telescope-nvim
       vim-cue

@@ -1,8 +1,33 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
+  sources = import ./nix/sources.nix;
+  pkgs = import sources.nixpkgs {};
+  lib = pkgs.lib;
+  nixgl = import sources.nixgl {
+    inherit pkgs;
+  };
+  nixGLWrap = pkg:
+    pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
+      mkdir $out
+      ln -s ${pkg}/* $out
+      rm $out/bin
+      mkdir $out/bin
+      for bin in ${pkg}/bin/*; do
+       wrapped_bin=$out/bin/$(basename $bin)
+       echo "exec ${lib.getExe nixgl.auto.nixGLDefault} $bin \"\$@\"" > $wrapped_bin
+       chmod +x $wrapped_bin
+      done
+      if [[ -e "$out/share/applications" ]]; then
+        rm $out/share
+        mkdir $out/share
+        ln -s ${pkg}/share/* $out/share/
+        rm "$out/share/applications"
+        mkdir "$out/share/applications"
+        for desktopFile in ${pkg}/share/applications/*; do
+           local name="$(basename $desktopFile)"
+           substitute "$desktopFile" $out/share/applications/$name --replace ${pkg} $out
+        done
+      fi
+    '';
   defaultShellAliases = {
     ".." = "cd ..";
     "..." = "cd ../..";
@@ -42,6 +67,8 @@ in {
     # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
+    (nixGLWrap pkgs.google-chrome)
+    (nixGLWrap pkgs.alacritty)
     age
     alejandra
     asciinema
@@ -69,6 +96,7 @@ in {
     deno
     direnv
     discord
+    dive
     fd
     firefox
     fzf
@@ -78,7 +106,6 @@ in {
     gnupg
     go
     golangci-lint
-    google-chrome
     gopls
     graphviz
     gron
@@ -102,6 +129,7 @@ in {
     nil
     niv
     nixfmt
+    nixgl.auto.nixGLDefault
     nmap
     nodePackages.diagnostic-languageserver
     nodePackages.eslint
@@ -124,6 +152,7 @@ in {
     skopeo
     socat
     spotify
+    sqlite
     stern
     tealdeer
     terraform
@@ -131,6 +160,7 @@ in {
     todo-txt-cli
     tree
     vault
+    visidata
     vte
     woodpecker-cli
     xclip
@@ -272,6 +302,7 @@ in {
 
   programs.vscode = {
     enable = true;
+    package = nixGLWrap pkgs.vscode;
     mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
       asciidoctor.asciidoctor-vscode
