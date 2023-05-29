@@ -67,8 +67,8 @@ in {
     # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
-    (nixGLWrap pkgs.google-chrome)
     (nixGLWrap pkgs.alacritty)
+    (nixGLWrap pkgs.google-chrome)
     age
     alejandra
     asciinema

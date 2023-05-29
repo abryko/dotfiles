@@ -31,5 +31,14 @@ layout {
                 pane
             }
         }
+        tab exact_panes=5 {
+            pane split_direction="vertical" {
+                pane
+                pane split_direction="horizontal" {
+                    pane
+                    pane
+                }
+            }
+        }
     }
 }

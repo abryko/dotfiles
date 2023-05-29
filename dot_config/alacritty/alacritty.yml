@@ -46,6 +46,11 @@ colors:
     focused_match:
       foreground: '#CC0000'
       background: '#C3A000'
+key_bindings:
+  - { key: Space, mods: Shift|Control, mode: ~Search, action: None }
+  - { key: F, mods: Control|Shift, mode: ~Search, action: None }
+  - { key: B, mods: Control|Shift, mode: ~Search, action: None }
+
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
 # Import additional configuration files

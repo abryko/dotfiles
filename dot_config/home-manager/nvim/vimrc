@@ -220,21 +220,22 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <leader>a  :<C-u>Telescope coc diagnostics<cr>
+nnoremap <silent><nowait> <leader>fa  :<C-u>Telescope coc workspace_diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> <leader>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <leader>o  <cmd>Telescope coc document_symbols<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <leader>s  <cmd>Telescope coc workspace_symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+nnoremap <silent><nowait> <leader>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><nowait> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> <leader>p  :<C-u>CocListResume<CR>
 
 " CoC menubar color
 hi CocMenuSel ctermbg=darkgrey ctermfg=yellow
@@ -242,11 +243,17 @@ hi CocSearch ctermfg=blue
 
 
 " Telescope mappings
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <silent><leader>ff <cmd>Telescope find_files()<cr>
+nnoremap <silent><C-p> <cmd>Telescope find_files()<cr>
+nnoremap <silent><leader>fg <cmd>Telescope live_grep()<cr>
+nnoremap <silent><leader>fG <cmd>Telescope grep_string()<cr>
+nnoremap <silent><leader>fb <cmd>Telescope buffers()<cr>
+nnoremap <silent><leader>fh <cmd>Telescope help_tags()<cr>
+nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
+nnoremap <silent><leader>fm <cmd>Telescope marks<cr>
+nnoremap <silent><leader>fo <cmd>Telescope coc document_symbols<cr>
+nnoremap <silent><leader>fs <cmd>Telescope coc workspace_symbols<cr>
+nnoremap <silent><leader>fq <cmd>Telescope coc workspace_symbols<cr>
 
 lua << END
 require('lualine').setup {
