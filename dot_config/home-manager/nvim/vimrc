@@ -243,12 +243,14 @@ hi CocSearch ctermfg=blue
 
 
 " Telescope mappings
-nnoremap <silent><leader>ff <cmd>Telescope find_files()<cr>
-nnoremap <silent><C-p> <cmd>Telescope find_files()<cr>
-nnoremap <silent><leader>fg <cmd>Telescope live_grep()<cr>
-nnoremap <silent><leader>fG <cmd>Telescope grep_string()<cr>
-nnoremap <silent><leader>fb <cmd>Telescope buffers()<cr>
-nnoremap <silent><leader>fh <cmd>Telescope help_tags()<cr>
+nnoremap <silent><leader>f. <cmd>Telescope resume<cr>
+nnoremap <silent><leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <silent><leader>ff <cmd>Telescope find_files<cr>
+nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
+nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <silent><leader>fG <cmd>Telescope grep_string<cr>
+nnoremap <silent><leader>fb <cmd>Telescope buffers<cr>
+nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
 nnoremap <silent><leader>fm <cmd>Telescope marks<cr>
 nnoremap <silent><leader>fo <cmd>Telescope coc document_symbols<cr>
@@ -300,9 +302,18 @@ require('lualine').setup {
 require('Comment').setup()
 
 require("telescope").setup({
+  defaults = {
+    layout_strategy = "vertical",
+    sorting_strategy = "ascending",
+    layout_config = {
+        preview_cutoff = 1,
+      vertical = { width = 0.8 }
+    },
+    border = true,
+  },
   extensions = {
     coc = {
-        theme = 'ivy',
+        -- theme = 'ivy',
         prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
     }
   },

@@ -124,6 +124,7 @@ in {
     libnotify
     mdsh
     meld
+    minio
     nginx
     nickel
     nil
@@ -133,6 +134,7 @@ in {
     nmap
     nodePackages.diagnostic-languageserver
     nodePackages.eslint
+    nodePackages.markdownlint-cli
     nodePackages_latest.bash-language-server
     nodejs
     noto-fonts-emoji
