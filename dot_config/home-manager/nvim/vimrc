@@ -52,30 +52,6 @@ if exists('g:vscode')
 
 
 else
-" Key bindings can be changed, see below
-call wilder#setup({
-      \ 'modes': [':'],
-      \ 'next_key': '<Tab>',
-      \ 'previous_key': '<S-Tab>',
-      \ 'accept_key': '<Down>',
-      \ 'reject_key': '<Up>',
-      \ })
-call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
-      \ 'highlighter': wilder#basic_highlighter(),
-      \ 'highlights': {
-      \   'border': 'Normal',
-      \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
-      \ },
-      \ 'border': 'rounded',
-      \ })))
-call wilder#set_option('pipeline', [
-      \   wilder#branch(
-      \     wilder#cmdline_pipeline({
-      \       'fuzzy': 1,
-      \     }),
-      \     wilder#python_search_pipeline(),
-      \   ),
-      \ ])
 
 " colorscheme
 colorscheme torte
@@ -122,10 +98,14 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gd  <cmd>Telescope coc definitions<cr>
+" nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy  <cmd>Telescope coc type_definitions<cr>
+" nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi  <cmd>Telescope coc implementations<cr>
+" nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr  <cmd>Telescope coc references<cr>
+" nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> gh :call ShowDocumentation()<CR>
@@ -246,6 +226,7 @@ hi CocSearch ctermfg=blue
 nnoremap <silent><leader>f. <cmd>Telescope resume<cr>
 nnoremap <silent><leader>f/ <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <silent><leader>ff <cmd>Telescope find_files<cr>
+nnoremap <silent><leader>fF <cmd>Telescope grep_string search="" only_sort_text=true<cr>
 nnoremap <silent><C-p> <cmd>Telescope find_files<cr>
 nnoremap <silent><leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent><leader>fG <cmd>Telescope grep_string<cr>
@@ -258,7 +239,7 @@ nnoremap <silent><leader>fs <cmd>Telescope coc workspace_symbols<cr>
 nnoremap <silent><leader>fq <cmd>Telescope coc workspace_symbols<cr>
 
 lua << END
-require('lualine').setup {
+require('lualine').setup({
   options = {
     icons_enabled = true,
     theme = 'codedark',
@@ -297,12 +278,22 @@ require('lualine').setup {
   winbar = {},
   inactive_winbar = {},
   extensions = {}
-}
+})
 
 require('Comment').setup()
 
 require("telescope").setup({
   defaults = {
+    mappings = {
+      i = {
+        ["<C-b>"] = "preview_scrolling_up",
+        ["<C-f>"] = "preview_scrolling_down",
+      },
+      n = {
+        ["<C-b>"] = "preview_scrolling_up",
+        ["<C-f>"] = "preview_scrolling_down",
+      },
+    },
     layout_strategy = "vertical",
     sorting_strategy = "ascending",
     layout_config = {
@@ -320,7 +311,7 @@ require("telescope").setup({
 })
 require('telescope').load_extension('coc')
 
-require'nvim-treesitter.configs'.setup {
+require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
@@ -377,9 +368,9 @@ require'nvim-treesitter.configs'.setup {
       }
     },
   },
-}
+})
 
-require'treesitter-context'.setup {
+require('treesitter-context').setup({
   enable = true,
   max_lines = 0,
   min_window_height = 0,
@@ -390,8 +381,32 @@ require'treesitter-context'.setup {
   separator = nil,
   zindex = 20,
   on_attach = nil,
-}
+})
 
+local wilder = require('wilder')
+wilder.setup({
+  modes = {':'},
+  next_key = '<Tab>',
+  previous_key = '<S-Tab>',
+  accept_key = '<Down>',
+  reject_key = '<Up>',
+})
+wilder.set_option('renderer',
+  wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
+    highlighter = wilder.basic_highlighter(),
+    highlights = {
+      border = 'Normal',
+      accent = wilder.make_hl('WilderAccent', 'Pmenu', {{}, {}, {foreground = '#f4468f'}}),
+    },
+    border = 'rounded',
+    empty_message = wilder.popupmenu_empty_message_with_spinner(),
+})))
+wilder.set_option('pipeline', { wilder.branch(
+  wilder.cmdline_pipeline({
+    fuzzy = 2,
+  }),
+  wilder.python_search_pipeline()),
+  })
 END
 
 endif
