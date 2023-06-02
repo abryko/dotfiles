@@ -73,7 +73,7 @@ keybinds clear-defaults=true {
     scroll {
         bind "Alt S" { SwitchToMode "Normal"; }
         bind "e" { EditScrollback; SwitchToMode "Normal"; }
-        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
+        bind "s" "/" { SwitchToMode "EnterSearch"; SearchInput 0; }
         bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "j" "Down" { ScrollDown; }
         bind "k" "Up" { ScrollUp; }
@@ -132,8 +132,11 @@ keybinds clear-defaults=true {
         bind "Alt i" "Alt v" { NewPane "Right"; }
         bind "Alt o" "Alt s" { NewPane "Down"; }
     }
+    shared_except "normal" "locked" "search" {
+        bind "Enter" { SwitchToMode "Normal"; }
+    }
     shared_except "normal" "locked" {
-        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+        bind "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
         bind "Alt P" { SwitchToMode "Pane"; }

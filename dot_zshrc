@@ -56,8 +56,6 @@ zinit lucid light-mode for \
 autoload compinit; compinit -C;
 # Primary stuffs
 zinit lucid light-mode for \
-    from'gh-r' as"program" \
-        @junegunn/fzf \
     @rupa/z \
     pick'fasd' \
         atclone'./fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install > script.zsh' \
