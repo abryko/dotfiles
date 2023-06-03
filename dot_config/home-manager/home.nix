@@ -136,6 +136,7 @@ in {
     nodePackages.eslint
     nodePackages.markdownlint-cli
     nodePackages.typescript-language-server
+    nodePackages.vim-language-server
     nodePackages_latest.bash-language-server
     nodejs
     noto-fonts-emoji
