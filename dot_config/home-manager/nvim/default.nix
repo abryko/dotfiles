@@ -84,6 +84,16 @@
             };
             filetypes = ["vim"];
           };
+          lua = {
+            command = "lua-language-server";
+            filetypes = ["lua"];
+            args = ["--stdio"];
+            rootPatterns = [".luarc.json" ".luarc.jsonc" ".luacheckrc" ".stylua.toml" "stylua.toml" "selene.toml" "selene.yml" ".git"];
+            settings = {
+              lua.telemetry.enable = false;
+              lua.diagnostics.globals = ["vim"];
+            };
+          };
           diagnostic-ls = {
             command = "diagnostic-languageserver";
             args = ["--stdio"];

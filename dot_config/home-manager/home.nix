@@ -122,6 +122,7 @@ in {
     kubectl
     kubernetes-helm
     libnotify
+    lua-language-server
     mdsh
     meld
     minio
