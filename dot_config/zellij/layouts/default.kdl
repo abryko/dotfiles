@@ -9,6 +9,55 @@ layout {
             plugin location="zellij:status-bar"
         }
     }
+    swap_tiled_layout name="default" {
+        tab exact_panes=4 {
+            pane split_direction="vertical" {
+                pane
+                pane
+            }
+        }
+        tab exact_panes=5 {
+            pane split_direction="vertical" {
+                pane
+                pane split_direction="horizontal" {
+                    pane
+                    pane
+                }
+            }
+        }
+        tab exact_panes=6 {
+            pane split_direction="vertical"
+            pane split_direction="vertical"
+        }
+        tab exact_panes=10 {
+            pane split_direction="horizontal" {
+                pane
+                pane
+            }
+        }
+        tab {
+            pane split_direction="vertical" {
+                pane split_direction="horizontal" {
+                    pane split_direction="horizontal" {
+                        pane
+                        pane
+                    }
+                }
+                pane split_direction="horizontal" {
+                    pane split_direction="horizontal" {
+                        pane
+                        pane
+                    }
+                }
+                pane split_direction="horizontal" {
+                    pane split_direction="horizontal" {
+                        pane
+                        pane
+                    }
+                }
+            }
+        }
+    }
     swap_tiled_layout name="vertical" {
         tab {
             pane split_direction="vertical" {
@@ -21,23 +70,6 @@ layout {
                 pane
                 pane
                 pane
-            }
-        }
-    }
-    swap_tiled_layout name="horizontal" {
-        tab {
-            pane split_direction="horizontal" {
-                pane
-                pane
-            }
-        }
-        tab exact_panes=5 {
-            pane split_direction="vertical" {
-                pane
-                pane split_direction="horizontal" {
-                    pane
-                    pane
-                }
             }
         }
     }

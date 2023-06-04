@@ -324,12 +324,15 @@ require('nvim-treesitter.configs').setup({
         ["if"] = "@function.inner",
         ["ac"] = "@class.outer",
         ["ic"] = "@class.inner",
-        ["as"] = "@scope"
+        ["ib"] = "@block.inner",
+        ["ab"] = "@block.outer",
+        ["ap"] = "@parameter.outer",
+        ["ip"] = "@parameter.inner",
       },
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
         ['@function.outer'] = 'V', -- linewise
-        ['@class.outer'] = '<c-v>', -- blockwise
+        ['@block.outer'] = '<c-v>', -- blockwise
       },
     },
     swap = {
@@ -343,28 +346,45 @@ require('nvim-treesitter.configs').setup({
       enable = true,
       set_jumps = true,
       goto_next_start = {
+        ["]b"] = "@block.outer",
+        ["]c"] = { query = "@class.outer", desc = "Next class start" },
+        ["]d"] = "@conditional.outer",
+        ["]f"] = "@function.outer",
         ["]m"] = "@function.outer",
-        ["]]"] = { query = "@class.outer", desc = "Next class start" },
+        ["]p"] = "@parameter.inner",
         ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
         ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
       },
       goto_next_end = {
+        ["]B"] = "@block.outer",
+        ["]F"] = "@function.outer",
         ["]M"] = "@function.outer",
-        ["]["] = "@class.outer",
+        ["]P"] = "@parameter.outer",
+        ["]C"] = "@class.outer",
       },
       goto_previous_start = {
-        ["[m"] = "@function.outer",
         ["[["] = "@class.outer",
+        ["[b"] = "@block.outer",
+        ["[c"] = "@class.outer",
+        ["[d"] = "@conditional.outer",
+        ["[f"] = "@function.outer",
+        ["[m"] = "@function.outer",
+        ["[p"] = "@parameter.inner",
       },
       goto_previous_end = {
+        ["[B"] = "@block.outer",
+        ["[C"] = "@class.outer",
+        ["[F"] = "@function.outer",
         ["[M"] = "@function.outer",
+        ["[P"] = "@parameter.outer",
         ["[]"] = "@class.outer",
       },
+      -- Below will go to either the start or the end, whichever is closer.
+      -- Use if you want more granular movements
+      -- Make it even more gradual by adding multiple queries and regex.
       goto_next = {
-        ["]d"] = "@conditional.outer",
       },
       goto_previous = {
-        ["[d"] = "@conditional.outer",
       }
     },
   },
