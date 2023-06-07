@@ -210,6 +210,16 @@ zinit depth=1 light-mode for romkatv/powerlevel10k
 export EDITOR=vim
 export SUDO_EDITOR=vim
 
+# Load add-zsh-hook
+autoload -Uz add-zsh-hook
+function zellij_rename_tab_on_cd() {
+    # [ -n "$ZELLIJ" ] && zellij action rename-tab $(basename "${PWD//${HOME}/~}")
+    [ -n "$ZELLIJ" ] && zellij action rename-tab "${PWD//${HOME}/~}"
+}
+add-zsh-hook chpwd zellij_rename_tab_on_cd
+# Call it immediately
+zellij_rename_tab_on_cd
+
 # Additional files to source
 [[ -r ~/.zsh_zle ]] && source ~/.zsh_zle
 [[ -r ~/.zsh_functions ]] && source ~/.zsh_functions

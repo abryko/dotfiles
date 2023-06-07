@@ -1,10 +1,9 @@
-{config, ...}: let
-  sources = import ./nix/sources.nix;
-  pkgs = import sources.nixpkgs {};
+{
+  pkgs,
+  nixgl,
+  ...
+}: let
   lib = pkgs.lib;
-  nixgl = import sources.nixgl {
-    inherit pkgs;
-  };
   nixGLWrap = pkg:
     pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
       mkdir $out
@@ -13,7 +12,7 @@
       mkdir $out/bin
       for bin in ${pkg}/bin/*; do
        wrapped_bin=$out/bin/$(basename $bin)
-       echo "exec ${lib.getExe nixgl.auto.nixGLDefault} $bin \"\$@\"" > $wrapped_bin
+       echo "exec ${lib.getExe nixgl.nixGLDefault} $bin \"\$@\"" > $wrapped_bin
        chmod +x $wrapped_bin
       done
       if [[ -e "$out/share/applications" ]]; then
@@ -102,6 +101,7 @@ in {
     firefox
     git
     git-filter-repo
+    git-lfs
     glow
     gnupg
     go
@@ -131,7 +131,7 @@ in {
     nil
     niv
     nixfmt
-    nixgl.auto.nixGLDefault
+    nixgl.nixGLDefault
     nmap
     nodePackages.diagnostic-languageserver
     nodePackages.eslint

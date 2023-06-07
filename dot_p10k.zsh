@@ -38,6 +38,7 @@
     context                 # user@hostname
     dir                     # current directory
     vcs                     # git status
+    direnv
     nix_shell
     virtualenv
     kubecontext

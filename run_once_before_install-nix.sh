@@ -8,9 +8,6 @@
 
 (
   if [ "$(command -v nix)" ] && ! [ "$(command -v home-manager)" ]; then
-    export NIX_PATH="$HOME/.nix-defexpr/channels${NIX_PATH:+:$NIX_PATH}"
-    nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-    nix-channel --update
-    nix-shell '<home-manager>' -A install
+    nix run home-manager/master -- init --switch --impure
   fi
 )
