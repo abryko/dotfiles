@@ -17,6 +17,7 @@
 	up = pull
 [init]
 	templatedir = ~/.git-templates
+	defaultBranch = main
 [pager]
     #branch = false
 [core]
