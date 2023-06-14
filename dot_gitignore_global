@@ -10,3 +10,4 @@ result
 .tool-versions
 .vscode/
 .direnv/
+.git/

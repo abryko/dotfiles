@@ -66,9 +66,10 @@ in {
     # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
-    (nixGLWrap pkgs.alacritty)
-    (nixGLWrap pkgs.google-chrome)
-    (nixGLWrap pkgs.krita)
+    (nixGLWrap alacritty)
+    (nixGLWrap firefox)
+    (nixGLWrap google-chrome)
+    (nixGLWrap krita)
     age
     alejandra
     asciinema
@@ -98,7 +99,7 @@ in {
     discord
     dive
     fd
-    firefox
+    fuse3
     git
     git-filter-repo
     git-lfs
@@ -116,12 +117,14 @@ in {
     inkscape
     jc
     jq
+    k9s
     kapp
     ko
     krew
     kubectl
     kubernetes-helm
     libnotify
+    litefs
     lua-language-server
     mdsh
     meld

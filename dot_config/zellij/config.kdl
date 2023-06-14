@@ -129,6 +129,8 @@ keybinds clear-defaults=true {
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
+        bind "Alt z" { TogglePaneFrames; SwitchToMode "Normal"; }
+        bind "Alt f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Alt i" "Alt v" { NewPane "Right"; }
         bind "Alt o" "Alt s" { NewPane "Down"; }
     }

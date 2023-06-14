@@ -114,7 +114,7 @@
       };
     };
     plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (p: [p.bash p.cue p.go p.lua p.nix p.typescript p.vim]))
+      (nvim-treesitter.withPlugins (p: [p.bash p.cue p.go p.lua p.make p.markdown_inline p.nix p.typescript p.vim]))
       coc-fzf
       comment-nvim
       completion-treesitter
