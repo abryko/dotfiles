@@ -98,6 +98,7 @@ zinit lucid light-mode for \
     OMZP::cp \
     OMZP::systemd \
     has'docker' as'completion' OMZP::docker/_docker \
+    has'vagrant' as'completion' OMZP::vagrant/_vagrant \
     has'docker-compose' as'completion' OMZP::docker-compose/_docker-compose \
     has'terraform' OMZP::terraform \
     has'vault' as'completion' OMZP::vault/_vault \
@@ -257,6 +258,9 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 # Comments in shell
 setopt interactivecomments
+
+# Disable autocd
+unsetopt autocd
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

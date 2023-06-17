@@ -66,6 +66,7 @@ in {
     # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
+    (nixGLWrap neovide)
     (nixGLWrap alacritty)
     (nixGLWrap firefox)
     (nixGLWrap google-chrome)
@@ -460,6 +461,11 @@ in {
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "21.11";
+
+  services.copyq = {
+    enable = true;
+    systemdTarget = "default.target";
+  };
 
   services.redshift = {
     enable = true;
