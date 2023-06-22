@@ -12,7 +12,8 @@
       mkdir $out/bin
       for bin in ${pkg}/bin/*; do
        wrapped_bin=$out/bin/$(basename $bin)
-       echo "exec ${lib.getExe nixgl.nixGLDefault} $bin \"\$@\"" > $wrapped_bin
+       echo "#!${pkgs.runtimeShell}" > $wrapped_bin
+       echo "exec ${lib.getExe nixgl.nixGLDefault} $bin \"\$@\"" >> $wrapped_bin
        chmod +x $wrapped_bin
       done
       if [[ -e "$out/share/applications" ]]; then
@@ -66,11 +67,12 @@ in {
     # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
-    (nixGLWrap neovide)
     (nixGLWrap alacritty)
     (nixGLWrap firefox)
     (nixGLWrap google-chrome)
     (nixGLWrap krita)
+    (nixGLWrap neovide)
+    (nixGLWrap obsidian)
     age
     alejandra
     asciinema
