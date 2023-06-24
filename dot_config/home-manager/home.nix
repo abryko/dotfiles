@@ -224,6 +224,9 @@ in {
       "*.sh" = {
         indent_size = 2;
       };
+      "*.lua" = {
+        indent_size = 2;
+      };
       "*.nix" = {
         indent_size = 2;
       };

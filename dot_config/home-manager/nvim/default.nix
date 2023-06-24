@@ -115,15 +115,25 @@
     };
     plugins = with pkgs.vimPlugins; [
       (nvim-treesitter.withPlugins (p: [p.bash p.c p.cpp p.cue p.go p.lua p.make p.markdown_inline p.nix p.typescript p.vim]))
+      cmp-cmdline
+      cmp-fuzzy-buffer
+      cmp-fuzzy-path
       coc-fzf
       comment-nvim
       completion-treesitter
       editorconfig-nvim
+      fuzzy-nvim
       lualine-nvim
+      luasnip
+      noice-nvim
+      nui-nvim
+      nvim-cmp
+      nvim-notify
       nvim-treesitter
       nvim-treesitter-context
       nvim-treesitter-textobjects
       telescope-coc-nvim
+      telescope-fzf-native-nvim
       telescope-nvim
       vim-cue
       vim-fugitive
@@ -131,7 +141,6 @@
       vim-nix
       vim-surround
       vim-terraform
-      wilder-nvim
     ];
     extraConfig = builtins.readFile ./vimrc;
     viAlias = true;

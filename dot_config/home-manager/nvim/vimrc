@@ -303,6 +303,13 @@ require("telescope").setup({
     border = true,
   },
   extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    },
     coc = {
         -- theme = 'ivy',
         prefer_locations = true, -- always use Telescope locations to preview definitions/declarations/implementations etc
@@ -310,6 +317,7 @@ require("telescope").setup({
   },
 })
 require('telescope').load_extension('coc')
+require('telescope').load_extension('fzf')
 
 require('nvim-treesitter.configs').setup({
   highlight = {
@@ -403,29 +411,69 @@ require('treesitter-context').setup({
   on_attach = nil,
 })
 
-local wilder = require('wilder')
-wilder.setup({
-  modes = {':'},
-  next_key = '<Tab>',
-  previous_key = '<S-Tab>',
-  accept_key = '<Down>',
-  reject_key = '<Up>',
-})
-wilder.set_option('renderer',
-  wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
-    highlighter = wilder.basic_highlighter(),
-    highlights = {
-      border = 'Normal',
-      accent = wilder.make_hl('WilderAccent', 'Pmenu', {{}, {}, {foreground = '#f4468f'}}),
+require("telescope").load_extension("noice")
+require("noice").setup({
+  lsp = {
+    -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+    override = {
+      ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+      ["vim.lsp.util.stylize_markdown"] = true,
+      ["cmp.entry.get_documentation"] = true,
     },
-    border = 'rounded',
-})))
-wilder.set_option('pipeline', { wilder.branch(
-  wilder.cmdline_pipeline({
-    fuzzy = 2,
+  },
+  -- you can enable a preset for easier configuration
+  presets = {
+    bottom_search = true, -- use a classic bottom cmdline for search
+    command_palette = true, -- position the cmdline and popupmenu together
+    long_message_to_split = true, -- long messages will be sent to a split
+    inc_rename = false, -- enables an input dialog for inc-rename.nvim
+    lsp_doc_border = false, -- add a border to hover docs and signature help
+  },
+})
+
+local cmp = require('cmp')
+cmp.setup({
+  snippet = {
+    -- REQUIRED - you must specify a snippet engine
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
+  window = {
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
-  wilder.python_search_pipeline()),
+  sources = cmp.config.sources({
+    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'fuzzy_path'},
+    { name = 'fuzzy_buffer' },
   })
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'fuzzy_buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'fuzzy_path', option = {fd_timeout_msec = 1500} },
+    { name = 'cmdline' }
+  })
+})
+
 END
 
 endif
