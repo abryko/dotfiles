@@ -239,6 +239,8 @@ nnoremap <silent><leader>fs <cmd>Telescope coc workspace_symbols<cr>
 nnoremap <silent><leader>fq <cmd>Telescope coc workspace_symbols<cr>
 
 lua << END
+vim.opt.termguicolors = true,
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
@@ -433,6 +435,9 @@ require("noice").setup({
 
 local cmp = require('cmp')
 cmp.setup({
+  view = {
+    entries = "custom",
+  },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
@@ -440,8 +445,8 @@ cmp.setup({
     end,
   },
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
   },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -451,17 +456,20 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'luasnip' }, -- For luasnip users.
-    { name = 'fuzzy_path'},
     { name = 'fuzzy_buffer' },
-  })
+    { name = 'fuzzy_path'},
+    { name = 'luasnip' }, -- For luasnip users.
+  }),
+  completion =  {
+    completeopt = 'menu,menuone,noinsert',
+  },
 })
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'fuzzy_buffer' }
+    { name = 'fuzzy_buffer' },
   }
 })
 
@@ -470,7 +478,7 @@ cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'fuzzy_path', option = {fd_timeout_msec = 1500} },
-    { name = 'cmdline' }
+    { name = 'cmdline' },
   })
 })
 
