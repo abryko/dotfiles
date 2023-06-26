@@ -73,4 +73,12 @@ layout {
             }
         }
     }
+    swap_tiled_layout name="horizontal" {
+        tab {
+            pane split_direction="horizontal" {
+                pane
+                pane
+            }
+        }
+    }
 }

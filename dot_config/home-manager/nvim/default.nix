@@ -114,7 +114,8 @@
       };
     };
     plugins = with pkgs.vimPlugins; [
-      (nvim-treesitter.withPlugins (p: [p.bash p.c p.cpp p.cue p.go p.lua p.make p.markdown_inline p.nix p.typescript p.vim]))
+      (nvim-treesitter.withPlugins (p: [p.bash p.c p.cpp p.cue p.go p.lua p.make p.markdown p.markdown_inline p.nix p.regex p.typescript p.vim]))
+      catppuccin-nvim
       cmp-cmdline
       cmp-fuzzy-buffer
       cmp-fuzzy-path
@@ -123,6 +124,7 @@
       completion-treesitter
       editorconfig-nvim
       fuzzy-nvim
+      gruvbox-nvim
       lualine-nvim
       luasnip
       noice-nvim
@@ -135,6 +137,7 @@
       telescope-coc-nvim
       telescope-fzf-native-nvim
       telescope-nvim
+      tokyonight-nvim
       vim-cue
       vim-fugitive
       vim-indentwise

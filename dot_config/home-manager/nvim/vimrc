@@ -54,7 +54,8 @@ if exists('g:vscode')
 else
 
 " colorscheme
-colorscheme torte
+colorscheme tokyonight-night
+highlight Normal guifg=#cccccc guibg=#000000 gui=NONE cterm=NONE
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -244,7 +245,7 @@ vim.opt.termguicolors = true,
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'codedark',
+    theme = 'tokyonight',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -264,7 +265,30 @@ require('lualine').setup({
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {{'filename', path=1, shorting_target = 39}},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_x = {
+      {
+        require("noice").api.status.message.get_hl,
+        cond = require("noice").api.status.message.has,
+      },
+      {
+        require("noice").api.status.command.get,
+        cond = require("noice").api.status.command.has,
+        color = { fg = "#ff9e64" },
+      },
+      {
+        require("noice").api.status.mode.get,
+        cond = require("noice").api.status.mode.has,
+        color = { fg = "#ff9e64" },
+      },
+      {
+        require("noice").api.status.search.get,
+        cond = require("noice").api.status.search.has,
+        color = { fg = "#ff9e64" },
+      },
+      'encoding',
+      'fileformat',
+      'filetype',
+    },
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
@@ -425,16 +449,27 @@ require("noice").setup({
   },
   -- you can enable a preset for easier configuration
   presets = {
-    bottom_search = true, -- use a classic bottom cmdline for search
-    command_palette = true, -- position the cmdline and popupmenu together
+    bottom_search = false,
+    command_palette = false, -- position the cmdline and popupmenu together
     long_message_to_split = true, -- long messages will be sent to a split
     inc_rename = false, -- enables an input dialog for inc-rename.nvim
     lsp_doc_border = false, -- add a border to hover docs and signature help
+  },
+  popupmenu = {
+    backend = "cmp",
   },
 })
 
 local cmp = require('cmp')
 cmp.setup({
+  enabled = function()
+    if vim.api.nvim_get_mode().mode == 'c' then
+      return true
+    else
+      return false
+    end
+  end,
+  -- enabled = true,
   view = {
     entries = "custom",
   },
@@ -448,6 +483,7 @@ cmp.setup({
     completion = cmp.config.window.bordered(),
     documentation = cmp.config.window.bordered(),
   },
+  preselect = cmp.PreselectMode.None,
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -461,7 +497,7 @@ cmp.setup({
     { name = 'luasnip' }, -- For luasnip users.
   }),
   completion =  {
-    completeopt = 'menu,menuone,noinsert',
+    completeopt = 'menu,menuone,noselect',
   },
 })
 
@@ -477,9 +513,9 @@ cmp.setup.cmdline({ '/', '?' }, {
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
-    { name = 'fuzzy_path', option = {fd_timeout_msec = 1500} },
-    { name = 'cmdline' },
-  })
+    { name = 'fuzzy_path', option = {fd_timeout_msec = 1500}},
+    { name = 'cmdline', option = { ignore_cmds = { 'Man', '!' }}},
+  }),
 })
 
 END
