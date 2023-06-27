@@ -114,6 +114,12 @@
       };
     };
     plugins = with pkgs.vimPlugins; [
+      # cmp-nvim-lsp
+      # cmp-nvim-lsp-document-symbol
+      # cmp-nvim-lsp-signature-help
+      # cmp-nvim-lua
+      # cmp-treesitter
+      # cmp_luasnip
       (nvim-treesitter.withPlugins (p: [p.bash p.c p.cpp p.cue p.go p.lua p.make p.markdown p.markdown_inline p.nix p.regex p.typescript p.vim]))
       catppuccin-nvim
       cmp-cmdline
