@@ -138,6 +138,7 @@ in {
     niv
     nixfmt
     nixgl.nixGLDefault
+    nls
     nmap
     nodePackages.diagnostic-languageserver
     nodePackages.eslint
