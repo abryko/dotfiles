@@ -22,13 +22,6 @@ set smarttab
 set ignorecase
 set smartcase
 
-" " May need for vim (not neovim) since coc.nvim calculate byte offset by count
-" " utf-8 byte sequence.
-" set encoding=utf-8
-" " Some servers have issues with backup files, see #649.
-" set nobackup
-" set nowritebackup
-
 " ONLY When running vscode
 if exists('g:vscode')
     " VSCode extension
@@ -86,6 +79,7 @@ nmap <leader>f  <cmd>lua vim.lsp.buf.format()<cr>
 
 " Remap keys for apply code actions at the cursor position.
 nmap <leader>ac <cmd>lua vim.lsp.buf.code_action()<cr>
+xmap <leader>ac <cmd>lua vim.lsp.buf.code_action()<cr>
 " Apply the most preferred quickfix action to fix diagnostic on the current line.
 nmap <leader>qf <cmd>lua vim.lsp.buf.code_action({only = 'quickfix'})<cr>
 

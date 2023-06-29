@@ -2,8 +2,6 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      # coc-fzf
-      # telescope-coc-nvim
       (nvim-treesitter.withPlugins (p: [p.bash p.c p.cpp p.cue p.dockerfile p.go p.gomod p.gosum p.hcl p.ini p.json p.lua p.make p.markdown p.markdown_inline p.nickel p.nix p.python p.regex p.rego p.rust p.typescript p.vim p.yaml]))
       catppuccin-nvim
       cmp-cmdline
