@@ -99,7 +99,7 @@ nnoremap <silent><nowait> <leader>fa  <cmd>Telescope diagnostics<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait> <leader>o  <cmd>Telescope lsp_document_symbols<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <leader>s  <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <silent><nowait> <leader>s  <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 
 
 " Telescope mappings
@@ -115,8 +115,8 @@ nnoremap <silent><leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent><leader>fr <cmd>Telescope registers<cr>
 nnoremap <silent><leader>fm <cmd>Telescope marks<cr>
 nnoremap <silent><leader>fo <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <silent><leader>fs <cmd>Telescope lsp_workspace_symbols<cr>
-nnoremap <silent><leader>fq <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <silent><leader>fs <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
+nnoremap <silent><leader>fq <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 
 lua << END
 vim.opt.termguicolors = true,
@@ -352,6 +352,7 @@ require("noice").setup({
   },
 })
 
+local luasnip = require('luasnip')
 local cmp = require('cmp')
 cmp.setup({
   enabled = true,
@@ -396,7 +397,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = 'fuzzy_buffer' },
-    { name = 'fuzzy_path'},
+    { name = 'path' },
     { name = 'luasnip' }, -- For luasnip users.
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
@@ -423,7 +424,7 @@ cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources({
     { name = 'cmdline_history' },
-    { name = 'fuzzy_path', option = {fd_timeout_msec = 1500}},
+    { name = 'path' },
     { name = 'cmdline', option = { ignore_cmds = { 'Man', '!' }}},
   }),
 })
