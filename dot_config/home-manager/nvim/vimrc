@@ -483,10 +483,33 @@ lspconfig.lua_ls.setup ({
 -- nix
 lspconfig.nil_ls.setup ({
   capabilities = capabilities,
+  settings = {
+    ['nil'] = {
+      formatting = {
+        command = {'alejandra'},
+      },
+      nix = {
+        flake = {
+          autoArchive = true,
+        },
+      },
+    },
+  },
 })
 -- nickel
 lspconfig.nls.setup ({
   capabilities = capabilities,
+})
+-- rust
+lspconfig.rust_analyzer.setup ({
+  capabilities = capabilities,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false,
+      }
+    }
+  }
 })
 -- vimscript
 lspconfig.vimls.setup ({

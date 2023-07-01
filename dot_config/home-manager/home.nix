@@ -156,7 +156,7 @@ in {
     ripgrep
     rnix-lsp
     rocketchat-desktop
-    rustup
+    rust-analyzer
     shellcheck
     shfmt
     shutter
