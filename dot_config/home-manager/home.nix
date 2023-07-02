@@ -170,6 +170,7 @@ in {
     terraform
     tig
     todo-txt-cli
+    topiary
     tree
     tree-sitter
     vault

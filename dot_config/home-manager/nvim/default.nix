@@ -35,6 +35,7 @@
       vim-cue
       vim-fugitive
       vim-indentwise
+      vim-nickel
       vim-nix
       vim-surround
       vim-terraform

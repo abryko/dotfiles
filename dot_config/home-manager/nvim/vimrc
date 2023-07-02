@@ -434,7 +434,7 @@ lspconfig.denols.setup ({
 -- Linters integration
 lspconfig.diagnosticls.setup ({
   capabilities = capabilities,
-  filetypes = { 'sh' },
+  filetypes = { 'nickel', 'sh' },
   init_options = {
     formatFiletypes = {
       sh = 'shfmt',
@@ -492,7 +492,7 @@ lspconfig.nil_ls.setup ({
   },
 })
 -- nickel
-lspconfig.nls.setup ({
+lspconfig.nickel_ls.setup ({
   capabilities = capabilities,
 })
 -- rust
