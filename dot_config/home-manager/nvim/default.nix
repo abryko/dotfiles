@@ -9,7 +9,6 @@
       cmp-fuzzy-buffer
       cmp-nvim-lsp
       cmp-nvim-lsp-document-symbol
-      cmp-nvim-lsp-signature-help
       cmp-nvim-lua
       cmp-path
       cmp-treesitter

@@ -375,13 +375,12 @@ cmp.setup({
     end, { 'i', 's' }),
   }),
   sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'treesitter' },
+    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'nvim_lua' },
     { name = 'fuzzy_buffer' },
     { name = 'path' },
-    { name = 'luasnip' }, -- For luasnip users.
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'nvim_lua' },
-    { name = 'treesitter' },
   }),
   completion =  {
     completeopt = 'menu,menuone,noselect',
