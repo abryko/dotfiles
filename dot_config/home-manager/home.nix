@@ -171,6 +171,7 @@ in {
     tig
     todo-txt-cli
     tree
+    tree-sitter
     vault
     visidata
     vte

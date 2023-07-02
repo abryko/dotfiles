@@ -15,7 +15,6 @@
       cmp-treesitter
       cmp_luasnip
       comment-nvim
-      completion-treesitter
       editorconfig-nvim
       fuzzy-nvim
       gruvbox-nvim
