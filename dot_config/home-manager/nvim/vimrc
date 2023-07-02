@@ -283,10 +283,11 @@ require('nvim-treesitter.configs').setup({
       },
       goto_next_end = {
         ["]B"] = "@block.outer",
+        ["]C"] = "@class.outer",
+        ["]D"] = "@conditional.outer",
         ["]F"] = "@function.outer",
         ["]M"] = "@function.outer",
         ["]P"] = "@parameter.outer",
-        ["]C"] = "@class.outer",
       },
       goto_previous_start = {
         ["[["] = "@class.outer",
@@ -300,6 +301,7 @@ require('nvim-treesitter.configs').setup({
       goto_previous_end = {
         ["[B"] = "@block.outer",
         ["[C"] = "@class.outer",
+        ["[D"] = "@conditional.outer",
         ["[F"] = "@function.outer",
         ["[M"] = "@function.outer",
         ["[P"] = "@parameter.outer",
@@ -451,6 +453,10 @@ lspconfig.diagnosticls.setup ({
 lspconfig.gopls.setup ({
   capabilities = capabilities,
 })
+-- golangci-lint
+lspconfig.golangci_lint_ls.setup{
+  capabilities = capabilities,
+}
 -- lua
 lspconfig.lua_ls.setup ({
   capabilities = capabilities,

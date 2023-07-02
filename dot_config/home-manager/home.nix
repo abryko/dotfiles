@@ -110,6 +110,7 @@ in {
     gnupg
     go
     golangci-lint
+    golangci-lint-langserver
     gopls
     graphviz
     gron
