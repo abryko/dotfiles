@@ -333,6 +333,26 @@ require('treesitter-context').setup({
 
 local luasnip = require('luasnip')
 local cmp = require('cmp')
+
+local jump_to_next_item = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_next_item()
+    elseif luasnip.expand_or_jumpable() then
+      luasnip.expand_or_jump()
+    else
+      fallback()
+    end
+  end, { 'i', 's', 'c' })
+local jump_to_previous_item = cmp.mapping(function(fallback)
+    if cmp.visible() then
+      cmp.select_prev_item()
+    elseif luasnip.jumpable(-1) then
+      luasnip.jump(-1)
+    else
+      fallback()
+    end
+  end, { 'i', 's', 'c' })
+
 cmp.setup({
   enabled = true,
   view = {
@@ -354,25 +374,9 @@ cmp.setup({
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
-      else
-        fallback()
-      end
-    end, { 'i', 's' }),
+    ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<S-Tab>'] = jump_to_previous_item,
+    ['<Tab>'] = jump_to_next_item,
   }),
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
@@ -435,15 +439,20 @@ lspconfig.denols.setup ({
 -- Linters integration
 lspconfig.diagnosticls.setup ({
   capabilities = capabilities,
-  filetypes = { 'nickel', 'sh' },
+  filetypes = { 'markdown', 'sh' },
   init_options = {
     formatFiletypes = {
       sh = 'shfmt',
+      markdown = 'mdformat',
     },
     formatters = {
       shfmt = {
         command = 'shfmt',
         args = {'-i', '2', '-bn', '-ci', '-sr'},
+      },
+      mdformat = {
+        command = 'mdformat',
+        args = { '-' },
       },
     },
   },
@@ -455,6 +464,16 @@ lspconfig.gopls.setup ({
 -- golangci-lint
 lspconfig.golangci_lint_ls.setup{
   capabilities = capabilities,
+}
+-- spellcheck (latex, markdown)
+lspconfig.ltex.setup{
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    -- rest of your on_attach process.
+    require("ltex_extra").setup {
+      path = ".ltex"
+    }
+  end,
 }
 -- lua
 lspconfig.lua_ls.setup ({
@@ -480,6 +499,10 @@ lspconfig.lua_ls.setup ({
     },
   },
 })
+-- markdown
+require'lspconfig'.marksman.setup{
+  capabilities = capabilities,
+}
 -- nix
 lspconfig.nil_ls.setup ({
   capabilities = capabilities,
@@ -535,12 +558,33 @@ require('noice').setup({
     lsp_doc_border = true, -- add a border to hover docs and signature help
   },
   popupmenu = {
-    -- backend = "cmp",
-    backend = "nui",
+    backend = "cmp",
+    -- backend = "nui",
   },
 })
 require("telescope").load_extension("noice")
 
+vim.keymap.set("c", "<S-Enter>", function()
+    require("noice").redirect(vim.fn.getcmdline())
+  end, { desc = "Redirect Cmdline" })
+
+vim.keymap.set({"n", "i", "s"}, "<c-f>", function()
+    if not require("noice.lsp").scroll(4) then
+      return "<c-f>"
+    end
+  end, { silent = true, expr = true })
+
+vim.keymap.set({"n", "i", "s"}, "<c-b>", function()
+    if not require("noice.lsp").scroll(-4) then
+      return "<c-b>"
+    end
+  end, { silent = true, expr = true })
+
+vim.keymap.set({"n", "i", "s"}, "", function()
+    if not require("noice.lsp.docs").on_close() then
+      return ""
+    end
+  end, { silent = true, expr = true })
 
 END
 

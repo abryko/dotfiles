@@ -129,7 +129,9 @@ in {
     kubernetes-helm
     libnotify
     litefs
+    ltex-ls
     lua-language-server
+    marksman
     mdsh
     meld
     minio
@@ -153,6 +155,7 @@ in {
     podman
     powertop
     pre-commit
+    python311Packages.mdformat
     rclone
     ripgrep
     rnix-lsp

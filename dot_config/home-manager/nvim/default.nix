@@ -17,6 +17,7 @@
       editorconfig-nvim
       fuzzy-nvim
       gruvbox-nvim
+      ltex_extra-nvim
       lualine-nvim
       luasnip
       noice-nvim
