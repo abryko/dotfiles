@@ -73,6 +73,7 @@ in {
     (nixGLWrap krita)
     (nixGLWrap neovide)
     (nixGLWrap obsidian)
+    (python311Packages.mdformat.withPlugins [python311Packages.mdformat-frontmatter])
     age
     alejandra
     asciinema
@@ -155,7 +156,6 @@ in {
     podman
     powertop
     pre-commit
-    python311Packages.mdformat
     rclone
     ripgrep
     rnix-lsp

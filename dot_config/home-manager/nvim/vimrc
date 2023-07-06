@@ -472,11 +472,19 @@ lspconfig.ltex.setup{
   on_attach = function(client, bufnr)
     -- rest of your on_attach process.
     require("ltex_extra").setup {
-      load_langs = { "en-US", "fr-FR" },
+      load_langs = { "en-US", "fr" },
       init_check = true,
       path = (lspconfig.util.find_git_ancestor(vim.api.nvim_buf_get_name(0)) or '.') .. "/.ltex",
     }
   end,
+  settings = {
+    ltex = {
+      language = "en-US",
+      additionalRules = {
+        motherTongue = "fr",
+      },
+    },
+  },
 }
 -- lua
 lspconfig.lua_ls.setup ({
