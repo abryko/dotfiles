@@ -73,7 +73,7 @@ in {
     (nixGLWrap krita)
     (nixGLWrap neovide)
     (nixGLWrap obsidian)
-    (python311Packages.mdformat.withPlugins [python311Packages.mdformat-frontmatter])
+    (python311Packages.mdformat.withPlugins [python311Packages.mdit-py-plugins python311Packages.mdformat-tables python311Packages.mdformat-frontmatter])
     age
     alejandra
     asciinema
