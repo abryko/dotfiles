@@ -42,6 +42,7 @@ autoload -Uz _zinit
 #    zinit-zsh/z-a-as-monitor \
 #    zinit-zsh/z-a-bin-gem-node
 
+
 # Do not load these in turbo
 zinit lucid light-mode for \
     OMZL::completion.zsh \
@@ -54,6 +55,10 @@ zinit lucid light-mode for \
 
 
 autoload compinit; compinit -C;
+
+# fzf-tab: has to be loaded as soon as possible
+zinit lucid light-mode for depth'1' blockf @Aloxaf/fzf-tab
+
 # Primary stuffs
 zinit lucid light-mode for \
     @rupa/z \
@@ -83,10 +88,6 @@ zinit lucid light-mode for \
         @zsh-users/zsh-autosuggestions \
     blockf atclone'zinit creinstall -q zsh-users/zsh-completions' atpull'%atclone' \
         @zsh-users/zsh-completions
-
-
-# fzf-tab
-zinit lucid light-mode for depth'1' blockf @Aloxaf/fzf-tab
 
 
 # todo.txt
