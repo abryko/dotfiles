@@ -5,13 +5,6 @@ if [[ $TILIX_ID ]]; then
 fi
 
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 export DIRENV_WARN_TIMEOUT=40s
 export ZLE_RPROMPT_INDENT=0
 export ZSH_DISABLE_COMPFIX=true
@@ -59,6 +52,15 @@ autoload compinit; compinit -C;
 # fzf-tab: has to be loaded as soon as possible
 zinit lucid light-mode for depth'1' blockf @Aloxaf/fzf-tab
 
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 # Primary stuffs
 zinit lucid light-mode for \
     @rupa/z \
@@ -98,7 +100,6 @@ zinit depth'1' lucid light-mode pick'todo_completion' for \
 zinit lucid light-mode for \
     OMZP::cp \
     OMZP::systemd \
-    has'docker' as'completion' OMZP::docker/_docker \
     has'vagrant' as'completion' OMZP::vagrant/_vagrant \
     has'docker-compose' as'completion' OMZP::docker-compose/_docker-compose \
     has'terraform' OMZP::terraform \
