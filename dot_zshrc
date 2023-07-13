@@ -83,14 +83,20 @@ zinit lucid light-mode id-as'direnv' \
 
 # Highlights
 zinit lucid light-mode for \
+    @zsh-users/zsh-autosuggestions
+
+zinit lucid light-mode for \
+    @zdharma-continuum/fast-syntax-highlighting
+
+zinit lucid light-mode for \
     OMZ::plugins/sudo/sudo.plugin.zsh \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicdreplay;" \
-        @zdharma-continuum/fast-syntax-highlighting \
-    atload"_zsh_autosuggest_start" \
-        @zsh-users/zsh-autosuggestions \
+
+zinit lucid light-mode for \
     blockf atclone'zinit creinstall -q zsh-users/zsh-completions' atpull'%atclone' \
         @zsh-users/zsh-completions
 
+# ZLE Bindings
+[[ -r ~/.zsh_zle ]] && source ~/.zsh_zle
 
 # todo.txt
 zinit depth'1' lucid light-mode pick'todo_completion' for \
@@ -112,6 +118,11 @@ zinit lucid light-mode for \
     has'curl' depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
     OMZP::command-not-found
 
+# docker-completion
+zinit lucid light-mode as'completion' id-as'docker-completion' \
+    atclone'docker completion zsh > _docker' \
+    atpull'%atclone' run-atpull nocompile \
+    has'docker' for zdharma-continuum/null
 
 # # kubectl-completion
 # zinit lucid light-mode as'completion' id-as'kubectl-completion' \
@@ -224,7 +235,6 @@ add-zsh-hook chpwd zellij_rename_tab_on_cd
 zellij_rename_tab_on_cd
 
 # Additional files to source
-[[ -r ~/.zsh_zle ]] && source ~/.zsh_zle
 [[ -r ~/.zsh_functions ]] && source ~/.zsh_functions
 export GPG_TTY=$(tty)
 
