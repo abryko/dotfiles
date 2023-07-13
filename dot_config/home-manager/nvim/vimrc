@@ -536,6 +536,10 @@ lspconfig.nil_ls.setup ({
 lspconfig.nickel_ls.setup ({
   capabilities = capabilities,
 })
+-- -- nix
+-- lspconfig.nixd.setup ({
+--   capabilities = capabilities,
+-- })
 -- rust
 lspconfig.rust_analyzer.setup ({
   capabilities = capabilities,

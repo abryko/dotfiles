@@ -140,6 +140,7 @@ in {
     nickel
     nil
     niv
+    nixd
     nixfmt
     nixgl.nixGLDefault
     nls
@@ -184,6 +185,7 @@ in {
     xclip
     yarn
     yq
+    zsh
   ];
 
   home.language = {
@@ -476,7 +478,7 @@ in {
 
   services.copyq = {
     enable = true;
-    systemdTarget = "default.target";
+    systemdTarget = "graphical-session.target";
   };
 
   services.redshift = {
@@ -485,8 +487,9 @@ in {
     latitude = 48.863049;
     longitude = 2.348856;
     temperature.day = 5500;
-    temperature.night = 3000;
+    temperature.night = 3500;
   };
 
+  services.gpg-agent.enable = true;
   services.systembus-notify.enable = true;
 }

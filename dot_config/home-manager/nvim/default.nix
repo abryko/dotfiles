@@ -23,6 +23,7 @@
       noice-nvim
       nui-nvim
       nvim-cmp
+      nvim-dap
       nvim-lspconfig
       nvim-notify
       nvim-treesitter
