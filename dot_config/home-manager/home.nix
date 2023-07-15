@@ -486,7 +486,7 @@ in {
     package = pkgs.redshift;
     latitude = 48.863049;
     longitude = 2.348856;
-    temperature.day = 5500;
+    temperature.day = 6000;
     temperature.night = 3500;
   };
 

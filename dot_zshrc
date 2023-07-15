@@ -12,7 +12,7 @@ export CASE_SENSITIVE="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=200
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
 export DISABLE_MAGIC_FUNCTIONS=true     # make pasting into terminal faster
-#export ZSH_AUTOSUGGEST_USE_ASYNC=1
+# export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 
 ### Added by Zinit's installer
@@ -80,16 +80,12 @@ zinit lucid light-mode id-as'direnv' \
     atpull'%atclone' run-atpull pick'zhook.zsh' nocompile \
     has'direnv' for zdharma-continuum/null
 
-
 # Highlights
-zinit lucid light-mode for \
-    @zsh-users/zsh-autosuggestions
+zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
-zinit lucid light-mode for \
-    @zdharma-continuum/fast-syntax-highlighting
+zinit lucid light-mode for @zdharma-continuum/fast-syntax-highlighting
 
-zinit lucid light-mode for \
-    OMZ::plugins/sudo/sudo.plugin.zsh \
+zinit lucid light-mode for @zsh-users/zsh-autosuggestions
 
 zinit lucid light-mode for \
     blockf atclone'zinit creinstall -q zsh-users/zsh-completions' atpull'%atclone' \
@@ -124,18 +120,6 @@ zinit lucid light-mode as'completion' id-as'docker-completion' \
     atpull'%atclone' run-atpull nocompile \
     has'docker' for zdharma-continuum/null
 
-# # kubectl-completion
-# zinit lucid light-mode as'completion' id-as'kubectl-completion' \
-#     atclone'kubectl completion zsh > _kubectl' \
-#     atpull'%atclone' run-atpull nocompile \
-#     has'kubectl' for zdharma-continuum/null
-
-# # helm-completion
-# zinit lucid light-mode as'completion' id-as'helm-completion' \
-#     atclone'helm completion zsh > _helm' \
-#     atpull'%atclone' run-atpull nocompile \
-#     has'kubectl' for zdharma-continuum/null
-
 # gopass-completion
 zinit lucid light-mode id-as'gopass-completion' \
     atclone'gopass completion bash > script.zsh' \
@@ -153,24 +137,6 @@ zinit lucid light-mode as'completion' id-as'bitwarden-completion' \
     atclone'bw completion --shell zsh > _bw' \
     atpull'%atclone' run-atpull nocompile \
     has'bw' for zdharma-continuum/null
-
-# # cue-completion
-# zinit lucid light-mode as'completion' id-as'cue-completion' \
-#     atclone'cue completion zsh > _cue' \
-#     atpull'%atclone' run-atpull nocompile \
-#     has'cue' for zdharma-continuum/null
-
-# # rustup-completion
-# zinit lucid light-mode as'completion' id-as'rustup-completion' \
-#     atclone'rustup completions zsh > _rustup' \
-#     atpull'%atclone' run-atpull nocompile \
-#     has'rustup' for zdharma-continuum/null
-
-# # cargo-completion
-#  zinit lucid light-mode as'completion' id-as'cargo-completion' \
-#      atclone'rustup completions zsh cargo > _cargo' \
-#      atpull'%atclone' run-atpull nocompile \
-#      has'rustup' has'cargo' for zdharma-continuum/null
 
 # kind-completion
 zinit lucid light-mode as'completion' id-as'kind-completion' \
@@ -190,16 +156,16 @@ zinit lucid light-mode as'completion' id-as'minikube-completion' \
     atpull'%atclone' run-atpull nocompile \
     has'minikube' for zdharma-continuum/null
 
-# # hugo-completion
-# zinit lucid light-mode as'completion' id-as'hugo-completion' \
-#     atclone'hugo completion zsh > _hugo' \
-#     atpull'%atclone' run-atpull nocompile \
-#     has'hugo' for zdharma-continuum/null
-
 # aws-completion
 zinit lucid light-mode as'completion' id-as'aws-completion' \
     atload'complete -C "aws_completer" aws' nocompile \
     has'aws' for zdharma-continuum/null
+
+# Fetching config from local zsh installation
+zinit lucid light-mode id-as'zsh-default-completions' \
+    atclone'find /usr/share/zsh/vendor-completions -name "_*" -exec install -m 0644 -t . {} \+' \
+    atpull'%atclone' run-atpull nocompile \
+    has'nix' for zdharma-continuum/null
 
 # Bunch of completions from nix installed packages in case they are missing
 zinit lucid light-mode id-as'completions' \
