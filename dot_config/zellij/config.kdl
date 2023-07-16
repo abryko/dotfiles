@@ -133,6 +133,7 @@ keybinds clear-defaults=true {
         bind "Alt f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "Alt i" "Alt v" { NewPane "Right"; }
         bind "Alt o" "Alt s" { NewPane "Down"; }
+        bind "Alt g" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
     }
     shared_except "normal" "locked" "search" {
         bind "Enter" { SwitchToMode "Normal"; }
