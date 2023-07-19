@@ -5,6 +5,7 @@ if [[ $TILIX_ID ]]; then
 fi
 
 
+export SHELL=zsh
 export DIRENV_WARN_TIMEOUT=40s
 export ZLE_RPROMPT_INDENT=0
 export ZSH_DISABLE_COMPFIX=true

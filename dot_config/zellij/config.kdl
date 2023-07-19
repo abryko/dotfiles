@@ -1,4 +1,3 @@
-copy_command "xclip -selection clipboard"
 default_shell "zsh"
 mirror_session false
 mouse_mode true
