@@ -185,6 +185,7 @@ in {
     xclip
     yarn
     yq
+    zig
     zsh
   ];
 
