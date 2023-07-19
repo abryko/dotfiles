@@ -74,8 +74,10 @@ nmap <leader>rn <cmd>lua vim.lsp.buf.rename()<cr>
 nmap <F2> <cmd>lua vim.lsp.buf.rename()<cr>
 
 " Formatting selected code.
-xmap <leader>f  <cmd>lua vim.lsp.buf.format()<cr>
-nmap <leader>f  <cmd>lua vim.lsp.buf.format()<cr>
+xmap <leader>f= <cmd>lua vim.lsp.buf.format()<cr>
+xmap <leader>= <cmd>lua vim.lsp.buf.format()<cr>
+nmap <leader>f= <cmd>lua vim.lsp.buf.format()<cr>
+nmap <leader>= <cmd>lua vim.lsp.buf.format()<cr>
 
 " Remap keys for apply code actions at the cursor position.
 nmap <leader>ac <cmd>lua vim.lsp.buf.code_action()<cr>
@@ -121,7 +123,7 @@ nnoremap <silent><leader>fq <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
 lua << END
 vim.opt.termguicolors = true,
 -- auto-format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 require('lualine').setup({
   options = {
@@ -479,8 +481,8 @@ lspconfig.ltex.setup{
   end,
   settings = {
     ltex = {
-      language = "auto",
-      -- language = "en-US",
+      -- language = "auto",
+      language = "en-US",
       additionalRules = {
         motherTongue = "fr",
       },
