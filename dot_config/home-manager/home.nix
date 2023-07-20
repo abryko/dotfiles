@@ -73,6 +73,7 @@ in {
     (nixGLWrap krita)
     (nixGLWrap neovide)
     (nixGLWrap obsidian)
+    (nixGLWrap youtube-music)
     (python311Packages.mdformat.withPlugins [python311Packages.mdit-py-plugins python311Packages.mdformat-tables python311Packages.mdformat-frontmatter])
     age
     alejandra
