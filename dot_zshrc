@@ -47,6 +47,7 @@ zinit lucid light-mode for \
     OMZL::directories.zsh \
     romkatv/zsh-defer
 
+zinit lucid light-mode has'atuin' for @ellie/atuin
 
 autoload compinit; compinit -C;
 
