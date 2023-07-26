@@ -42,7 +42,7 @@ zinit lucid light-mode for \
     OMZL::completion.zsh \
     OMZL::key-bindings.zsh \
     OMZL::spectrum.zsh \
-    OMZP::fzf \
+    has'fzf' OMZP::fzf \
     OMZL::history.zsh \
     OMZL::directories.zsh \
     romkatv/zsh-defer
@@ -52,7 +52,7 @@ zinit lucid light-mode has'atuin' for @ellie/atuin
 autoload compinit; compinit -C;
 
 # fzf-tab: has to be loaded as soon as possible
-zinit lucid light-mode for depth'1' blockf @Aloxaf/fzf-tab
+zinit lucid light-mode for depth'1' blockf has'fzf' @Aloxaf/fzf-tab
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.

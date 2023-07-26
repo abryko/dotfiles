@@ -2,7 +2,7 @@
 
 (
   if ! [ "$(command -v nix)" ]; then
-    sh -c "(wget -qO- https://nixos.org/nix/install)" -- --no-daemon
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
   fi
 )
 

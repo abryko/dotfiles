@@ -12,7 +12,7 @@ sourcePath() {
 	local p="$*"
 	[ -z "$p" ] && return
 	if [ -r "$p" ]; then
-		source  "$p"
+		[[ ":$PATH:" == *":$p:"* ]] || source "$p"
 	fi
 }
 
@@ -23,5 +23,5 @@ addPath "{{.chezmoi.homeDir }}/go/bin"
 addPath "{{.chezmoi.homeDir }}/.cargo/bin"
 addPath "${KREW_ROOT:-{{.chezmoi.homeDir }}/.krew}/bin"
 
-[[ ":$PATH:" == *":{{.chezmoi.homeDir }}/.nix-profile/bin:"* ]] || sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/nix.sh"
+sourcePath "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh"
