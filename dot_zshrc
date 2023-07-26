@@ -70,7 +70,7 @@ zinit lucid light-mode for \
         atclone'./fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install > script.zsh' \
         atpull'%atclone' run-atpull src'script.zsh' depth'1' \
         @clvv/fasd \
-    depth'1' \
+    depth'1' has'fzf' \
         @changyuheng/fz \
     depth'1' if'[[ $PATH != *asdf/bin* ]]' \
         @asdf-vm/asdf
