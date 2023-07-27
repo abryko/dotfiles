@@ -9,10 +9,15 @@ addPath() {
 }
 
 sourcePath() {
-	local p="$*"
-	[ -z "$p" ] && return
-	if [ -r "$p" ]; then
-		[[ ":$PATH:" == *":$p:"* ]] || source "$p"
+    [ "$#" -ne 2 ] && echo "sourcePath $@ [Not enough arguments]" && return
+    local checkPath="$1"
+	local sourcePath="$2"
+	[ -z "$checkPath" ] && return
+	[ -z "$sourcePath" ] && return
+	if [ -r "$sourcePath" ]; then
+		if ! [[ ":$PATH:" == *":$checkPath:"* ]]; then
+            source "$sourcePath"
+        fi
 	fi
 }
 
@@ -23,5 +28,5 @@ addPath "{{.chezmoi.homeDir }}/go/bin"
 addPath "{{.chezmoi.homeDir }}/.cargo/bin"
 addPath "${KREW_ROOT:-{{.chezmoi.homeDir }}/.krew}/bin"
 
-sourcePath "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
-sourcePath "{{.chezmoi.homeDir }}/.nix-profile/etc/profile.d/hm-session-vars.sh"
+sourcePath "/nix/var/nix/profiles/default/bin" "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
+sourcePath "{{.chezmoi.homeDir}}/.nix-profile/bin" "{{.chezmoi.homeDir}}/.nix-profile/etc/profile.d/hm-session-vars.sh"
