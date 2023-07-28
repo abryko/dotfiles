@@ -476,7 +476,7 @@ lspconfig.ltex.setup{
     require("ltex_extra").setup {
       load_langs = { "en-US", "fr" },
       init_check = true,
-      path = (lspconfig.util.find_git_ancestor(vim.api.nvim_buf_get_name(0)) or '.') .. "/.ltex",
+      path = (lspconfig.util.find_git_ancestor(vim.api.nvim_buf_get_name(0)) or '.') .. "/.ltex/",
     }
   end,
   settings = {

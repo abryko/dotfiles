@@ -69,7 +69,7 @@ cursor:
     #   - Always: Force the cursor to always blink
     blinking: On
   # Cursor blinking interval in milliseconds.
-  blink_interval: 750
+  blink_interval: 600
   # Time after which cursor stops blinking, in seconds.
   # Specifying '0' will disable timeout for blinking.
   blink_timeout: 0
