@@ -83,9 +83,8 @@ zinit lucid light-mode id-as'direnv' \
     has'direnv' for zdharma-continuum/null
 
 # Highlights
-zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
-zinit lucid light-mode for @zdharma-continuum/fast-syntax-highlighting
+zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
 zinit lucid light-mode for @zsh-users/zsh-autosuggestions
 
@@ -187,6 +186,9 @@ zinit lucid light-mode as'null' id-as'compdef-replay' \
 
 # THEME
 zinit depth=1 light-mode for romkatv/powerlevel10k
+
+# Load fast-syntax-highlighting after p10k
+zinit lucid light-mode for @zdharma-continuum/fast-syntax-highlighting
 
 # Default editor
 export EDITOR=vim
