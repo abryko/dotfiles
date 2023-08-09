@@ -13,7 +13,7 @@ export CASE_SENSITIVE="true"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=200
 export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
 export DISABLE_MAGIC_FUNCTIONS=true     # make pasting into terminal faster
-# export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 
 ### Added by Zinit's installer
@@ -87,6 +87,12 @@ zinit lucid light-mode id-as'direnv' \
 zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
 zinit lucid light-mode for @zsh-users/zsh-autosuggestions
+functions -c _atuin_search _atuin_search_orig
+function _atuin_search(){
+    _zsh_autosuggest_clear
+    _atuin_search_orig "$@"
+    _zsh_autosuggest_fetch
+}
 
 zinit lucid light-mode for \
     blockf atclone'zinit creinstall -q zsh-users/zsh-completions' atpull'%atclone' \

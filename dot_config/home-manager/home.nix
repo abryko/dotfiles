@@ -13,7 +13,7 @@
       for bin in ${pkg}/bin/*; do
        wrapped_bin=$out/bin/$(basename $bin)
        echo "#!${pkgs.runtimeShell}" > $wrapped_bin
-       echo "exec ${lib.getExe nixgl.nixGLDefault} $bin \"\$@\"" >> $wrapped_bin
+       echo "exec ${nixgl.nixGLDefault}/bin/nixGL $bin \"\$@\"" >> $wrapped_bin
        chmod +x $wrapped_bin
       done
       if [[ -e "$out/share/applications" ]]; then
@@ -86,6 +86,7 @@ in {
     bitwarden-cli
     buildah
     caddy
+    cargo
     ccls
     chezmoi
     colordiff
@@ -117,6 +118,7 @@ in {
     graphviz
     gron
     gum
+    haskell-language-server
     helmfile
     hugo
     imagemagick
@@ -163,6 +165,7 @@ in {
     rnix-lsp
     rocketchat-desktop
     rust-analyzer
+    rustc
     shellcheck
     shfmt
     shutter

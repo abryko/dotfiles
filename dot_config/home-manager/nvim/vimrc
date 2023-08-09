@@ -489,6 +489,11 @@ lspconfig.ltex.setup{
     },
   },
 }
+-- haskell
+lspconfig.hls.setup{
+  capabilities = capabilities,
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
 -- lua
 lspconfig.lua_ls.setup ({
   capabilities = capabilities,
@@ -545,13 +550,6 @@ lspconfig.nickel_ls.setup ({
 -- rust
 lspconfig.rust_analyzer.setup ({
   capabilities = capabilities,
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false,
-      }
-    }
-  }
 })
 -- vimscript
 lspconfig.vimls.setup ({
