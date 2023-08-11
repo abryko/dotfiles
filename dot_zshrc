@@ -20,7 +20,7 @@ export ZSH_AUTOSUGGEST_USE_ASYNC=1
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma-continuum/zinit)…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
+    command git clone --depth 1 https://github.com/zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -45,39 +45,39 @@ zinit lucid light-mode for \
     has'fzf' OMZP::fzf \
     OMZL::history.zsh \
     OMZL::directories.zsh \
-    romkatv/zsh-defer
+    depth'1' romkatv/zsh-defer
 
-zinit lucid light-mode has'atuin' for @ellie/atuin
+zinit depth'1' lucid light-mode has'atuin' for @ellie/atuin
 
 autoload compinit; compinit -C;
 
 # fzf-tab: has to be loaded as soon as possible
-zinit lucid light-mode for depth'1' blockf has'fzf' @Aloxaf/fzf-tab
+zinit depth'1' lucid light-mode for blockf has'fzf' @Aloxaf/fzf-tab
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 
 # Primary stuffs
-zinit lucid light-mode for \
+zinit depth'1' lucid light-mode for \
     @rupa/z \
     pick'fasd' \
         atclone'./fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install > script.zsh' \
         atpull'%atclone' run-atpull src'script.zsh' depth'1' \
         @clvv/fasd \
-    depth'1' has'fzf' \
+    has'fzf' \
         @changyuheng/fz \
-    depth'1' if'[[ $PATH != *asdf/bin* ]]' \
+    if'[[ $PATH != *asdf/bin* ]]' \
         @asdf-vm/asdf
 
 
 # Direnv
-zinit lucid light-mode id-as'direnv' \
+zinit depth'1' lucid light-mode id-as'direnv' \
     atclone'direnv hook zsh > zhook.zsh' \
     atpull'%atclone' run-atpull pick'zhook.zsh' nocompile \
     has'direnv' for zdharma-continuum/null
@@ -86,7 +86,7 @@ zinit lucid light-mode id-as'direnv' \
 
 zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
-zinit lucid light-mode for @zsh-users/zsh-autosuggestions
+zinit depth'1' lucid light-mode for @zsh-users/zsh-autosuggestions
 functions -c _atuin_search _atuin_search_orig
 function _atuin_search(){
     _zsh_autosuggest_clear
@@ -94,7 +94,7 @@ function _atuin_search(){
     _zsh_autosuggest_fetch
 }
 
-zinit lucid light-mode for \
+zinit depth'1' lucid light-mode for \
     blockf atclone'zinit creinstall -q zsh-users/zsh-completions' atpull'%atclone' \
         @zsh-users/zsh-completions
 
@@ -117,84 +117,84 @@ zinit lucid light-mode for \
     has'pip' as'completion' OMZP::pip/_pip \
     has'pip' OMZP::pip \
     OMZP::colored-man-pages \
-    has'nix' depth=1 chisui/zsh-nix-shell \
-    has'curl' depth=1 as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
+    has'nix' depth'1' chisui/zsh-nix-shell \
+    has'curl' depth'1' as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
     OMZP::command-not-found
 
 # docker-completion
-zinit lucid light-mode as'completion' id-as'docker-completion' \
+zinit depth'1' lucid light-mode as'completion' id-as'docker-completion' \
     atclone'docker completion zsh > _docker' \
     atpull'%atclone' run-atpull nocompile \
     has'docker' for zdharma-continuum/null
 
 # gopass-completion
-zinit lucid light-mode id-as'gopass-completion' \
+zinit depth'1' lucid light-mode id-as'gopass-completion' \
     atclone'gopass completion bash > script.zsh' \
     atpull'%atclone' run-atpull nocompile \
     has'gopass' for zdharma-continuum/null
 
 # fly-completion
-zinit lucid light-mode id-as'fly-completion' \
+zinit depth'1' lucid light-mode id-as'fly-completion' \
     atclone'fly completion --shell bash > script.zsh' \
     atpull'%atclone' run-atpull pick'script.zsh' nocompile \
     has'fly' for zdharma-continuum/null
 
 # bitwarden-completion
-zinit lucid light-mode as'completion' id-as'bitwarden-completion' \
+zinit depth'1' lucid light-mode as'completion' id-as'bitwarden-completion' \
     atclone'bw completion --shell zsh > _bw' \
     atpull'%atclone' run-atpull nocompile \
     has'bw' for zdharma-continuum/null
 
 # kind-completion
-zinit lucid light-mode as'completion' id-as'kind-completion' \
+zinit depth'1' lucid light-mode as'completion' id-as'kind-completion' \
     atclone'kind completion zsh > _kind' \
     atpull'%atclone' run-atpull nocompile \
     has'kind' for zdharma-continuum/null
 
 # velero-completion
-zinit lucid light-mode as'completion' id-as'velero-completion' \
+zinit depth'1' lucid light-mode as'completion' id-as'velero-completion' \
     atclone'velero completion zsh > _velero' \
     atpull'%atclone' run-atpull nocompile \
     has'velero' for zdharma-continuum/null
 
 # minikube-completion
-zinit lucid light-mode as'completion' id-as'minikube-completion' \
+zinit depth'1' lucid light-mode as'completion' id-as'minikube-completion' \
     atclone'minikube completion zsh > _minikube' \
     atpull'%atclone' run-atpull nocompile \
     has'minikube' for zdharma-continuum/null
 
 # aws-completion
-zinit lucid light-mode as'completion' id-as'aws-completion' \
+zinit depth'1' lucid light-mode as'completion' id-as'aws-completion' \
     atload'complete -C "aws_completer" aws' nocompile \
     has'aws' for zdharma-continuum/null
 
 # Fetching config from local zsh installation
-zinit lucid light-mode id-as'zsh-default-completions' \
+zinit depth'1' lucid light-mode id-as'zsh-default-completions' \
     atclone'find /usr/share/zsh/vendor-completions -name "_*" -exec install -m 0644 -t . {} \+' \
     atpull'%atclone' run-atpull nocompile \
     has'nix' for zdharma-continuum/null
 
 # Bunch of completions from nix installed packages in case they are missing
-zinit lucid light-mode id-as'completions' \
+zinit depth'1' lucid light-mode id-as'completions' \
     atclone'find ~/.nix-profile/share -name "_*" -exec install -m 0644 -t . {} \+' \
     atpull'%atclone' run-atpull nocompile \
     has'nix' for zdharma-continuum/null
 
 # nix additional completions
-zinit lucid light-mode for depth=1 has'nix' spwhitt/nix-zsh-completions
+zinit depth'1' lucid light-mode for has'nix' spwhitt/nix-zsh-completions
 
 
 # Replay all compdef
 # Fix insecure directories when sudo https://github.com/zdharma-continuum/zinit/issues/357
 #[ -n "$SUDO_UID" ] && fpath=(${fpath[@]/$ZINIT[HOME_DIR]*})
-zinit lucid light-mode as'null' id-as'compdef-replay' \
+zinit depth'1' lucid light-mode as'null' id-as'compdef-replay' \
     atload'zicdreplay' for zdharma-continuum/null
 
 # THEME
-zinit depth=1 light-mode for romkatv/powerlevel10k
+zinit depth'1' light-mode for romkatv/powerlevel10k
 
 # Load fast-syntax-highlighting after p10k
-zinit lucid light-mode for @zdharma-continuum/fast-syntax-highlighting
+zinit depth'1' lucid light-mode for @zdharma-continuum/fast-syntax-highlighting
 
 # Default editor
 export EDITOR=vim
