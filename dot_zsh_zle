@@ -1,4 +1,5 @@
 autoload -Uz add-zle-hook-widget
+autoload -Uz bracketed-paste-magic
 
 # ZSH conf
 # jump word better
@@ -28,12 +29,9 @@ function _forward_full_word(){
   zle forward-word
 }
 
-function reset_prompt(){
-    zle reset-prompt
-}
-
 # Ensure autosuggestion are colored properly
-add-zle-hook-widget line-pre-redraw reset_prompt
+ _zsh_autosuggest_disable
+add-zle-hook-widget line-pre-redraw _zsh_autosuggest_fetch
 
 #zle declaration
 zle -N _backward_delete_full_word
@@ -46,20 +44,3 @@ bindkey '^ ' _forward_full_word
 bindkey '^u' backward-kill-line
 bindkey '^[^?' _backward_kill_lesser_word
 bindkey '^H' _backward_kill_less_word
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
-
-# Autosuggestion slow
-# This speeds up pasting w/ autosuggest
-# https://github.com/zsh-users/zsh-autosuggestions/issues/238
-pasteinit() {
-  OLD_SELF_INSERT=${${(s.:.)widgets[self-insert]}[2,3]}
-  zle -N self-insert url-quote-magic # I wonder if you'd need `.url-quote-magic`?
-}
-
-pastefinish() {
-  zle -N self-insert $OLD_SELF_INSERT
-}
-zstyle :bracketed-paste-magic paste-init pasteinit
-zstyle :bracketed-paste-magic paste-finish pastefinish
-ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
-
