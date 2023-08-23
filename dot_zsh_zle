@@ -1,5 +1,6 @@
 autoload -Uz add-zle-hook-widget
-autoload -Uz bracketed-paste-magic
+# autoload -Uz bracketed-paste-magic
+# zle -N bracketed-paste bracketed-paste-magic
 
 # ZSH conf
 # jump word better
@@ -30,8 +31,7 @@ function _forward_full_word(){
 }
 
 # Ensure autosuggestion are colored properly
- _zsh_autosuggest_disable
-add-zle-hook-widget line-pre-redraw _zsh_autosuggest_fetch
+add-zle-hook-widget line-pre-redraw reset-prompt
 
 #zle declaration
 zle -N _backward_delete_full_word
@@ -44,3 +44,4 @@ bindkey '^ ' _forward_full_word
 bindkey '^u' backward-kill-line
 bindkey '^[^?' _backward_kill_lesser_word
 bindkey '^H' _backward_kill_less_word
+bindkey '^[[Z' fzf-tab-complete

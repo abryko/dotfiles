@@ -10,9 +10,6 @@ export DIRENV_WARN_TIMEOUT=40s
 export ZLE_RPROMPT_INDENT=0
 export ZSH_DISABLE_COMPFIX=true
 export CASE_SENSITIVE="true"
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=200
-export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 
 ### Added by Zinit's installer
@@ -86,7 +83,10 @@ zinit depth'1' lucid light-mode id-as'direnv' \
 zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
 zinit depth'1' lucid light-mode for @zsh-users/zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=200
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
+unset ZSH_AUTOSUGGEST_USE_ASYNC
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 functions -c _atuin_search _atuin_search_orig
 function _atuin_search(){
     _zsh_autosuggest_clear
