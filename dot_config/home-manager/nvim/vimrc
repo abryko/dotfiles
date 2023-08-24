@@ -290,6 +290,8 @@ require('nvim-treesitter.configs').setup({
         ["]F"] = "@function.outer",
         ["]M"] = "@function.outer",
         ["]P"] = "@parameter.outer",
+        ["]S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+        ["]Z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
       },
       goto_previous_start = {
         ["[["] = "@class.outer",
@@ -299,6 +301,8 @@ require('nvim-treesitter.configs').setup({
         ["[f"] = "@function.outer",
         ["[m"] = "@function.outer",
         ["[p"] = "@parameter.inner",
+        ["[s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+        ["[z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
       },
       goto_previous_end = {
         ["[B"] = "@block.outer",
@@ -307,6 +311,8 @@ require('nvim-treesitter.configs').setup({
         ["[F"] = "@function.outer",
         ["[M"] = "@function.outer",
         ["[P"] = "@parameter.outer",
+        ["[S"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+        ["[Z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
         ["[]"] = "@class.outer",
       },
       -- Below will go to either the start or the end, whichever is closer.
