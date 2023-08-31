@@ -41,6 +41,7 @@
     };
     nixgl = nixGL.packages.${system};
   in {
+    legacyPackages.${system} = pkgs;
     homeConfigurations."xmaillard" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 

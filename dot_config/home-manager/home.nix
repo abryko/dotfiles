@@ -79,6 +79,7 @@ in {
     alejandra
     asciinema
     authy
+    bashInteractive
     bat
     bazel
     bazelisk
@@ -305,18 +306,18 @@ in {
   };
 
   programs.starship = {
-    package = pkgs.starship;
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = false;
     settings = {
       add_newline = true;
-      format = "$all";
+      format = lib.concatStrings [
+        "$all"
+      ];
     };
   };
 
   programs.fzf = {
-    package = pkgs.fzf;
     enable = true;
     enableBashIntegration = true;
     enableFishIntegration = false;
@@ -325,7 +326,6 @@ in {
   };
 
   programs.gpg = {
-    package = pkgs.gnupg;
     enable = true;
     mutableKeys = true;
     mutableTrust = true;
@@ -360,18 +360,15 @@ in {
 
   programs.htop = {
     enable = true;
-    package = pkgs.htop;
   };
   programs.jq = {
     enable = true;
-    package = pkgs.jq;
   };
   programs.less.enable = true;
   programs.man.enable = true;
   programs.tealdeer.enable = true;
   programs.tmux = {
     enable = true;
-    package = pkgs.tmux;
   };
 
   programs.direnv = {
@@ -382,7 +379,6 @@ in {
   };
 
   programs.atuin = {
-    package = pkgs.atuin;
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = false;
@@ -396,7 +392,6 @@ in {
 
   programs.zellij = {
     enable = true;
-    package = pkgs.zellij;
   };
 
   #programs.zsh = {
@@ -488,7 +483,6 @@ in {
 
   services.redshift = {
     enable = true;
-    package = pkgs.redshift;
     latitude = 48.863049;
     longitude = 2.348856;
     temperature.day = 6000;

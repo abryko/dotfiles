@@ -447,13 +447,18 @@ lspconfig.denols.setup ({
 -- Linters integration
 lspconfig.diagnosticls.setup ({
   capabilities = capabilities,
-  filetypes = { 'markdown', 'sh' },
+  filetypes = { 'json', 'markdown', 'sh' },
   init_options = {
     formatFiletypes = {
+      json = 'jq',
       sh = 'shfmt',
       markdown = 'mdformat',
     },
     formatters = {
+      jq = {
+        command = 'jq',
+        args = {},
+      },
       shfmt = {
         command = 'shfmt',
         args = {'-i', '2', '-bn', '-ci', '-sr'},

@@ -82,11 +82,12 @@ zinit depth'1' lucid light-mode id-as'direnv' \
 
 zinit lucid light-mode for OMZP::sudo/sudo.plugin.zsh
 
+ZSH_AUTOSUGGEST_STRATEGY="history"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=200
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
 zinit depth'1' lucid light-mode for @zsh-users/zsh-autosuggestions
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=200
-export ZSH_AUTOSUGGEST_MANUAL_REBIND=1  # make prompt faster
 unset ZSH_AUTOSUGGEST_USE_ASYNC
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 functions -c _atuin_search _atuin_search_orig
 function _atuin_search(){
     _zsh_autosuggest_clear
@@ -198,6 +199,7 @@ zinit depth'1' lucid light-mode for @zdharma-continuum/fast-syntax-highlighting
 
 # Default editor
 export EDITOR=vim
+export VISUAL=vim
 export SUDO_EDITOR=vim
 
 # Load add-zsh-hook

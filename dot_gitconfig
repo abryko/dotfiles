@@ -47,3 +47,8 @@
 
 [alias]
 	jdiff = difftool -t jsondiff -y
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
