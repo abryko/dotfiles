@@ -233,7 +233,7 @@ in {
         indent_size = 4;
         tab_width = 4;
       };
-      "*.{yaml,yml}" = {
+      "*.{json,yaml,yml}" = {
         indent_size = 2;
       };
       "*.sh" = {

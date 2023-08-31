@@ -9,6 +9,9 @@ set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 set number
 set relativenumber
 
+" Allways try to keep 3 lines on screen above/under the cursor
+set scrolloff=3
+
 " No insert mode while using mouse
 set mouse=r
 
