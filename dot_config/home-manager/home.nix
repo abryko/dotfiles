@@ -99,6 +99,7 @@ in {
     ccls
     chezmoi
     colordiff
+    comma
     cosign
     crane
     cue
@@ -467,6 +468,12 @@ in {
         };
       }
     ];
+  };
+
+  programs.nix-index = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
   };
 
   programs.bash = {

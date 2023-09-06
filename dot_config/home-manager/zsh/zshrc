@@ -1,19 +1,5 @@
 #zmodload zsh/zprof
 
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma-continuum/zinit)…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone --depth 1 https://github.com/zdharma-continuum/zinit.git "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-
 # Highlights
 unset ZSH_AUTOSUGGEST_USE_ASYNC
 functions -c _atuin_search _atuin_search_orig
@@ -25,72 +11,6 @@ function _atuin_search(){
 
 # ZLE Bindings
 [[ -r ~/.zsh_zle ]] && source ~/.zsh_zle
-
-# Completions
-zinit lucid light-mode for \
-    has'vagrant' as'completion' OMZP::vagrant/_vagrant \
-    has'docker-compose' as'completion' OMZP::docker-compose/_docker-compose \
-    has'terraform' OMZP::terraform \
-    has'vault' as'completion' OMZP::vault/_vault \
-    has'docker-compose' OMZP::docker-compose \
-    has'pip' as'completion' OMZP::pip/_pip \
-    has'pip' OMZP::pip \
-    has'curl' depth'1' as'completion' atclone'scripts/completion.pl --shell zsh > _curl' atpull'%atclone' run-atpull nocompile curl/curl \
-    OMZP::command-not-found
-
-# docker-completion
-zinit depth'1' lucid light-mode as'completion' id-as'docker-completion' \
-    atclone'docker completion zsh > _docker' \
-    atpull'%atclone' run-atpull nocompile \
-    has'docker' for zdharma-continuum/null
-
-# gopass-completion
-zinit depth'1' lucid light-mode id-as'gopass-completion' \
-    atclone'gopass completion bash > script.zsh' \
-    atpull'%atclone' run-atpull nocompile \
-    has'gopass' for zdharma-continuum/null
-
-# bitwarden-completion
-zinit depth'1' lucid light-mode as'completion' id-as'bitwarden-completion' \
-    atclone'bw completion --shell zsh > _bw' \
-    atpull'%atclone' run-atpull nocompile \
-    has'bw' for zdharma-continuum/null
-
-# kind-completion
-zinit depth'1' lucid light-mode as'completion' id-as'kind-completion' \
-    atclone'kind completion zsh > _kind' \
-    atpull'%atclone' run-atpull nocompile \
-    has'kind' for zdharma-continuum/null
-
-# velero-completion
-zinit depth'1' lucid light-mode as'completion' id-as'velero-completion' \
-    atclone'velero completion zsh > _velero' \
-    atpull'%atclone' run-atpull nocompile \
-    has'velero' for zdharma-continuum/null
-
-# minikube-completion
-zinit depth'1' lucid light-mode as'completion' id-as'minikube-completion' \
-    atclone'minikube completion zsh > _minikube' \
-    atpull'%atclone' run-atpull nocompile \
-    has'minikube' for zdharma-continuum/null
-
-# aws-completion
-zinit depth'1' lucid light-mode as'completion' id-as'aws-completion' \
-    atload'complete -C "aws_completer" aws' nocompile \
-    has'aws' for zdharma-continuum/null
-
-# Fetching config from local zsh installation
-zinit depth'1' lucid light-mode id-as'zsh-default-completions' \
-    atclone'find /usr/share/zsh/vendor-completions -name "_*" -exec install -m 0644 -t . {} \+' \
-    atpull'%atclone' run-atpull nocompile \
-    has'nix' for zdharma-continuum/null
-
-# Replay all compdef
-# Fix insecure directories when sudo https://github.com/zdharma-continuum/zinit/issues/357
-#[ -n "$SUDO_UID" ] && fpath=(${fpath[@]/$ZINIT[HOME_DIR]*})
-zinit depth'1' lucid light-mode as'null' id-as'compdef-replay' \
-    atload'zicdreplay' for zdharma-continuum/null
-
 
 # Load add-zsh-hook
 autoload -Uz add-zsh-hook

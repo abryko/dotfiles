@@ -63,6 +63,22 @@
         file = "share/oh-my-zsh/lib/directories.zsh";
       }
       {
+        name = "docker-compose";
+        src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/docker-compose";
+      }
+      {
+        name = "terraform";
+        src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/terraform";
+      }
+      {
+        name = "vault";
+        src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/vault";
+      }
+      {
+        name = "pip";
+        src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/pip";
+      }
+      {
         name = "completion";
         src = pkgs.oh-my-zsh;
         file = "share/oh-my-zsh/lib/completion.zsh";
