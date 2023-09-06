@@ -51,7 +51,7 @@ alias todo='todo.sh'
 alias cm='chezmoi'
 alias e='vim'
 
-export FZF_DEFAULT_OPTS="--bind ctrl-t:select-all,ctrl-d:deselect-all"
+export FZF_DEFAULT_OPTS="--bind tab:down,btab:up,ctrl-space:toggle,ctrl-t:select-all,ctrl-d:deselect-all"
 
 # Firefox log SSL KEYS (for Wireshark)
 #export SSLKEYLOGFILE=~/ssl-keys.log

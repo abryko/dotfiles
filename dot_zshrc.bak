@@ -10,7 +10,7 @@ export DIRENV_WARN_TIMEOUT=40s
 export ZLE_RPROMPT_INDENT=0
 export ZSH_DISABLE_COMPFIX=true
 export CASE_SENSITIVE="true"
-
+COMPLETION_WAITING_DOTS=true
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -41,14 +41,13 @@ zinit lucid light-mode for \
     has'fzf' OMZP::fzf \
     OMZL::history.zsh \
     OMZL::directories.zsh \
+    OMZL::completion.zsh \
     depth'1' romkatv/zsh-defer
 
 zinit depth'1' lucid light-mode has'atuin' for @ellie/atuin
 
-autoload compinit; compinit -C;
 
-# fzf-tab: has to be loaded as soon as possible
-zinit depth'1' lucid light-mode for blockf has'fzf' @Aloxaf/fzf-tab
+autoload compinit; compinit -C;
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -65,11 +64,17 @@ zinit depth'1' lucid light-mode for \
     pick'fasd' \
         atclone'./fasd --init zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install > script.zsh' \
         atpull'%atclone' run-atpull src'script.zsh' depth'1' \
-        @clvv/fasd \
+        @whjvenyl/fasd \
     has'fzf' \
         @changyuheng/fz \
     if'[[ $PATH != *asdf/bin* ]]' \
         @asdf-vm/asdf
+
+
+# fzf tab completion
+zinit depth'1' lucid light-mode for blockf has'fzf' @Aloxaf/fzf-tab
+bindkey '^I' fzf-tab-complete
+bindkey '^[[Z' fzf-tab-complete
 
 
 # Direnv

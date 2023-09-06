@@ -1,0 +1,22 @@
+skip_global_compinit=1
+
+ addPath() {
+ 	local p="$*"
+ 	[ -z "$p" ] && return
+ 	if [ -d "$p" ]; then
+ 	   [[ ":$PATH:" == *":$p:"* ]] || export PATH="${p}${PATH+:$PATH}"
+ 	fi
+ }
+
+sourcePath() {
+    [ "$#" -ne 2 ] && echo "sourcePath $@ [Not enough arguments]" && return
+    local checkPath="$1"
+	local sourcePath="$2"
+	[ -z "$checkPath" ] && return
+	[ -z "$sourcePath" ] && return
+	if [ -r "$sourcePath" ]; then
+		if ! [[ ":$PATH:" == *":$checkPath:"* ]]; then
+            source "$sourcePath"
+        fi
+	fi
+}

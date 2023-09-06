@@ -1,0 +1,86 @@
+{
+    "atuin": {
+        "branch": "main",
+        "description": "✨ Magical shell history",
+        "homepage": "https://atuin.sh",
+        "owner": "ellie",
+        "repo": "atuin",
+        "rev": "6d3b14b123e287be0a06dd7e68dacca507480b94",
+        "sha256": "14m0pcgxyg48vr4yx9lkqy1xkhawj2v8chxi0igs3s6qchrdrjbb",
+        "type": "tarball",
+        "url": "https://github.com/ellie/atuin/archive/6d3b14b123e287be0a06dd7e68dacca507480b94.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "fasd": {
+        "branch": "master",
+        "description": "Command-line productivity booster, offers quick access to files and directories, inspired by autojump, z and v.",
+        "homepage": "",
+        "owner": "whjvenyl",
+        "repo": "fasd",
+        "rev": "bc07c8b446e35b6ff6511c84a8ce9c1f17c5f1a2",
+        "sha256": "1jjhwzks7zi1a0xhmkkwdzrf1pmajjqwskm01i0lcf7n1dmrrgqv",
+        "type": "tarball",
+        "url": "https://github.com/whjvenyl/fasd/archive/bc07c8b446e35b6ff6511c84a8ce9c1f17c5f1a2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "fz": {
+        "branch": "master",
+        "description": "Cli shell plugin, the missing fuzzy tab completion feature for the z jump around command.",
+        "homepage": "",
+        "owner": "changyuheng",
+        "repo": "fz",
+        "rev": "7b4e215f5887b24e1ef725ffdb89f3479e913875",
+        "sha256": "18zi76i6syasc69p6nfc1skbyxwyy8yr4iz28d8w7cz63q93iq8z",
+        "type": "tarball",
+        "url": "https://github.com/changyuheng/fz/archive/7b4e215f5887b24e1ef725ffdb89f3479e913875.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "fzf-tab-completion": {
+        "branch": "master",
+        "description": "Tab completion using fzf",
+        "homepage": "",
+        "owner": "lincheney",
+        "repo": "fzf-tab-completion",
+        "rev": "1d596ebea90e7fab18892ceb7af013794aad5c4d",
+        "sha256": "1za6mblkq3kbja3sadgakd9jih99qmm2rf8a0jap4rp0glgnwiay",
+        "type": "tarball",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/1d596ebea90e7fab18892ceb7af013794aad5c4d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "z": {
+        "branch": "master",
+        "description": "z - jump around",
+        "homepage": "",
+        "owner": "rupa",
+        "repo": "z",
+        "rev": "b82ac78a2d4457d2ca09973332638f123f065fd1",
+        "sha256": "0phk9lswwxsypchb11qsnxy1pv5xg1zkrqj8im6x2icma63hfcz2",
+        "type": "tarball",
+        "url": "https://github.com/rupa/z/archive/b82ac78a2d4457d2ca09973332638f123f065fd1.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "zsh-autosuggestions": {
+        "branch": "master",
+        "description": "Fish-like autosuggestions for zsh",
+        "homepage": null,
+        "owner": "zsh-users",
+        "repo": "zsh-autosuggestions",
+        "rev": "39aa7bed3a477af1eaa3aa72bcb6e6e616aa7dc0",
+        "sha256": "1a5zc24jyi0h8z4j8ry4yi4552w8ij2n7fiw6xwl8lzl1935cc7n",
+        "type": "tarball",
+        "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/39aa7bed3a477af1eaa3aa72bcb6e6e616aa7dc0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "zsh-defer": {
+        "branch": "master",
+        "description": "Deferred execution of Zsh commands",
+        "homepage": "",
+        "owner": "romkatv",
+        "repo": "zsh-defer",
+        "rev": "57a6650ff262f577278275ddf11139673e01e471",
+        "sha256": "1dvh0w5yg5dvki1h3d5bc1rp9pmn0zwjrv3qv2q22kqvc15hidzy",
+        "type": "tarball",
+        "url": "https://github.com/romkatv/zsh-defer/archive/57a6650ff262f577278275ddf11139673e01e471.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

@@ -1,6 +1,7 @@
 {
   pkgs,
   nixgl,
+  config,
   ...
 }: let
   lib = pkgs.lib;
@@ -52,6 +53,7 @@ in {
     ./tilix/default.nix
     ./gnome-terminal/default.nix
     ./nvim/default.nix
+    ./zsh
   ];
 
   # Let Home Manager install and manage itself.
@@ -61,6 +63,12 @@ in {
   # paths it should manage.
   home.username = "xmaillard";
   home.homeDirectory = "/home/xmaillard";
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.cargo/bin"
+    "${config.home.homeDirectory}/.krew/bin"
+    "${config.home.homeDirectory}/.local/bin"
+    "${config.home.homeDirectory}/go/bin"
+  ];
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
@@ -210,10 +218,14 @@ in {
   };
 
   home.sessionVariables = {
-    LANGUAGE = "en_US.UTF-8";
-    LANG = "en_US.UTF-8";
-    LC_ALL = "C.UTF-8";
+    EDITOR = "vim";
+    SUDO_EDITOR = "vim";
+    VISUAL = "vim";
+    GOPATH = "${config.home.homeDirectory}/go";
     GTK_THEME = "Mint-Y-Dark-Aqua";
+    LANG = "en_US.UTF-8";
+    LANGUAGE = "en_US.UTF-8";
+    LC_ALL = "C.UTF-8";
   };
 
   fonts.fontconfig.enable = true;
@@ -374,7 +386,7 @@ in {
   programs.direnv = {
     enable = true;
     enableBashIntegration = true;
-    enableZshIntegration = false;
+    enableZshIntegration = true;
     nix-direnv.enable = true;
   };
 
