@@ -99,7 +99,6 @@ in {
     ccls
     chezmoi
     colordiff
-    comma
     cosign
     crane
     cue
@@ -475,6 +474,9 @@ in {
     enableBashIntegration = true;
     enableZshIntegration = true;
   };
+
+  # Depends on nix-index-database module
+  programs.nix-index-database.comma.enable = true;
 
   programs.bash = {
     enable = true;

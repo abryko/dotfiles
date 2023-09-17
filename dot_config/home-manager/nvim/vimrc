@@ -12,8 +12,8 @@ set number
 " Always try to keep 2 lines on screen above/under the cursor
 set scrolloff=2
 
-" Use mouse to move cursor
-set mouse=a
+" Moving cursor with mouse in insert mode
+set mouse=i
 
 " Indentation Defaults
 set tabstop=4

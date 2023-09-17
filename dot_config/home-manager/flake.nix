@@ -3,13 +3,17 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixGL = {
       url = "github:guibou/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -31,6 +35,7 @@
     nixpkgs,
     home-manager,
     nixGL,
+    nix-index-database,
     ...
   }: let
     system = "x86_64-linux";
@@ -45,7 +50,10 @@
     homeConfigurations."xmaillard" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
 
-      modules = [./home.nix];
+      modules = [
+        ./home.nix
+        nix-index-database.hmModules.nix-index
+      ];
 
       extraSpecialArgs = {
         inherit nixgl;
