@@ -36,6 +36,9 @@ less_termcap[us]="$(print -P -- ${FX[underline]}${FG[208]})"
 less_termcap[me]="$(print -P -- ${FX[reset]})"
 less_termcap[ue]="$(print -P -- ${FX[reset]})"
 
+# fzf-tab preview for cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
+
 # Comments in shell
 setopt interactivecomments
 

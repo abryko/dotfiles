@@ -72,7 +72,6 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    # tilix
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     (nixGLWrap alacritty)
@@ -110,7 +109,6 @@ in {
     delta
     delve
     deno
-    direnv
     discord
     dive
     fd
@@ -169,6 +167,7 @@ in {
     podman
     powertop
     pre-commit
+    pyright
     rclone
     ripgrep
     rnix-lsp
@@ -331,8 +330,8 @@ in {
 
   programs.fzf = {
     enable = true;
-    enableBashIntegration = true;
-    enableFishIntegration = false;
+    # atuin is used instead
+    enableBashIntegration = false;
     enableZshIntegration = false;
     tmux.enableShellIntegration = true;
   };
@@ -388,6 +387,13 @@ in {
     enableBashIntegration = true;
     enableZshIntegration = true;
     nix-direnv.enable = true;
+    config = {
+      global = {
+        warn_timeout = "45s";
+        disable_stdin = true;
+        load_dotenv = true;
+      };
+    };
   };
 
   programs.atuin = {
@@ -406,26 +412,6 @@ in {
     enable = true;
   };
 
-  #programs.zsh = {
-  #  enable = true;
-  #  enableAutosuggestions = true;
-  #  enableCompletion = true;
-  #  enableSyntaxHighlighting = true;
-  #  enableVteIntegration = true;
-  #  defaultKeymap = "vicmd";
-  #  envExtra = builtins.readFile ./zsh/zshenv;
-  #  history = {
-  #    expireDuplicatesFirst = true;
-  #    extended = true;
-  #    ignoreDups = true;
-  #    ignoreSpace = true;
-  #    save = 60000;
-  #    share = true;
-  #    size = 60000;
-  #  };
-  #  initExtra = builtins.readFile ./zsh/zshrc;
-  #};
-
   programs.fish = {
     enable = true;
     shellAliases = defaultShellAliases;
@@ -439,15 +425,6 @@ in {
           sha256 = "0c5i7sdrsp0q3vbziqzdyqn4fmp235ax4mn4zslrswvn8g3fvdyh";
         };
       }
-      #{
-      #  name = "fzf-fish";
-      #  src = pkgs.fetchFromGitHub {
-      #    owner = "PatrickF1";
-      #    repo = "fzf.fish";
-      #    rev = "175222b9bd79e589da55972b2cd6686b94c6325b";
-      #    sha256 = "sha256-aou6UYE6gjLK8J0yXNTFA9yc9Lv8F7ytzBDSmP2K6Sg";
-      #  };
-      #}
       {
         name = "fasd";
         src = pkgs.fetchFromGitHub {

@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "6d3b14b123e287be0a06dd7e68dacca507480b94",
-        "sha256": "14m0pcgxyg48vr4yx9lkqy1xkhawj2v8chxi0igs3s6qchrdrjbb",
+        "rev": "351b3e8a57c9e0143b7b6f3ed2160dcdce00225e",
+        "sha256": "1fqfmicv91qllr0gxkq7wvcs0vwvvfbxd7c5cck7jifb33969pzz",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/6d3b14b123e287be0a06dd7e68dacca507480b94.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/351b3e8a57c9e0143b7b6f3ed2160dcdce00225e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "1d596ebea90e7fab18892ceb7af013794aad5c4d",
-        "sha256": "1za6mblkq3kbja3sadgakd9jih99qmm2rf8a0jap4rp0glgnwiay",
+        "rev": "27edd88039357717724210d02758168d695f98d6",
+        "sha256": "0kd9s5a8l62d9zklryxvgvmi707bnkadksr0q1fjrsdqphkrmmxi",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/1d596ebea90e7fab18892ceb7af013794aad5c4d.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/27edd88039357717724210d02758168d695f98d6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "z": {
@@ -59,16 +59,28 @@
         "url": "https://github.com/rupa/z/archive/b82ac78a2d4457d2ca09973332638f123f065fd1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "z-lua": {
+        "branch": "master",
+        "description": ":zap: A new cd command that helps you navigate faster by learning your habits.",
+        "homepage": "",
+        "owner": "skywind3000",
+        "repo": "z.lua",
+        "rev": "7f2bfcbfc1e5f7572dd436a5a9b9e42b56a8efd0",
+        "sha256": "10rm4491qpjg0szn0dl6vr42gkbidsm2j5zsydaqz3qzg252x111",
+        "type": "tarball",
+        "url": "https://github.com/skywind3000/z.lua/archive/7f2bfcbfc1e5f7572dd436a5a9b9e42b56a8efd0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "zsh-autosuggestions": {
         "branch": "master",
         "description": "Fish-like autosuggestions for zsh",
         "homepage": null,
         "owner": "zsh-users",
         "repo": "zsh-autosuggestions",
-        "rev": "39aa7bed3a477af1eaa3aa72bcb6e6e616aa7dc0",
-        "sha256": "1a5zc24jyi0h8z4j8ry4yi4552w8ij2n7fiw6xwl8lzl1935cc7n",
+        "rev": "c3d4e576c9c86eac62884bd47c01f6faed043fc5",
+        "sha256": "1m8yawj7skbjw0c5ym59r1y88klhjl6abvbwzy6b1xyx3vfb7qh7",
         "type": "tarball",
-        "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/39aa7bed3a477af1eaa3aa72bcb6e6e616aa7dc0.tar.gz",
+        "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/c3d4e576c9c86eac62884bd47c01f6faed043fc5.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-defer": {

@@ -44,5 +44,6 @@ bindkey '^ ' _forward_full_word
 bindkey '^u' backward-kill-line
 bindkey '^[^?' _backward_kill_lesser_word
 bindkey '^H' _backward_kill_less_word
-bindkey '^I' fzf-tab-complete
-bindkey '^[[Z' fzf-tab-complete
+
+# Bind TAB bind (completion) to SHIFT + TAB
+bindkey '^[[Z' "$(bindkey '^I' | cut -d' ' -f2)"

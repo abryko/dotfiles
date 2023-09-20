@@ -561,6 +561,10 @@ lspconfig.nickel_ls.setup ({
 -- lspconfig.nixd.setup ({
 --   capabilities = capabilities,
 -- })
+-- python
+lspconfig.pyright.setup ({
+  capabilities = capabilities,
+})
 -- rust
 lspconfig.rust_analyzer.setup ({
   capabilities = capabilities,

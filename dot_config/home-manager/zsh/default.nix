@@ -1,4 +1,5 @@
 {
+  lib,
   pkgs,
   config,
   ...
@@ -10,7 +11,6 @@
     localVariables = {
       CASE_SENSITIVE = "true";
       COMPLETION_WAITING_DOTS = true;
-      DIRENV_WARN_TIMEOUT = "40s";
       SHELL = "zsh";
       ZLE_RPROMPT_INDENT = "0";
       ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE = 200;
@@ -18,6 +18,9 @@
       ZSH_AUTOSUGGEST_MANUAL_REBIND = 1;
       ZSH_AUTOSUGGEST_STRATEGY = "history";
       ZSH_DISABLE_COMPFIX = true;
+      FZ_HISTORY_CD_CMD = "_zlua";
+      ZLUA_EXEC = lib.getExe' pkgs.lua "lua";
+      _FASD_INIT_OPTS = "zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install";
     };
     enableAutosuggestions = false;
     enableCompletion = true;
@@ -107,20 +110,6 @@
         file = "fasd.plugin.zsh";
       }
       {
-        name = "z";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.z) owner repo rev sha256;
-        };
-        file = "z.sh";
-      }
-      {
-        name = "fz";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.fz) owner repo rev sha256;
-        };
-        file = "fz.sh";
-      }
-      {
         name = "cp";
         src = pkgs.oh-my-zsh;
         file = "share/oh-my-zsh/plugins/cp/cp.plugin.zsh";
@@ -161,6 +150,20 @@
         name = "fzf-tab";
         src = pkgs.zsh-fzf-tab;
         file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+      {
+        name = "z-lua";
+        src = pkgs.fetchFromGitHub {
+          inherit (sources.z-lua) owner repo rev sha256;
+        };
+        file = "z.lua.plugin.zsh";
+      }
+      {
+        name = "fz";
+        src = pkgs.fetchFromGitHub {
+          inherit (sources.fz) owner repo rev sha256;
+        };
+        file = "fz.sh";
       }
       {
         name = "sudo";
