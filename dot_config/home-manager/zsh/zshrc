@@ -48,6 +48,7 @@ setopt interactivecomments
 # Include dotfiles in completion
 setopt globdots
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# Disabling special-dirs completion (from OMZ completion)
+zstyle ':completion:*' special-dirs false
+
 #zprof

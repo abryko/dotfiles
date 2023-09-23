@@ -54,7 +54,12 @@ alias todo='todo.sh'
 alias cm='chezmoi'
 alias e='vim'
 
-export FZF_DEFAULT_OPTS="--cycle --layout=reverse --height=~25 --bind tab:down,btab:up,ctrl-space:toggle,ctrl-t:select-all,ctrl-d:deselect-all"
+# FZF height for fzf-tab
+export FZF_TMUX_HEIGHT="~22"
+
+export FZF_DEFAULT_OPTS="--cycle --layout=reverse --height=${FZF_TMUX_HEIGHT} --bind tab:down,btab:up,ctrl-space:toggle,ctrl-t:select-all,ctrl-d:deselect-all"
+
+
 export COMMA_PICKER=fzf
 
 # Firefox log SSL KEYS (for Wireshark)
