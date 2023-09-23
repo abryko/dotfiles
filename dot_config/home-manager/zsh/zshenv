@@ -1,22 +1,33 @@
 skip_global_compinit=1
 
- addPath() {
- 	local p="$*"
- 	[ -z "$p" ] && return
- 	if [ -d "$p" ]; then
- 	   [[ ":$PATH:" == *":$p:"* ]] || export PATH="${p}${PATH+:$PATH}"
- 	fi
- }
+addPath() {
+  local p="$*"
+  [ -z "$p" ] && return
+  if [ -d "$p" ]; then
+    [[ ":$PATH:" == *":$p:"* ]] || export PATH="${p}${PATH+:$PATH}"
+  fi
+}
 
 sourcePath() {
-    [ "$#" -ne 2 ] && echo "sourcePath $@ [Not enough arguments]" && return
-    local checkPath="$1"
-	local sourcePath="$2"
-	[ -z "$checkPath" ] && return
-	[ -z "$sourcePath" ] && return
-	if [ -r "$sourcePath" ]; then
-		if ! [[ ":$PATH:" == *":$checkPath:"* ]]; then
-            source "$sourcePath"
-        fi
-	fi
+  [ "$#" -ne 2 ] && echo "sourcePath $* [Not enough arguments]" && return
+  local checkPath="$1"
+  local sourcePath="$2"
+  [ -z "$checkPath" ] && return
+  [ -z "$sourcePath" ] && return
+  if [ -r "$sourcePath" ]; then
+    if ! [[ ":$PATH:" == *":$checkPath:"* ]]; then
+      source "$sourcePath"
+    fi
+  fi
+}
+
+fzf_preview_cmd() {
+  local word="$*"
+  if [ -d "$word" ]; then
+    ls -1 --color=always "$word"
+  elif [ -f "$word" ]; then
+    bat --color=always --style=numbers --line-range=:1000 "$word"
+  else
+    echo "$word" | tr -s " "
+  fi
 }

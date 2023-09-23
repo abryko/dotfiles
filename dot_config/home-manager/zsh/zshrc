@@ -37,7 +37,7 @@ less_termcap[me]="$(print -P -- ${FX[reset]})"
 less_termcap[ue]="$(print -P -- ${FX[reset]})"
 
 # fzf-tab previews
-FTB_FZF_PREVIEW='if [ -d "$word" ]; then ls -1 --color=always "$realpath"; elif [ -f "$word" ]; then bat --color=always --style=numbers --line-range=:1000 "$word"; else echo $desc | tr -s " "; fi'
+FTB_FZF_PREVIEW='fzf_preview_cmd $word'
 
 zstyle ':fzf-tab:complete:(vi|vim|ls|bat|cat|exa):argument-rest' fzf-preview "$FTB_FZF_PREVIEW"
 zstyle ':fzf-tab:complete:cd:*' fzf-preview "$FTB_FZF_PREVIEW"

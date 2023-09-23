@@ -450,11 +450,12 @@ lspconfig.denols.setup ({
 -- Linters integration
 lspconfig.diagnosticls.setup ({
   capabilities = capabilities,
-  filetypes = { 'json', 'markdown', 'sh' },
+  filetypes = { 'bash', 'json', 'markdown', 'sh', },
   init_options = {
     formatFiletypes = {
       json = 'jq',
       sh = 'shfmt',
+      bash = 'shfmt',
       markdown = 'mdformat',
     },
     formatters = {
