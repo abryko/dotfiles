@@ -36,11 +36,17 @@ less_termcap[us]="$(print -P -- ${FX[underline]}${FG[208]})"
 less_termcap[me]="$(print -P -- ${FX[reset]})"
 less_termcap[ue]="$(print -P -- ${FX[reset]})"
 
-# fzf-tab preview for cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls -1 --color=always $realpath'
+# fzf-tab previews
+FTB_FZF_PREVIEW='if [ -d "$word" ]; then ls -1 --color=always "$realpath"; elif [ -f "$word" ]; then bat --color=always --style=numbers --line-range=:1000 "$word"; else echo $desc | tr -s " "; fi'
+
+zstyle ':fzf-tab:complete:(vi|vim|ls|bat|cat|exa):argument-rest' fzf-preview "$FTB_FZF_PREVIEW"
+zstyle ':fzf-tab:complete:cd:*' fzf-preview "$FTB_FZF_PREVIEW"
 
 # Comments in shell
 setopt interactivecomments
+
+# Include dotfiles in completion
+setopt globdots
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

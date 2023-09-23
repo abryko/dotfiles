@@ -20,7 +20,7 @@
       ZSH_DISABLE_COMPFIX = true;
       FZ_HISTORY_CD_CMD = "_zlua";
       ZLUA_EXEC = lib.getExe' pkgs.lua "lua";
-      _FASD_INIT_OPTS = "zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install";
+      _FASD_INIT_OPTS = "zsh-hook zsh-wcomp zsh-wcomp-install";
     };
     enableAutosuggestions = false;
     enableCompletion = true;
@@ -80,11 +80,6 @@
       {
         name = "pip";
         src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/pip";
-      }
-      {
-        name = "completion";
-        src = pkgs.oh-my-zsh;
-        file = "share/oh-my-zsh/lib/completion.zsh";
       }
       {
         name = "fzf";
