@@ -164,6 +164,7 @@ in {
     nodejs
     noto-fonts-emoji
     open-policy-agent
+    page
     podman
     powertop
     pre-commit
@@ -351,6 +352,7 @@ in {
     );
     mutableExtensionsDir = false;
     extensions = with pkgs.vscode-extensions; [
+      # ms-python.python
       asciidoctor.asciidoctor-vscode
       asvetliakov.vscode-neovim
       denoland.vscode-deno
@@ -362,7 +364,6 @@ in {
       mads-hartmann.bash-ide-vscode
       ms-azuretools.vscode-docker
       ms-kubernetes-tools.vscode-kubernetes-tools
-      ms-python.python
       ms-vscode.go
       ms-vsliveshare.vsliveshare
       redhat.vscode-yaml
