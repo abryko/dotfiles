@@ -247,6 +247,10 @@ require('nvim-treesitter.configs').setup({
     enable = true,
   },
   additional_vim_regex_highlighting = false,
+  matchup = {
+    enable = true,          -- mandatory, false will disable the whole extension
+    disable = {},           -- optional, list of language that will be disabled
+  },
   textobjects = {
     select = {
       enable = true,
@@ -612,7 +616,28 @@ require('noice').setup({
 })
 require("telescope").load_extension("noice")
 
-vim.keymap.set("c", "<M-Enter>", function()
+-- nvim-treeclimber
+local tc = require('nvim-treeclimber')
+-- Highlight groups
+local color = require("nvim-treeclimber.hi")
+local bg = color.bg_hsluv("Normal")
+local fg = color.fg_hsluv("Normal")
+local dim = bg.mix(fg, 20)
+
+vim.api.nvim_set_hl(0, "TreeClimberHighlight", { background = dim.hex })
+vim.api.nvim_set_hl(0, "TreeClimberSiblingBoundary", { background = color.terminal_color_5.hex })
+vim.api.nvim_set_hl(0, "TreeClimberSibling", { background = color.terminal_color_5.mix(bg, 40).hex, bold = true })
+vim.api.nvim_set_hl(0, "TreeClimberParent", { background = bg.mix(fg, 2).hex })
+vim.api.nvim_set_hl(0, "TreeClimberParentStart", { background = color.terminal_color_4.mix(bg, 10).hex, bold = true })
+
+-- Keymaps
+vim.keymap.set({ "x", "o" }, "o", tc.select_current_node, { desc = "select current node" })
+vim.keymap.set({ "n", "x", "o" }, "[o", tc.select_backward, {})
+vim.keymap.set({ "n", "x", "o" }, "]o", tc.select_forward, {})
+vim.keymap.set({ "n", "x", "o" }, "]O", tc.select_shrink, { desc = "select child node" })
+vim.keymap.set({ "n", "x", "o" }, "[O", tc.select_expand, { desc = "select parent node" })
+
+vim.keymap.set("c", "<M-CR>", function()
     require("noice").redirect(vim.fn.getcmdline())
   end, { desc = "Redirect Cmdline" })
 

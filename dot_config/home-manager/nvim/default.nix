@@ -1,4 +1,10 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  sources = import ./nix/sources.nix {};
+  nvim-treeclimber = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "nvim-treeclimber";
+    src = sources.nvim-treeclimber;
+  };
+in {
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
@@ -26,6 +32,7 @@
       nvim-dap
       nvim-lspconfig
       nvim-notify
+      nvim-treeclimber
       nvim-treesitter
       nvim-treesitter-context
       nvim-treesitter-textobjects
@@ -36,6 +43,7 @@
       vim-cue
       vim-fugitive
       vim-indentwise
+      vim-matchup
       vim-nickel
       vim-nix
       vim-surround

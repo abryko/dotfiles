@@ -128,6 +128,7 @@ in {
     haskell-language-server
     helmfile
     hugo
+    hyperfine
     imagemagick
     inkscape
     jc

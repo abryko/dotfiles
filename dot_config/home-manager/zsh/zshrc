@@ -51,4 +51,7 @@ setopt globdots
 # Disabling special-dirs completion (from OMZ completion)
 zstyle ':completion:*' special-dirs false
 
+# Perform completion instead of inserting tab
+zstyle ':completion:*' insert-tab false
+
 #zprof
