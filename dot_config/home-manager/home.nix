@@ -79,6 +79,7 @@ in {
     (nixGLWrap google-chrome)
     (nixGLWrap krita)
     (nixGLWrap neovide)
+    (nixGLWrap element-desktop)
     (nixGLWrap obsidian)
     (nixGLWrap youtube-music)
     (python311Packages.mdformat.withPlugins [python311Packages.mdit-py-plugins python311Packages.mdformat-tables python311Packages.mdformat-frontmatter])
@@ -164,6 +165,7 @@ in {
     nodePackages_latest.bash-language-server
     nodejs
     noto-fonts-emoji
+    nvd
     open-policy-agent
     page
     podman
@@ -474,7 +476,7 @@ in {
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "21.11";
+  home.stateVersion = "23.05";
 
   services.copyq = {
     enable = true;
