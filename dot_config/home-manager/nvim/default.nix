@@ -4,6 +4,10 @@
     name = "nvim-treeclimber";
     src = sources.nvim-treeclimber;
   };
+  syntax-tree-surfer = pkgs.vimUtils.buildVimPluginFrom2Nix {
+    name = "syntax-tree-surfer";
+    src = sources.syntax-tree-surfer;
+  };
 in {
   programs.neovim = {
     enable = true;
@@ -36,6 +40,7 @@ in {
       nvim-treesitter
       nvim-treesitter-context
       nvim-treesitter-textobjects
+      syntax-tree-surfer
       telescope-fzf-native-nvim
       telescope-nvim
       telescope-ui-select-nvim
