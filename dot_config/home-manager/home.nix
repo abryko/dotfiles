@@ -1,6 +1,7 @@
 {
   pkgs,
   nixgl,
+  nickel,
   config,
   ...
 }: let
@@ -75,11 +76,11 @@ in {
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     (nixGLWrap alacritty)
+    (nixGLWrap element-desktop)
     (nixGLWrap firefox)
     (nixGLWrap google-chrome)
     (nixGLWrap krita)
     (nixGLWrap neovide)
-    (nixGLWrap element-desktop)
     (nixGLWrap obsidian)
     (nixGLWrap youtube-music)
     (python311Packages.mdformat.withPlugins [python311Packages.mdit-py-plugins python311Packages.mdformat-tables python311Packages.mdformat-frontmatter])
@@ -155,7 +156,6 @@ in {
     nixd
     nixfmt
     nixgl.nixGLDefault
-    nls
     nmap
     nodePackages.diagnostic-languageserver
     nodePackages.eslint

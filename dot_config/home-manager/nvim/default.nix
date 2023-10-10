@@ -1,10 +1,10 @@
 {pkgs, ...}: let
   sources = import ./nix/sources.nix {};
-  nvim-treeclimber = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  nvim-treeclimber = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-treeclimber";
     src = sources.nvim-treeclimber;
   };
-  syntax-tree-surfer = pkgs.vimUtils.buildVimPluginFrom2Nix {
+  syntax-tree-surfer = pkgs.vimUtils.buildVimPlugin {
     name = "syntax-tree-surfer";
     src = sources.syntax-tree-surfer;
   };

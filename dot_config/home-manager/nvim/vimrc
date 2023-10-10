@@ -650,8 +650,8 @@ local ts_utils = require("nvim-treesitter.ts_utils")
 local sts = require('syntax-tree-surfer')
 local opts = { silent = true, noremap = true }
 sts.setup()
--- vim.keymap.set({ "v" }, "o", function() sts.select_current_node() end, opts)
-vim.keymap.set({ "v" }, "o", function()
+vim.keymap.set({ "n", "o" }, "", function() sts.select_current_node() end, opts)
+vim.keymap.set({ "v" }, "", function()
 	local node = vim.treesitter.get_node()
 	if node == nil then
 		return
