@@ -88,9 +88,7 @@
       }
       {
         name = "zsh-defer";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.zsh-defer) owner repo rev sha256;
-        };
+        src = sources.zsh-defer;
         file = "zsh-defer.plugin.zsh";
       }
       {
@@ -99,9 +97,7 @@
       }
       {
         name = "fasd";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.fasd) owner repo rev sha256;
-        };
+        src = sources.fasd;
         file = "fasd.plugin.zsh";
       }
       {
@@ -136,9 +132,7 @@
       }
       {
         name = "atuin";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.atuin) owner repo rev sha256;
-        };
+        src = sources.atuin;
         file = "atuin.plugin.zsh";
       }
       {
@@ -148,16 +142,12 @@
       }
       {
         name = "z-lua";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.z-lua) owner repo rev sha256;
-        };
+        src = sources.z-lua;
         file = "z.lua.plugin.zsh";
       }
       {
         name = "fz";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.fz) owner repo rev sha256;
-        };
+        src = sources.fz;
         file = "fz.sh";
       }
       {
@@ -167,9 +157,7 @@
       }
       {
         name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          inherit (sources.zsh-autosuggestions) owner repo rev sha256;
-        };
+        src = sources.zsh-autosuggestions;
         file = "zsh-autosuggestions.plugin.zsh";
       }
       {

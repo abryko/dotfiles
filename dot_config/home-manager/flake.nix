@@ -3,7 +3,11 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    # broken: https://hydra.nixos.org/job/nixpkgs/trunk/open-policy-agent.x86_64-linux
+    nixpkgs-opa.url = "github:NixOS/nixpkgs/517501bcf14ae6ec47efd6a17dda0ca8e6d866f9";
+    # broken: https://hydra.nixos.org/job/nixpkgs/trunk/visidata.x86_64-linux
+    nixpkgs-visidata.url = "github:NixOS/nixpkgs/01441e14af5e29c9d27ace398e6dd0b293e25a54";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,13 +48,10 @@
     ...
   }: let
     system = "x86_64-linux";
-    # pkgs = nixpkgs.legacyPackages.${system};
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
-    nixgl = inputs.nixGL.packages.${system};
-    nickel = inputs.nickel.packages.${system}.default;
   in {
     formatter.${system} = pkgs.alejandra;
     legacyPackages.${system} = pkgs;
@@ -63,8 +64,7 @@
       ];
 
       extraSpecialArgs = {
-        inherit nixgl;
-        inherit nickel;
+        myInputs = inputs;
       };
       # Optionally use extraSpecialArgs
       # to pass through arguments to home.nix

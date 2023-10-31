@@ -1,11 +1,15 @@
 {
+  myInputs,
   pkgs,
-  nixgl,
-  nickel,
   config,
   ...
 }: let
+  system = pkgs.hostPlatform.system;
   lib = pkgs.lib;
+  nickel = myInputs.nickel.packages.${system}.default;
+  open-policy-agent = myInputs.nixpkgs-opa.legacyPackages.${system}.open-policy-agent;
+  visidata = myInputs.nixpkgs-visidata.legacyPackages.${system}.visidata;
+  nixgl = myInputs.nixGL.packages.${system};
   nixGLWrap = pkg:
     pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
       mkdir $out
@@ -105,7 +109,6 @@ in {
     cue
     cuelsp
     curl
-    dagger
     dconf
     dconf2nix
     delta
@@ -188,7 +191,6 @@ in {
     sqlite
     stern
     tealdeer
-    terraform
     tig
     todo-txt-cli
     topiary

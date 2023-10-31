@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "351b3e8a57c9e0143b7b6f3ed2160dcdce00225e",
-        "sha256": "1fqfmicv91qllr0gxkq7wvcs0vwvvfbxd7c5cck7jifb33969pzz",
+        "rev": "a1799af567d16083783a250392a845276beee18e",
+        "sha256": "17f15xq0chdqgdwp514ilnvmh8xgzl5jxkd3gxsycdsg2pr9v0rj",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/351b3e8a57c9e0143b7b6f3ed2160dcdce00225e.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/a1799af567d16083783a250392a845276beee18e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "27edd88039357717724210d02758168d695f98d6",
-        "sha256": "0kd9s5a8l62d9zklryxvgvmi707bnkadksr0q1fjrsdqphkrmmxi",
+        "rev": "337deb9fcfc20557fec5cdbd6fd1b3a99d349417",
+        "sha256": "0y8fvmn00clbrmyp8801sw7c7pvkay5wwr902qkvw4lkcdi1a1sk",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/27edd88039357717724210d02758168d695f98d6.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/337deb9fcfc20557fec5cdbd6fd1b3a99d349417.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "z": {
