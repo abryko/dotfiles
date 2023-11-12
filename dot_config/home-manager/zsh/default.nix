@@ -38,7 +38,7 @@
     };
     initExtra = builtins.readFile ./zshrc;
     plugins = let
-      sources = import ./nix/sources.nix {};
+      sources = import ../nix/sources.nix {};
     in [
       {
         name = "completion";

@@ -8,7 +8,6 @@
   lib = pkgs.lib;
   nickel = myInputs.nickel.packages.${system}.default;
   open-policy-agent = myInputs.nixpkgs-opa.legacyPackages.${system}.open-policy-agent;
-  visidata = myInputs.nixpkgs-visidata.legacyPackages.${system}.visidata;
   nixgl = myInputs.nixGL.packages.${system};
   nixGLWrap = pkg:
     pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
@@ -187,6 +186,7 @@ in {
     silver-searcher
     skopeo
     socat
+    sops
     spotify
     sqlite
     stern

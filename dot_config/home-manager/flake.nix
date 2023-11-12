@@ -3,18 +3,17 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs_23_05.url = "github:NixOS/nixpkgs/nixos-23.05";
     # broken: https://hydra.nixos.org/job/nixpkgs/trunk/open-policy-agent.x86_64-linux
     nixpkgs-opa.url = "github:NixOS/nixpkgs/517501bcf14ae6ec47efd6a17dda0ca8e6d866f9";
-    # broken: https://hydra.nixos.org/job/nixpkgs/trunk/visidata.x86_64-linux
-    nixpkgs-visidata.url = "github:NixOS/nixpkgs/01441e14af5e29c9d27ace398e6dd0b293e25a54";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixGL = {
       url = "github:guibou/nixGL";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs_23_05";
     };
     nickel = {
       url = "github:tweag/nickel/1.2.2";

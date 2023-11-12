@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  sources = import ./nix/sources.nix {};
+  sources = import ../nix/sources.nix {};
   nvim-treeclimber = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-treeclimber";
     src = sources.nvim-treeclimber;
