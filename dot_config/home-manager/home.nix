@@ -1,11 +1,11 @@
 {
   myInputs,
   pkgs,
+  lib,
   config,
   ...
 }: let
   system = pkgs.hostPlatform.system;
-  lib = pkgs.lib;
   nickel = myInputs.nickel.packages.${system}.default;
   open-policy-agent = myInputs.nixpkgs-opa.legacyPackages.${system}.open-policy-agent;
   nixgl = myInputs.nixGL.packages.${system};
@@ -77,6 +77,7 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+    (lib.hiPrio nix)
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     (nixGLWrap alacritty)
     (nixGLWrap element-desktop)
