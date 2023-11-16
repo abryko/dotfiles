@@ -8,6 +8,10 @@
     name = "syntax-tree-surfer";
     src = sources.syntax-tree-surfer;
   };
+  nvim-treesitter-pairs = pkgs.vimUtils.buildVimPlugin {
+    name = "nvim-treesitter-pairs";
+    src = sources.nvim-treesitter-pairs;
+  };
 in {
   programs.neovim = {
     enable = true;
@@ -39,6 +43,7 @@ in {
       nvim-treeclimber
       nvim-treesitter
       nvim-treesitter-context
+      nvim-treesitter-pairs
       nvim-treesitter-textobjects
       syntax-tree-surfer
       telescope-fzf-native-nvim
@@ -48,7 +53,6 @@ in {
       vim-cue
       vim-fugitive
       vim-indentwise
-      vim-matchup
       vim-nickel
       vim-nix
       vim-surround

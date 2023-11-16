@@ -251,11 +251,25 @@ require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
-  additional_vim_regex_highlighting = false,
-  matchup = {
-    enable = true,          -- mandatory, false will disable the whole extension
-    disable = {},           -- optional, list of language that will be disabled
+  pairs = { -- nvim-treesitter-pairs
+    enable = true,
+    disable = {},
+    highlight_pair_events = {},
+    highlight_self = true,
+    goto_right_end = false,
+    fallback_cmd_normal = "call matchit#Match_wrapper('',1,'n')",
+    keymaps = {
+      goto_partner = "%",
+      delete_balanced = "X",
+    },
+    delete_balanced = {
+      only_on_first_char = false, -- whether to trigger balanced delete when on first character of a pair
+      fallback_cmd_normal = nil, -- fallback command when no pair found, can be nil
+      longest_partner = false, -- whether to delete the longest or the shortest pair when multiple found.
+                               -- E.g. whether to delete the angle bracket or whole tag in  <pair> </pair>
+    }
   },
+  additional_vim_regex_highlighting = false,
   textobjects = {
     select = {
       enable = true,
@@ -668,7 +682,6 @@ vim.keymap.set({ "n", "o" }, "[o", function() sts.surf("prev", "normal", false) 
 vim.keymap.set({ "x" }, "[o", function() sts.surf("prev", "visual", false) end, opts)
 vim.keymap.set({ "n", "o" }, "[O", function() sts.surf("parent", "normal", false) end, opts)
 vim.keymap.set({ "x" }, "[O", function() sts.surf("parent", "visual", false) end, opts)
-
 
 END
 

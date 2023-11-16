@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "a1799af567d16083783a250392a845276beee18e",
-        "sha256": "17f15xq0chdqgdwp514ilnvmh8xgzl5jxkd3gxsycdsg2pr9v0rj",
+        "rev": "db70e8c52a6ecf6f8cc6c552955bba16e0061ffd",
+        "sha256": "06xc0kxdxy9kpid49zpz21f62yiw4wap775bar729516n5snhlnd",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/a1799af567d16083783a250392a845276beee18e.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/db70e8c52a6ecf6f8cc6c552955bba16e0061ffd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -41,10 +41,46 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "337deb9fcfc20557fec5cdbd6fd1b3a99d349417",
-        "sha256": "0y8fvmn00clbrmyp8801sw7c7pvkay5wwr902qkvw4lkcdi1a1sk",
+        "rev": "f6f83c88eca0fc07f7820dd8bb6c7ea75ef478c5",
+        "sha256": "049gx3pwlamq7n4s8zkmp1k5vvccv37lvcza7chcd2dd6kr1ys01",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/337deb9fcfc20557fec5cdbd6fd1b3a99d349417.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/f6f83c88eca0fc07f7820dd8bb6c7ea75ef478c5.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-treeclimber": {
+        "branch": "main",
+        "description": "Neovim structured editing plugin",
+        "homepage": "",
+        "owner": "Dkendal",
+        "repo": "nvim-treeclimber",
+        "rev": "1c932333025544d6e756b1cb83ff9b5333deee47",
+        "sha256": "0sfaazl888824c138rkbclncpjnd6zkkz1h902p1syvagswwg7rs",
+        "type": "tarball",
+        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/1c932333025544d6e756b1cb83ff9b5333deee47.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-treesitter-pairs": {
+        "branch": "master",
+        "description": null,
+        "homepage": null,
+        "owner": "theHamsta",
+        "repo": "nvim-treesitter-pairs",
+        "rev": "f8c195d4d8464cba6971bf8de2d6a5c8c109b37a",
+        "sha256": "0cw3vrgfmwpg861xxfzd8w3a66z1bd812255q80ijkj322ibnyjl",
+        "type": "tarball",
+        "url": "https://github.com/theHamsta/nvim-treesitter-pairs/archive/f8c195d4d8464cba6971bf8de2d6a5c8c109b37a.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "syntax-tree-surfer": {
+        "branch": "master",
+        "description": "A plugin for Neovim that helps you surf through your document and move elements around using the nvim-treesitter API.",
+        "homepage": "",
+        "owner": "ziontee113",
+        "repo": "syntax-tree-surfer",
+        "rev": "732ea6d0f868bcccd2f526be73afa46997d5a2fb",
+        "sha256": "0x7kpmxq3n8531ca2bz506swww92wd3x16d125wrk54rxp1lv1cd",
+        "type": "tarball",
+        "url": "https://github.com/ziontee113/syntax-tree-surfer/archive/732ea6d0f868bcccd2f526be73afa46997d5a2fb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "z": {
@@ -89,10 +125,10 @@
         "homepage": "",
         "owner": "romkatv",
         "repo": "zsh-defer",
-        "rev": "57a6650ff262f577278275ddf11139673e01e471",
-        "sha256": "1dvh0w5yg5dvki1h3d5bc1rp9pmn0zwjrv3qv2q22kqvc15hidzy",
+        "rev": "1c75faff4d8584afe090b06db11991c8c8d62055",
+        "sha256": "0rq280izhnighn1aj1yz94grm4gnb71a0pwbmhfc6kl9j743xsra",
         "type": "tarball",
-        "url": "https://github.com/romkatv/zsh-defer/archive/57a6650ff262f577278275ddf11139673e01e471.tar.gz",
+        "url": "https://github.com/romkatv/zsh-defer/archive/1c75faff4d8584afe090b06db11991c8c8d62055.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
