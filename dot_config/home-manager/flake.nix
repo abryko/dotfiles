@@ -16,7 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs_23_05";
     };
     nickel = {
-      url = "github:tweag/nickel/1.2.2";
+      url = "github:tweag/nickel/1.3.0";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-index-database = {
