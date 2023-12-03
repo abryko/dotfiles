@@ -136,6 +136,7 @@ in {
     hyperfine
     imagemagick
     inkscape
+    jaq
     jc
     jq
     k9s
