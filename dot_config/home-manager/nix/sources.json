@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "a52568be795b891c96438ec116ce0b29723655e7",
-        "sha256": "08ndsa837nn4msn6r1biqj71ab2dq11i73l8m09na764w53nmg58",
+        "rev": "86f50e0356e4b661be43c2aeba97a67d83910095",
+        "sha256": "09c38jkgpv7fywxwmwnjncr9chgb9hzxpns4sqhw5024gc2cm9gs",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/a52568be795b891c96438ec116ce0b29723655e7.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/86f50e0356e4b661be43c2aeba97a67d83910095.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "Dkendal",
         "repo": "nvim-treeclimber",
-        "rev": "1c932333025544d6e756b1cb83ff9b5333deee47",
-        "sha256": "0sfaazl888824c138rkbclncpjnd6zkkz1h902p1syvagswwg7rs",
+        "rev": "613daac29f134ad66ccc20f3445d35645a7fe17e",
+        "sha256": "12bcj9g1xbsrp7ah49r2dyp1j7gihqg60vs8aqf0v4bpa7808zpa",
         "type": "tarball",
-        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/1c932333025544d6e756b1cb83ff9b5333deee47.tar.gz",
+        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/613daac29f134ad66ccc20f3445d35645a7fe17e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treesitter-pairs": {
@@ -89,10 +89,10 @@
         "homepage": "",
         "owner": "rupa",
         "repo": "z",
-        "rev": "b82ac78a2d4457d2ca09973332638f123f065fd1",
-        "sha256": "0phk9lswwxsypchb11qsnxy1pv5xg1zkrqj8im6x2icma63hfcz2",
+        "rev": "d37a763a6a30e1b32766fecc3b8ffd6127f8a0fd",
+        "sha256": "10azqw3da1mamfxhx6r0x481gsnjjipcfv6q91vp2bhsi22l35hy",
         "type": "tarball",
-        "url": "https://github.com/rupa/z/archive/b82ac78a2d4457d2ca09973332638f123f065fd1.tar.gz",
+        "url": "https://github.com/rupa/z/archive/d37a763a6a30e1b32766fecc3b8ffd6127f8a0fd.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "z-lua": {
@@ -101,10 +101,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "7f2bfcbfc1e5f7572dd436a5a9b9e42b56a8efd0",
-        "sha256": "10rm4491qpjg0szn0dl6vr42gkbidsm2j5zsydaqz3qzg252x111",
+        "rev": "992134061a1b5b545fecb97189e993166d4fca9f",
+        "sha256": "1yyysyyxdxznxjsqyrbf23scbfzpfxi2caklig8fmml584n526z2",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/7f2bfcbfc1e5f7572dd436a5a9b9e42b56a8efd0.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/992134061a1b5b545fecb97189e993166d4fca9f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {

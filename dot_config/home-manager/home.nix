@@ -324,6 +324,13 @@ in {
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
+  # xsession = {
+  #   enable = true;
+  #   windowManager.i3.enable = true;
+  # };
+  #
+  # programs.i3status.enable = true;
+
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
@@ -480,12 +487,14 @@ in {
   # You can update Home Manager without changing this value. See
   # the Home Manager release notes for a list of state version
   # changes in each release.
-  home.stateVersion = "23.05";
+  home.stateVersion = "23.11";
 
   services.copyq = {
     enable = true;
     systemdTarget = "graphical-session.target";
   };
+
+  services.ssh-agent.enable = true;
 
   services.redshift = {
     enable = true;
@@ -495,6 +504,10 @@ in {
     temperature.night = 3500;
   };
 
-  services.gpg-agent.enable = true;
+  services.gpg-agent = {
+    enable = true;
+    pinentryFlavor = null;
+  };
+
   services.systembus-notify.enable = true;
 }
