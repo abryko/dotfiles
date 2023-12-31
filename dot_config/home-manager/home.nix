@@ -117,6 +117,7 @@ in {
     discord
     dive
     fd
+    feh
     fuse3
     git
     git-filter-repo
@@ -204,6 +205,7 @@ in {
     vte
     woodpecker-cli
     xclip
+    xcwd
     yarn
     yq
     zig
@@ -332,10 +334,14 @@ in {
       enable = true;
       config = {
         bars = lib.mkForce [];
-        terminal = "--no-startup-id alacritty -e zsh";
+        terminal = ''--no-startup-id alacritty --working-directory="`xcwd`" -e zsh'';
         startup = [
           {
             command = "systemctl start --user dummy-graphical.service";
+            notification = false;
+          }
+          {
+            command = "feh --scale-down --bg-scale ${./img/wallpaper.jpg}";
             notification = false;
           }
         ];
