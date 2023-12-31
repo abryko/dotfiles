@@ -122,6 +122,7 @@ in {
     git-filter-repo
     git-lfs
     glow
+    gnome.dconf-editor
     gnupg
     go
     golangci-lint
@@ -227,6 +228,7 @@ in {
   home.sessionVariables = {
     EDITOR = "vim";
     SUDO_EDITOR = "vim";
+    # SHELL = lib.getExe config.programs.zsh.package;
     VISUAL = "vim";
     GOPATH = "${config.home.homeDirectory}/go";
     GTK_THEME = "Mint-Y-Dark-Aqua";
@@ -324,12 +326,28 @@ in {
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
   };
 
-  # xsession = {
-  #   enable = true;
-  #   windowManager.i3.enable = true;
-  # };
-  #
-  # programs.i3status.enable = true;
+  xsession = {
+    enable = true;
+    windowManager.i3 = {
+      enable = true;
+      config = {
+        bars = lib.mkForce [];
+        terminal = "--no-startup-id alacritty -e zsh";
+        startup = [
+          {
+            command = "systemctl start --user dummy-graphical.service";
+            notification = false;
+          }
+        ];
+        keybindings = let
+          modifier = config.xsession.windowManager.i3.config.modifier;
+        in
+          lib.mkOptionDefault {
+            "${modifier}+z" = "focus child";
+          };
+      };
+    };
+  };
 
   programs.starship = {
     enable = true;
@@ -506,8 +524,26 @@ in {
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = null;
+    pinentryFlavor = "curses";
   };
 
   services.systembus-notify.enable = true;
+
+  systemd.user.services = {
+    dummy-graphical = {
+      Unit = {
+        Description = "dummy service to reach graphical-session.target";
+        Requires = ["basic.target"];
+        BindsTo = ["graphical-session.target"];
+        PartOf = ["graphical-session.target"];
+        Before = ["graphical-session.target"];
+      };
+      Service = {
+        Type = "oneshot";
+        RemainAfterExit = "yes";
+        ExecStart = "${pkgs.coreutils}/bin/true";
+        Restart = "on-failure";
+      };
+    };
+  };
 }
