@@ -333,9 +333,15 @@ in {
     windowManager.i3 = {
       enable = true;
       config = {
+        modifier = "Mod4";
         bars = lib.mkForce [];
         terminal = ''--no-startup-id alacritty --working-directory="`xcwd`" -e zsh'';
         startup = [
+          # {
+          #   command = "${lib.getExe pkgs.autotiling}";
+          #   notification = false;
+          #   always = true;
+          # }
           {
             command = "systemctl start --user dummy-graphical.service";
             notification = false;
@@ -343,13 +349,39 @@ in {
           {
             command = "feh --scale-down --bg-scale ${./img/wallpaper.jpg}";
             notification = false;
+            always = true;
           }
         ];
+        gaps = let
+          gapPixel = 0;
+        in {
+          smartGaps = true;
+          top = gapPixel;
+          bottom = gapPixel;
+          horizontal = gapPixel;
+          vertical = gapPixel;
+          left = gapPixel;
+          right = gapPixel;
+          inner = gapPixel;
+          outer = gapPixel;
+        };
+        focus.newWindow = "focus";
+        window = {
+          hideEdgeBorders = "none";
+          titlebar = false;
+          commands = [
+            {
+              command = "border normal 3";
+              criteria = {class = ".*";};
+            }
+          ];
+        };
         keybindings = let
           modifier = config.xsession.windowManager.i3.config.modifier;
         in
           lib.mkOptionDefault {
             "${modifier}+z" = "focus child";
+            "${modifier}+d" = "exec --no-startup-id ${lib.getExe pkgs.rofi} -show drun";
           };
       };
     };
@@ -512,6 +544,12 @@ in {
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "23.11";
+
+  services.picom = {
+    enable = true;
+    vSync = true;
+    fade = true;
+  };
 
   services.copyq = {
     enable = true;

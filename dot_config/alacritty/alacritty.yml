@@ -51,7 +51,7 @@ colors:
 key_bindings:
   - { key: Key0, mods: Shift|Control, action: ResetFontSize }
   - { key: Space, mods: Shift|Control, mode: ~Search, action: None }
-  - { key: F, mods: Control|Shift, mode: ~Search, action: None }
+  # - { key: F, mods: Control|Shift, mode: ~Search, action: None }
   - { key: B, mods: Control|Shift, mode: ~Search, action: None }
 cursor:
   style:
@@ -79,6 +79,8 @@ cursor:
   # Thickness of the cursor relative to the cell width as floating point number
   # from `0.0` to `1.0`.
   thickness: 0.15
+mouse:
+  hide_when_typing: true
 
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
