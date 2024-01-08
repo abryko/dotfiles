@@ -335,7 +335,8 @@ in {
       config = {
         modifier = "Mod4";
         bars = lib.mkForce [];
-        terminal = ''--no-startup-id alacritty --working-directory="`xcwd`" -e zsh'';
+        # terminal = ''--no-startup-id alacritty --working-directory="`xcwd`" -e zsh'';
+        terminal = ''--no-startup-id kitty --working-directory="`xcwd`" zsh'';
         startup = [
           # {
           #   command = "${lib.getExe pkgs.autotiling}";
@@ -364,6 +365,13 @@ in {
           right = gapPixel;
           inner = gapPixel;
           outer = gapPixel;
+        };
+        colors.focused = {
+          background = "#285577";
+          border = "#5acf00";
+          childBorder = "#5acf00";
+          indicator = "#2e9ef4";
+          text = "#ffffff";
         };
         focus.newWindow = "focus";
         window = {
@@ -533,6 +541,25 @@ in {
     historyControl = ["erasedups" "ignoredups" "ignorespace"];
     historySize = 20000;
     shellAliases = defaultShellAliases;
+  };
+
+  programs.kitty = {
+    enable = true;
+    package = nixGLWrap pkgs.kitty;
+    font = {
+      name = "BitstromWera Nerd Font Mono";
+      size = 11;
+    };
+    theme = "Tango Dark";
+    keybindings = {
+      "kitty_mod+t" = "no_op";
+      "kitty_mod+enter" = "no_op";
+      "kitty_mod+w" = "no_op";
+    };
+    settings = {
+      scrollback_pager = "page";
+      enable_audio_bell = false;
+    };
   };
 
   # This value determines the Home Manager release that your
