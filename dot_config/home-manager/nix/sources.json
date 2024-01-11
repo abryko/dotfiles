@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "951aafa414c438553438a8e713f8e951e9ffc902",
-        "sha256": "075z8zg6wpgw3fxs4h5fgfyz3cz84nfvkkfxz10gf3n5lyf8gzm8",
+        "rev": "a60d8934c5dfcf0679dfa5f4de5c2080dfd32a5f",
+        "sha256": "0h6nw3s72ibmsmmhq8v3b9kxpl1vxb6lz6447jnr7kwjcif944pn",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/951aafa414c438553438a8e713f8e951e9ffc902.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/a60d8934c5dfcf0679dfa5f4de5c2080dfd32a5f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -41,10 +41,22 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "f6f83c88eca0fc07f7820dd8bb6c7ea75ef478c5",
-        "sha256": "049gx3pwlamq7n4s8zkmp1k5vvccv37lvcza7chcd2dd6kr1ys01",
+        "rev": "a003e879e22b21693c54d6d5431a9b3a6d778f26",
+        "sha256": "100zgclcz343af02lh7hh8vmwdyimd7lpdzy10yngcyrqm9kmmhb",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/f6f83c88eca0fc07f7820dd8bb6c7ea75ef478c5.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/a003e879e22b21693c54d6d5431a9b3a6d778f26.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "kitty-scrollback-nvim": {
+        "branch": "v3.1.3",
+        "description": "😽 Open your Kitty scrollback buffer with Neovim. Ameowzing!",
+        "homepage": "",
+        "owner": "mikesmithgh",
+        "repo": "kitty-scrollback.nvim",
+        "rev": "da7c576180a36f40e1d4d39878b3e13385f280e4",
+        "sha256": "06rq0kk26rd4r2mjvhrdhaknkwvifqql108hql54px4ic37kbwfd",
+        "type": "tarball",
+        "url": "https://github.com/mikesmithgh/kitty-scrollback.nvim/archive/da7c576180a36f40e1d4d39878b3e13385f280e4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treeclimber": {

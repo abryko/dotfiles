@@ -184,6 +184,7 @@ in {
     rocketchat-desktop
     rust-analyzer
     rustc
+    rustfmt
     shellcheck
     shfmt
     shutter
@@ -335,8 +336,8 @@ in {
       config = {
         modifier = "Mod4";
         bars = lib.mkForce [];
-        # terminal = ''--no-startup-id alacritty --working-directory="`xcwd`" -e zsh'';
-        terminal = ''--no-startup-id kitty --working-directory="`xcwd`" zsh'';
+        terminal = ''--no-startup-id alacritty --working-directory="`xcwd`" -e zsh'';
+        # terminal = ''--no-startup-id kitty --working-directory="`xcwd`" zsh'';
         startup = [
           # {
           #   command = "${lib.getExe pkgs.autotiling}";
@@ -557,8 +558,10 @@ in {
       "kitty_mod+w" = "no_op";
     };
     settings = {
+      shell_integration = "enabled";
+      copy_on_select = "yes";
       scrollback_pager = "page";
-      enable_audio_bell = false;
+      enable_audio_bell = "no";
     };
   };
 
