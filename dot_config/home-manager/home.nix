@@ -76,6 +76,7 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    # vault
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (lib.hiPrio nix)
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
@@ -201,7 +202,6 @@ in {
     topiary
     tree
     tree-sitter
-    vault
     visidata
     vte
     woodpecker-cli
