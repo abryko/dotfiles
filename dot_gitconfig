@@ -52,3 +52,7 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[url "http://gitea"]
+	insteadOf = https://git.s3ns.internal
+[url "git@gitea"]
+	insteadOf = git@git.s3ns.internal
