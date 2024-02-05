@@ -202,6 +202,7 @@ in {
     topiary
     tree
     tree-sitter
+    vals
     visidata
     vte
     woodpecker-cli

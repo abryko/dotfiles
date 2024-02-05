@@ -56,3 +56,7 @@
 	insteadOf = https://git.s3ns.internal
 [url "git@gitea"]
 	insteadOf = git@git.s3ns.internal
+[maintenance]
+	repo = /home/xmaillard/misc/nixpkgs
+[rerere]
+	enabled = true
