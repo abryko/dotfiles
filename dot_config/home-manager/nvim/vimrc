@@ -16,8 +16,8 @@ set cursorlineopt=number
 " Always try to keep 2 lines on screen above/under the cursor
 set scrolloff=2
 
-" Moving cursor with mouse in insert mode
-set mouse=i
+" No insert mode while using mouse
+set mouse=r
 
 " Indentation Defaults
 set tabstop=4
@@ -455,6 +455,9 @@ lspconfig.bashls.setup ({
 })
 -- c cpp
 lspconfig.ccls.setup ({
+  capabilities = capabilities,
+})
+lspconfig.clangd.setup({
   capabilities = capabilities,
 })
 -- cuelang

@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "3ff2e2552f5b4db9c8b8e127ff833873902258c0",
-        "sha256": "1wlw2pa7fm00l5fs9i6wylwyfjwfk7fhhj8y98hkk36s6qayxz3q",
+        "rev": "248213bf3eafdf53ac60b872aa1e454f334a288f",
+        "sha256": "0mn1p075ci2xvl4zdjg562wzm7w43qfa9jfjp6p4sh0dfr5ii982",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/3ff2e2552f5b4db9c8b8e127ff833873902258c0.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/248213bf3eafdf53ac60b872aa1e454f334a288f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "9616591b74c72c0f716b214c659b2c3c91964e75",
-        "sha256": "1lmawh2cgn1l80adxcjrj2qfkybwx91ridkjm9yndx6hv81crysb",
+        "rev": "19776c420456c25ea3578aa7991e7fa41b0b4829",
+        "sha256": "1909jqcjlml3gykgnzndfpy7zhlzm4646im9jmff77c69c0bfx63",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/9616591b74c72c0f716b214c659b2c3c91964e75.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/19776c420456c25ea3578aa7991e7fa41b0b4829.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {
@@ -113,10 +113,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "992134061a1b5b545fecb97189e993166d4fca9f",
-        "sha256": "1yyysyyxdxznxjsqyrbf23scbfzpfxi2caklig8fmml584n526z2",
+        "rev": "30220996cae675f9ec12fc3aeb2b5c3d957af8c8",
+        "sha256": "1xzipjlgm0635n5pmmkwvm2dcyb76smfvk1npnazwajy7d2nn66f",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/992134061a1b5b545fecb97189e993166d4fca9f.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/30220996cae675f9ec12fc3aeb2b5c3d957af8c8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {
@@ -137,10 +137,10 @@
         "homepage": "",
         "owner": "romkatv",
         "repo": "zsh-defer",
-        "rev": "1c75faff4d8584afe090b06db11991c8c8d62055",
-        "sha256": "0rq280izhnighn1aj1yz94grm4gnb71a0pwbmhfc6kl9j743xsra",
+        "rev": "53a26e287fbbe2dcebb3aa1801546c6de32416fa",
+        "sha256": "0m8xhzdqy2fbd1vj2vy95xjij4vz547i9lbdj6h794n2fc16yn9h",
         "type": "tarball",
-        "url": "https://github.com/romkatv/zsh-defer/archive/1c75faff4d8584afe090b06db11991c8c8d62055.tar.gz",
+        "url": "https://github.com/romkatv/zsh-defer/archive/53a26e287fbbe2dcebb3aa1801546c6de32416fa.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

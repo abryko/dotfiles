@@ -79,6 +79,7 @@ in {
     # vault
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (lib.hiPrio nix)
+    (mdformat.withPlugins (p: [p.mdit-py-plugins p.mdformat-tables p.mdformat-frontmatter]))
     (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     (nixGLWrap alacritty)
     (nixGLWrap element-desktop)
@@ -88,7 +89,6 @@ in {
     (nixGLWrap neovide)
     (nixGLWrap obsidian)
     (nixGLWrap youtube-music)
-    (python311Packages.mdformat.withPlugins [python311Packages.mdit-py-plugins python311Packages.mdformat-tables python311Packages.mdformat-frontmatter])
     age
     alejandra
     asciinema
@@ -104,6 +104,8 @@ in {
     cargo
     ccls
     chezmoi
+    clang-tools
+    cntr
     colordiff
     cosign
     crane
@@ -117,6 +119,7 @@ in {
     deno
     discord
     dive
+    entr
     fd
     feh
     fuse3
@@ -156,10 +159,12 @@ in {
     mdsh
     meld
     minio
+    moreutils
     nginx
     nickel
     nil
     niv
+    nix-output-monitor
     nixd
     nixfmt
     nixgl.nixGLDefault
