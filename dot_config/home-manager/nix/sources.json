@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "248213bf3eafdf53ac60b872aa1e454f334a288f",
-        "sha256": "0mn1p075ci2xvl4zdjg562wzm7w43qfa9jfjp6p4sh0dfr5ii982",
+        "rev": "f9fa441d6089fd735a8a3a20f12ab00eb659f342",
+        "sha256": "0618ar3k0h2c038wjwf27d6nzw1m988misghm5iv91nhv4418zqc",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/248213bf3eafdf53ac60b872aa1e454f334a288f.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/f9fa441d6089fd735a8a3a20f12ab00eb659f342.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "changyuheng",
         "repo": "fz",
-        "rev": "7b4e215f5887b24e1ef725ffdb89f3479e913875",
-        "sha256": "18zi76i6syasc69p6nfc1skbyxwyy8yr4iz28d8w7cz63q93iq8z",
+        "rev": "fa41aa22abac86db1d1e9dd858d689d1c009aefa",
+        "sha256": "07n2v9zqfcljha19axa85isfmgj59cnwrjcpr8n4hjqn3yzfkzrk",
         "type": "tarball",
-        "url": "https://github.com/changyuheng/fz/archive/7b4e215f5887b24e1ef725ffdb89f3479e913875.tar.gz",
+        "url": "https://github.com/changyuheng/fz/archive/fa41aa22abac86db1d1e9dd858d689d1c009aefa.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fzf-tab-completion": {

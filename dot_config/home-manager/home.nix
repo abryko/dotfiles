@@ -117,6 +117,7 @@ in {
     delta
     delve
     deno
+    diffoscope
     discord
     dive
     entr
@@ -237,6 +238,7 @@ in {
   home.sessionVariables = {
     EDITOR = "vim";
     SUDO_EDITOR = "vim";
+    _ZL_MAXAGE = "10000";
     # SHELL = lib.getExe config.programs.zsh.package;
     VISUAL = "vim";
     GOPATH = "${config.home.homeDirectory}/go";

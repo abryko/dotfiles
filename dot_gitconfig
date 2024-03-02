@@ -58,5 +58,7 @@
 	insteadOf = git@git.s3ns.internal
 [maintenance]
 	repo = /home/xmaillard/misc/nixpkgs
+	repo = /home/xmaillard/misc/kubernetes
+	repo = /home/xmaillard/misc/gitea
 [rerere]
 	enabled = true
