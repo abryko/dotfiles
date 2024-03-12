@@ -121,6 +121,7 @@ in {
     discord
     dive
     entr
+    erdtree
     fd
     feh
     fuse3
@@ -166,6 +167,7 @@ in {
     nil
     niv
     nix-output-monitor
+    nix-tree
     nixd
     nixfmt
     nixgl.nixGLDefault
@@ -210,6 +212,7 @@ in {
     tree-sitter
     vals
     visidata
+    vlc
     vte
     woodpecker-cli
     xclip
