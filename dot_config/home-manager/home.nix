@@ -128,6 +128,7 @@ in {
     git
     git-filter-repo
     git-lfs
+    gleam
     glow
     gnome.dconf-editor
     gnupg
@@ -189,7 +190,6 @@ in {
     pyright
     rclone
     ripgrep
-    rnix-lsp
     rocketchat-desktop
     rust-analyzer
     rustc
@@ -609,7 +609,7 @@ in {
 
   services.gpg-agent = {
     enable = true;
-    pinentryFlavor = "curses";
+    pinentryPackage = pkgs.pinentry-curses;
   };
 
   services.systembus-notify.enable = true;
