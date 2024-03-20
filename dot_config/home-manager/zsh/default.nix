@@ -22,7 +22,7 @@
       ZLUA_EXEC = lib.getExe' pkgs.lua "lua";
       _FASD_INIT_OPTS = "zsh-hook zsh-wcomp zsh-wcomp-install";
     };
-    enableAutosuggestions = false;
+    autosuggestion.enable = false;
     enableCompletion = true;
     syntaxHighlighting.enable = false;
     enableVteIntegration = true;
