@@ -5,8 +5,6 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # broken: https://hydra.nixos.org/job/nixpkgs/trunk/open-policy-agent.x86_64-linux
-    nixpkgs-opa.url = "github:NixOS/nixpkgs/517501bcf14ae6ec47efd6a17dda0ca8e6d866f9";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,7 +14,7 @@
       inputs.nixpkgs.follows = "nixos";
     };
     nickel = {
-      url = "github:tweag/nickel/1.4.1";
+      url = "github:tweag/nickel/1.5.0";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-index-database = {

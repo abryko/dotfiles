@@ -7,7 +7,6 @@
 }: let
   system = pkgs.hostPlatform.system;
   nickel = myInputs.nickel.packages.${system}.default;
-  open-policy-agent = myInputs.nixpkgs-opa.legacyPackages.${system}.open-policy-agent;
   nixgl = myInputs.nixGL.packages.${system};
   nixGLWrap = pkg:
     pkgs.runCommand "${pkg.name}-nixgl-wrapper" {} ''
@@ -181,6 +180,7 @@ in {
     nodePackages_latest.bash-language-server
     nodejs
     noto-fonts-emoji
+    npins
     nvd
     open-policy-agent
     page
