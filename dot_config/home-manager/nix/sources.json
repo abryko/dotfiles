@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "0926941e14b7a35ede4cf540d52efdc995987dc2",
-        "sha256": "10gg25fw7nbr5fsxsagr8xffg7sz970x9q2qmgr7qqn4171s5iz4",
+        "rev": "97658f9f6370606cf337ef04c6b8553d1daf51cc",
+        "sha256": "0ww1sb5yg6r19xq6c6rns5x645n3pbf3vbx2hnsxzzfwnzlssrjq",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/0926941e14b7a35ede4cf540d52efdc995987dc2.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/97658f9f6370606cf337ef04c6b8553d1daf51cc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {
