@@ -75,6 +75,7 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    diffoscope
     # vault
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (lib.hiPrio nix)
@@ -91,13 +92,13 @@ in {
     age
     alejandra
     asciinema
-    authy
     bashInteractive
     bat
     bazel
     bazelisk
     bitwarden
     bitwarden-cli
+    btop
     buildah
     caddy
     cargo
@@ -116,7 +117,6 @@ in {
     delta
     delve
     deno
-    diffoscope
     discord
     dive
     entr
@@ -144,6 +144,7 @@ in {
     hyperfine
     imagemagick
     inkscape
+    iotop
     jaq
     jc
     jq

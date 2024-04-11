@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "82a7c8d3219749dd298b23bae22456657ee92575",
-        "sha256": "1hsjmnklnbd6rdpamdb4hk5lyvk7qik15psplbw92vp88pmcfyl7",
+        "rev": "0ab9f4d9ff545d83dc664b494ecf450750c0f184",
+        "sha256": "04hp2bnsfln6ip8m5k5dhrh5xqmx7ll5zackfwvyllnzd86qzhdm",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/82a7c8d3219749dd298b23bae22456657ee92575.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/0ab9f4d9ff545d83dc664b494ecf450750c0f184.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {
@@ -113,10 +113,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "ef9a49d73d2b4f262c6fbb23262253dcda7c19a7",
-        "sha256": "0an3p04m5vb748lfszhddmcivlk1vnc9s4fcpmwfqfsps22ijb21",
+        "rev": "019b2af4754f7d7fe792f085b74a92a6c4cad032",
+        "sha256": "1f1658hvbb2rrx3rpd772rpphw35amm3w0v3sw35a90vm3bwg350",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/ef9a49d73d2b4f262c6fbb23262253dcda7c19a7.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/019b2af4754f7d7fe792f085b74a92a6c4cad032.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {
