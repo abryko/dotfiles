@@ -5,10 +5,10 @@
         "homepage": "https://atuin.sh",
         "owner": "ellie",
         "repo": "atuin",
-        "rev": "0ab9f4d9ff545d83dc664b494ecf450750c0f184",
-        "sha256": "04hp2bnsfln6ip8m5k5dhrh5xqmx7ll5zackfwvyllnzd86qzhdm",
+        "rev": "0da8d34425ef83395759db79377025c062a69911",
+        "sha256": "0gv30nwy55y8dd3d46903gxn0gqv0cingnwp9m9bw7al588znwsl",
         "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/0ab9f4d9ff545d83dc664b494ecf450750c0f184.tar.gz",
+        "url": "https://github.com/ellie/atuin/archive/0da8d34425ef83395759db79377025c062a69911.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fasd": {

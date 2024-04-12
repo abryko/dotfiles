@@ -423,8 +423,8 @@ in {
   programs.fzf = {
     enable = true;
     # atuin is used instead
-    enableBashIntegration = false;
-    enableZshIntegration = false;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
     tmux.enableShellIntegration = true;
   };
 
@@ -491,7 +491,7 @@ in {
   programs.atuin = {
     enable = true;
     enableBashIntegration = true;
-    enableZshIntegration = false;
+    enableZshIntegration = true;
   };
 
   programs.autojump = {

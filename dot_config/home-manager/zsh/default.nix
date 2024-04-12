@@ -82,11 +82,6 @@
         src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/pip";
       }
       {
-        name = "fzf";
-        src = pkgs.oh-my-zsh;
-        file = "share/oh-my-zsh/plugins/fzf/fzf.plugin.zsh";
-      }
-      {
         name = "zsh-defer";
         src = sources.zsh-defer;
         file = "zsh-defer.plugin.zsh";
@@ -129,11 +124,6 @@
         name = "powerlevel10k-config";
         src = ./p10k-config;
         file = "p10k.zsh";
-      }
-      {
-        name = "atuin";
-        src = sources.atuin;
-        file = "atuin.plugin.zsh";
       }
       {
         name = "fzf-tab";

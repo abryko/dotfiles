@@ -2,12 +2,6 @@
 
 # Highlights
 unset ZSH_AUTOSUGGEST_USE_ASYNC
-functions -c _atuin_search _atuin_search_orig
-function _atuin_search(){
-    _zsh_autosuggest_clear
-    _atuin_search_orig "$@"
-    _zsh_autosuggest_fetch
-}
 
 # ZLE Bindings
 [[ -r ~/.zsh_zle ]] && source ~/.zsh_zle
