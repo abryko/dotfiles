@@ -1,16 +1,4 @@
 {
-    "atuin": {
-        "branch": "main",
-        "description": "✨ Magical shell history",
-        "homepage": "https://atuin.sh",
-        "owner": "ellie",
-        "repo": "atuin",
-        "rev": "0da8d34425ef83395759db79377025c062a69911",
-        "sha256": "0gv30nwy55y8dd3d46903gxn0gqv0cingnwp9m9bw7al588znwsl",
-        "type": "tarball",
-        "url": "https://github.com/ellie/atuin/archive/0da8d34425ef83395759db79377025c062a69911.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "fasd": {
         "branch": "master",
         "description": "Command-line productivity booster, offers quick access to files and directories, inspired by autojump, z and v.",
@@ -113,10 +101,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "019b2af4754f7d7fe792f085b74a92a6c4cad032",
-        "sha256": "1f1658hvbb2rrx3rpd772rpphw35amm3w0v3sw35a90vm3bwg350",
+        "rev": "7af012cc35b82d5d4b93ad6b6db1b65f2b601773",
+        "sha256": "1g9cv5yaz4qb7s19zavly1c75ax4czc5zg0z9s8w6kavd7ky7lnv",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/019b2af4754f7d7fe792f085b74a92a6c4cad032.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/7af012cc35b82d5d4b93ad6b6db1b65f2b601773.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {
