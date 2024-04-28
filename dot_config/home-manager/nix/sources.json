@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "97658f9f6370606cf337ef04c6b8553d1daf51cc",
-        "sha256": "0ww1sb5yg6r19xq6c6rns5x645n3pbf3vbx2hnsxzzfwnzlssrjq",
+        "rev": "32fd6371a6e266c2c10239690e5d93a583c3c5e4",
+        "sha256": "02wc6776p0xaanrcj7nbwama8jdnvi91xcp006v4cpkn8psc72rz",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/97658f9f6370606cf337ef04c6b8553d1daf51cc.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/32fd6371a6e266c2c10239690e5d93a583c3c5e4.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {

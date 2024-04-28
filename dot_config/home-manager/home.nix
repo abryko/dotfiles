@@ -75,7 +75,6 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    diffoscope
     # vault
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (lib.hiPrio nix)
@@ -91,6 +90,7 @@ in {
     (nixGLWrap youtube-music)
     age
     alejandra
+    archiver
     asciinema
     bashInteractive
     bat
@@ -117,6 +117,7 @@ in {
     delta
     delve
     deno
+    diffoscope
     discord
     dive
     entr
