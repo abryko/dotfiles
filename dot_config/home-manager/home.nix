@@ -171,7 +171,7 @@ in {
     nix-output-monitor
     nix-tree
     nixd
-    nixfmt
+    nixfmt-rfc-style
     nixgl.nixGLDefault
     nmap
     nodePackages.diagnostic-languageserver
