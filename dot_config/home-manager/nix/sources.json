@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "32fd6371a6e266c2c10239690e5d93a583c3c5e4",
-        "sha256": "02wc6776p0xaanrcj7nbwama8jdnvi91xcp006v4cpkn8psc72rz",
+        "rev": "2262b9fc6c0635871b90108e81f1537628a89cbb",
+        "sha256": "1gkk2s4w86wca088jmzd5jv7syl71akl6rg3in280a3xs1wn5rhj",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/32fd6371a6e266c2c10239690e5d93a583c3c5e4.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/2262b9fc6c0635871b90108e81f1537628a89cbb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "Dkendal",
         "repo": "nvim-treeclimber",
-        "rev": "613daac29f134ad66ccc20f3445d35645a7fe17e",
-        "sha256": "12bcj9g1xbsrp7ah49r2dyp1j7gihqg60vs8aqf0v4bpa7808zpa",
+        "rev": "707b75e0f1880f4b9f9ad0cf75a95c3046a3829d",
+        "sha256": "0y1bsijyal12cpav5wmjn34r9yl0z13km6965wp86rgm7c5awqma",
         "type": "tarball",
-        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/613daac29f134ad66ccc20f3445d35645a7fe17e.tar.gz",
+        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/707b75e0f1880f4b9f9ad0cf75a95c3046a3829d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treesitter-pairs": {
@@ -101,10 +101,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "7af012cc35b82d5d4b93ad6b6db1b65f2b601773",
-        "sha256": "1g9cv5yaz4qb7s19zavly1c75ax4czc5zg0z9s8w6kavd7ky7lnv",
+        "rev": "7c890c3645081014eab4be2ab45e8640f86f62d7",
+        "sha256": "01xlig4awxfcragwv954wzm8lid6wyhdrq91ww94q9chm95k06ay",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/7af012cc35b82d5d4b93ad6b6db1b65f2b601773.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/7c890c3645081014eab4be2ab45e8640f86f62d7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {

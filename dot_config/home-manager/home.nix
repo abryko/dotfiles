@@ -48,8 +48,8 @@
     la = "ls -A";
     ll = "ls -alF";
     ls = "ls --color=auto";
-    t = "toto.sh";
-    todo = "toto.sh";
+    t = "todo.sh";
+    todo = "todo.sh";
   };
 in {
   imports = [
