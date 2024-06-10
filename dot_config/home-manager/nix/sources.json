@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "2262b9fc6c0635871b90108e81f1537628a89cbb",
-        "sha256": "1gkk2s4w86wca088jmzd5jv7syl71akl6rg3in280a3xs1wn5rhj",
+        "rev": "255dc81b45acac8cdca07cd2e7e63b89cb056fee",
+        "sha256": "0691js9gbvrjzwr552niivjmmqxm65pxphc2p1naf3rviwh1fgm7",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/2262b9fc6c0635871b90108e81f1537628a89cbb.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/255dc81b45acac8cdca07cd2e7e63b89cb056fee.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "Dkendal",
         "repo": "nvim-treeclimber",
-        "rev": "707b75e0f1880f4b9f9ad0cf75a95c3046a3829d",
-        "sha256": "0y1bsijyal12cpav5wmjn34r9yl0z13km6965wp86rgm7c5awqma",
+        "rev": "f2704bef355ba4f5ff77b6b40a26c6604cd322c6",
+        "sha256": "0klkzfpmqyf6cxj4jhxk332f166fbrrfsib1rrd7ai0inif732gm",
         "type": "tarball",
-        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/707b75e0f1880f4b9f9ad0cf75a95c3046a3829d.tar.gz",
+        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/f2704bef355ba4f5ff77b6b40a26c6604cd322c6.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treesitter-pairs": {

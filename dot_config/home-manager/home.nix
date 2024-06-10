@@ -456,7 +456,7 @@ in {
       mads-hartmann.bash-ide-vscode
       ms-azuretools.vscode-docker
       ms-kubernetes-tools.vscode-kubernetes-tools
-      ms-vscode.go
+      golang.go
       ms-vsliveshare.vsliveshare
       redhat.vscode-yaml
     ];
