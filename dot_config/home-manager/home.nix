@@ -92,6 +92,7 @@ in {
     alejandra
     archiver
     asciinema
+    bash-language-server
     bashInteractive
     bat
     bazel
@@ -113,6 +114,7 @@ in {
     cuelsp
     curl
     dconf
+    dconf-editor
     dconf2nix
     delta
     delve
@@ -130,7 +132,6 @@ in {
     git-lfs
     gleam
     glow
-    gnome.dconf-editor
     gnupg
     go
     golangci-lint
@@ -179,7 +180,6 @@ in {
     nodePackages.markdownlint-cli
     nodePackages.typescript-language-server
     nodePackages.vim-language-server
-    nodePackages_latest.bash-language-server
     nodejs
     noto-fonts-emoji
     npins
@@ -327,15 +327,15 @@ in {
     };
     cursorTheme = {
       name = "Bibata-Modern-Classic";
-      package = pkgs.cinnamon.mint-cursor-themes;
+      package = pkgs.mint-cursor-themes;
       size = 16;
     };
     iconTheme = {
-      package = pkgs.cinnamon.mint-y-icons;
+      package = pkgs.mint-y-icons;
       name = "Mint-Y-Dark-Aqua";
     };
     theme = {
-      package = pkgs.cinnamon.mint-themes;
+      package = pkgs.mint-themes;
       name = "Mint-Y-Dark-Aqua";
     };
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;

@@ -48,6 +48,7 @@
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      config.allowInsecure = true;
     };
   in {
     formatter.${system} = pkgs.alejandra;

@@ -62,3 +62,5 @@
 	repo = /home/xmaillard/misc/gitea
 [rerere]
 	enabled = true
+[safe]
+	directory = /woodpecker/src/git.s3ns.internal/s3ns/woodpecker-ci
