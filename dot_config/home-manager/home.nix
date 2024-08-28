@@ -213,7 +213,7 @@ in {
     tree
     tree-sitter
     vals
-    visidata
+    # visidata
     vlc
     vte
     woodpecker-cli
