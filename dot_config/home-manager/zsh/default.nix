@@ -74,10 +74,6 @@
         src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/terraform";
       }
       {
-        name = "vault";
-        src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/vault";
-      }
-      {
         name = "pip";
         src = "${pkgs.oh-my-zsh}/share/oh-my-zsh/plugins/pip";
       }

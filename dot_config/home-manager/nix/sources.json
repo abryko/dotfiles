@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "Dkendal",
         "repo": "nvim-treeclimber",
-        "rev": "f2704bef355ba4f5ff77b6b40a26c6604cd322c6",
-        "sha256": "0klkzfpmqyf6cxj4jhxk332f166fbrrfsib1rrd7ai0inif732gm",
+        "rev": "3f367db688e8012269ca17400d72229f206aefa9",
+        "sha256": "1ba79jjyrbcc5rj1hymr64crrf0s89sy1lsf0472q719aadywy58",
         "type": "tarball",
-        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/f2704bef355ba4f5ff77b6b40a26c6604cd322c6.tar.gz",
+        "url": "https://github.com/Dkendal/nvim-treeclimber/archive/3f367db688e8012269ca17400d72229f206aefa9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treesitter-pairs": {
