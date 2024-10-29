@@ -101,10 +101,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "7c890c3645081014eab4be2ab45e8640f86f62d7",
-        "sha256": "01xlig4awxfcragwv954wzm8lid6wyhdrq91ww94q9chm95k06ay",
+        "rev": "3875d774cb1554b06f04b94f7d2b0772a5d7143c",
+        "sha256": "0h72yifmrijxyxy094fq6pfijvbx7swaxkax9hszz7d5ilf4a0zh",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/7c890c3645081014eab4be2ab45e8640f86f62d7.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/3875d774cb1554b06f04b94f7d2b0772a5d7143c.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {
