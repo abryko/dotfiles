@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "11122590127ab62c51dd4bbfd0d432cee30f9984",
-        "sha256": "0xdrj40923zqkchmm805cfkwyx0q836d1cmh23danpfp4j08dkvn",
+        "rev": "5ff8ab0f71006662fd3a7ab774a6cd837cdff32d",
+        "sha256": "0ik7iy9758j8v0a6anp1rr6wvzm81sdznyand4fv28nblrr6ic2g",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/11122590127ab62c51dd4bbfd0d432cee30f9984.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/5ff8ab0f71006662fd3a7ab774a6cd837cdff32d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {
@@ -113,10 +113,10 @@
         "homepage": null,
         "owner": "zsh-users",
         "repo": "zsh-autosuggestions",
-        "rev": "c3d4e576c9c86eac62884bd47c01f6faed043fc5",
-        "sha256": "1m8yawj7skbjw0c5ym59r1y88klhjl6abvbwzy6b1xyx3vfb7qh7",
+        "rev": "0e810e5afa27acbd074398eefbe28d13005dbc15",
+        "sha256": "0y866dsm8l164afbyd9cafbl97yf9viqwms9bbn0799nwgsb15pk",
         "type": "tarball",
-        "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/c3d4e576c9c86eac62884bd47c01f6faed043fc5.tar.gz",
+        "url": "https://github.com/zsh-users/zsh-autosuggestions/archive/0e810e5afa27acbd074398eefbe28d13005dbc15.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-defer": {

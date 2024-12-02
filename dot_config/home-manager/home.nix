@@ -76,10 +76,10 @@ in {
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # vault
+    # visidata
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
     (lib.hiPrio nix)
     (mdformat.withPlugins (p: [p.mdit-py-plugins p.mdformat-tables p.mdformat-frontmatter]))
-    (nerdfonts.override {fonts = ["BitstreamVeraSansMono" "DejaVuSansMono" "Noto" "Ubuntu" "UbuntuMono"];})
     (nixGLWrap alacritty)
     (nixGLWrap element-desktop)
     (nixGLWrap firefox)
@@ -165,6 +165,11 @@ in {
     meld
     minio
     moreutils
+    nerd-fonts.bitstream-vera-sans-mono
+    nerd-fonts.dejavu-sans-mono
+    nerd-fonts.noto
+    nerd-fonts.ubuntu
+    nerd-fonts.ubuntu-mono
     nginx
     nickel
     nil
@@ -213,7 +218,6 @@ in {
     tree
     tree-sitter
     vals
-    # visidata
     vlc
     vte
     woodpecker-cli
@@ -564,7 +568,7 @@ in {
       name = "BitstromWera Nerd Font Mono";
       size = 11;
     };
-    theme = "Tango Dark";
+    themeFile = "Tango_Dark";
     keybindings = {
       "kitty_mod+t" = "no_op";
       "kitty_mod+enter" = "no_op";
