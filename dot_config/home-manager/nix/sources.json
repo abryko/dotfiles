@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "whjvenyl",
         "repo": "fasd",
-        "rev": "bc07c8b446e35b6ff6511c84a8ce9c1f17c5f1a2",
-        "sha256": "1jjhwzks7zi1a0xhmkkwdzrf1pmajjqwskm01i0lcf7n1dmrrgqv",
+        "rev": "429a5cfbb66310784c93c18e6a9cd9ce61401aa8",
+        "sha256": "1php8lip5jhspjh7d4fsf56n3bhk63h48lg5wdd5a2swmp9z93wm",
         "type": "tarball",
-        "url": "https://github.com/whjvenyl/fasd/archive/bc07c8b446e35b6ff6511c84a8ce9c1f17c5f1a2.tar.gz",
+        "url": "https://github.com/whjvenyl/fasd/archive/429a5cfbb66310784c93c18e6a9cd9ce61401aa8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fz": {
@@ -29,10 +29,10 @@
         "homepage": "",
         "owner": "lincheney",
         "repo": "fzf-tab-completion",
-        "rev": "5ff8ab0f71006662fd3a7ab774a6cd837cdff32d",
-        "sha256": "0ik7iy9758j8v0a6anp1rr6wvzm81sdznyand4fv28nblrr6ic2g",
+        "rev": "4850357beac6f8e37b66bd78ccf90008ea3de40b",
+        "sha256": "02kxsxkf7wk7s6q5faqli4546dwf73y3mpjkhl1bls6r2r2jn1x6",
         "type": "tarball",
-        "url": "https://github.com/lincheney/fzf-tab-completion/archive/5ff8ab0f71006662fd3a7ab774a6cd837cdff32d.tar.gz",
+        "url": "https://github.com/lincheney/fzf-tab-completion/archive/4850357beac6f8e37b66bd78ccf90008ea3de40b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "kitty-scrollback-nvim": {
@@ -101,10 +101,10 @@
         "homepage": "",
         "owner": "skywind3000",
         "repo": "z.lua",
-        "rev": "3875d774cb1554b06f04b94f7d2b0772a5d7143c",
-        "sha256": "0h72yifmrijxyxy094fq6pfijvbx7swaxkax9hszz7d5ilf4a0zh",
+        "rev": "4bbd0f1e5889f2755438952785a11b7a8222f696",
+        "sha256": "0p4jrnjzpbf3y3rfd1qak3sdszh2cjh82afdali9vg8718yazgiy",
         "type": "tarball",
-        "url": "https://github.com/skywind3000/z.lua/archive/3875d774cb1554b06f04b94f7d2b0772a5d7143c.tar.gz",
+        "url": "https://github.com/skywind3000/z.lua/archive/4bbd0f1e5889f2755438952785a11b7a8222f696.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "zsh-autosuggestions": {

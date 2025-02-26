@@ -3,14 +3,17 @@
   nvim-treeclimber = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-treeclimber";
     src = sources.nvim-treeclimber;
+    doCheck = false;
   };
   syntax-tree-surfer = pkgs.vimUtils.buildVimPlugin {
     name = "syntax-tree-surfer";
     src = sources.syntax-tree-surfer;
+    doCheck = false;
   };
   nvim-treesitter-pairs = pkgs.vimUtils.buildVimPlugin {
     name = "nvim-treesitter-pairs";
     src = sources.nvim-treesitter-pairs;
+    doCheck = false;
   };
 in {
   programs.neovim = {

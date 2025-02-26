@@ -75,6 +75,10 @@ in {
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
+    # bitwarden-cli
+    # diffoscope
+    # nodePackages.eslint
+    # nodePackages.vim-language-server
     # vault
     # visidata
     (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
@@ -98,7 +102,6 @@ in {
     bazel
     bazelisk
     bitwarden
-    bitwarden-cli
     btop
     buildah
     caddy
@@ -119,7 +122,6 @@ in {
     delta
     delve
     deno
-    diffoscope
     discord
     dive
     entr
@@ -181,10 +183,8 @@ in {
     nixgl.nixGLDefault
     nmap
     nodePackages.diagnostic-languageserver
-    nodePackages.eslint
     nodePackages.markdownlint-cli
     nodePackages.typescript-language-server
-    nodePackages.vim-language-server
     nodejs
     noto-fonts-emoji
     npins
@@ -506,11 +506,11 @@ in {
   };
 
   programs.zellij = {
-    enable = true;
+    enable = false;
   };
 
   programs.fish = {
-    enable = true;
+    enable = false;
     shellAliases = defaultShellAliases;
     plugins = [
       {
